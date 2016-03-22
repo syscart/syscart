@@ -1,10 +1,10 @@
 @echo off
 
 rem -------------------------------------------------------------
-rem  system library management command line bootstrap script for Windows.
+rem  system cart(syscart) command line bootstrap script for Windows.
 rem
 rem  @author majeed mohammadian <majeedmohammadian@gmail.com>
-rem  @link http://www.systemli.ir/
+rem  @link http://www.syscart.ir/
 rem -------------------------------------------------------------
 
 @setlocal

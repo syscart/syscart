@@ -4,7 +4,7 @@
  * systemli console bootstrap file.
  */
 
-define('systemli', true);
+define('syscart', true);
 
 require(__DIR__ . '/include.php');
 
