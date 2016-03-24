@@ -17,7 +17,7 @@ class htmlAdminLoadDefault
     {
         factory::getDocument()->metaManager()->set([
             'name' => 'generator',
-            'content' => 'system library management (systemli)'
+            'content' => 'system cart (syscart)'
         ]);
 
         factory::getDocument()->metaManager()->set([

@@ -1,7 +1,7 @@
 #!/usr/bin/env php
 <?php
 /**
- * systemli console bootstrap file.
+ * syscart console bootstrap file.
  */
 
 define('syscart', true);

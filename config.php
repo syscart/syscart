@@ -14,7 +14,7 @@ defined('syscart') or die('access denied...!');
 class syscartConfig {
     // database
     public $host = 'localhost';
-    public $db = 'systemli';
+    public $db = 'syscart';
     public $db_user = 'root';
     public $db_pass = '';
     public $db_port = '3306';

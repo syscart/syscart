@@ -12,7 +12,7 @@
 defined('syscart') or die('access denied...!');
 
 /**
- * systemli Platform string Class
+ * syscart Platform string Class
  *
  * This class string to better than function string
  */

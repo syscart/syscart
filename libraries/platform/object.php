@@ -13,7 +13,7 @@
 defined('syscart') or die('access denied...!');
 
 /**
- * systemli Platform Object Class
+ * syscart Platform Object Class
  *
  * This class allows for simple but smart objects with get and set methods
  * and an internal error handler.
