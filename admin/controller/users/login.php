@@ -17,18 +17,27 @@ class adminControllerUsersLogin extends adminController
     {
         global $client;
 
+        if(($_SERVER['REQUEST_METHOD'] == 'POST') && $this->validate()) {
+            $username = platformRequest::getVar('username');
+            $password = platformRequest::getVar('password');
+
+            factory::getUser()->login($username, $password, $client);
+        }
+
         if(factory::getUser()->isLogin($client)) {
             $session = factory::getSession();
+            $header = new platformHeader();
             if($session->requestDataLogin) {
-                $url = factory::getConfig()->get('url').$session->requestDataLogin['route'];
-                unset($session->requestDataLogin['route']);
-                foreach($session->requestDataLogin as $key => $value) {
+                $dataLogin = $session->requestDataLogin;
+                $url = factory::getConfig()->get('url').$dataLogin['route'];
+                unset($dataLogin['route']);
+                foreach($dataLogin as $key => $value) {
                     $url .= '&'.$key.'='.$value;
                 }
-                $header = new platformHeader();
+                unset($session->requestDataLogin);
                 $header->redirect($url);
             } else
-                $this->form();
+                $header->redirect(factory::getConfig()->get('url').'admin');
         } else
             $this->form();
     }
@@ -51,8 +60,6 @@ class adminControllerUsersLogin extends adminController
             'html' => 'body-full-height'
         ]);
 
-        $data = [];
-
         foreach($language as $item => $value) {
             $data[$item] = $value;
         }
@@ -67,6 +74,20 @@ class adminControllerUsersLogin extends adminController
     public function login()
     {
 
+    }
+
+    private function validate()
+    {
+        $username = platformRequest::getVar('username', 'POST', '');
+        $password = platformRequest::getVar('password', 'POST', '');
+
+        if($username)
+            if($password)
+                return true;
+            else
+                return false;
+        else
+            return false;
     }
 }
 ?>

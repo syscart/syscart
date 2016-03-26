@@ -5,12 +5,12 @@
             <form action="<?php echo $site_url; ?>admin/users/login" class="form-horizontal" method="post" enctype="multipart/form-data">
                 <div class="form-group">
                     <div class="col-md-12">
-                        <input type="text" class="form-control" placeholder="<?php echo $text_username; ?>"/>
+                        <input type="text" name="username" class="form-control" placeholder="<?php echo $text_username; ?>"/>
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="col-md-12">
-                        <input type="password" class="form-control" placeholder="<?php echo $text_password; ?>"/>
+                        <input type="password" name="password" class="form-control" placeholder="<?php echo $text_password; ?>"/>
                     </div>
                 </div>
                 <div class="form-group">
