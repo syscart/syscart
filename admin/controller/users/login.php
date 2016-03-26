@@ -71,9 +71,18 @@ class adminControllerUsersLogin extends adminController
         factory::getDocument()->renderHtml();
     }
 
-    public function login()
+    private function validate()
     {
+        $username = platformRequest::getVar('username', 'POST', '');
+        $password = platformRequest::getVar('password', 'POST', '');
 
+        if($username)
+            if($password)
+                return true;
+            else
+                return false;
+        else
+            return false;
     }
 
     private function validate()
