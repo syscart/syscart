@@ -108,6 +108,13 @@ function loaderLanguage($file = '', $client = 'site')
         $default = 'persian';
         $data = [];
 
+        $file = PATH_PLATFORM.DS.$client.DS.'language'.DS.$default.DS.'default.php';
+
+        if(file_exists($file)) {
+            $_ = loadFile( $file, true );
+            $data = array_merge( $data, $_ );
+        }
+
         $file = PATH_PLATFORM.DS.$client.DS.'language'.DS.$default.DS.$file.'.php';
 
         if(file_exists($file)) {
