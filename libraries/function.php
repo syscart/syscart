@@ -11,21 +11,21 @@
 
 defined('syscart') or die('access denied...!');
 
-function loaderController($file = '', $client = 'site')
+function loaderController($file = '', $function = 'index', $client = 'site')
 {
     if($file == '') {
         trigger_error( 'Error: not selection controller' );
         exit;
     }
     else {
-        $file = PATH_PLATFORM.DS.$client.DS.'controller'.DS.$file.'.php';
+        $fileController = PATH_PLATFORM.DS.$client.DS.'controller'.DS.$file.'.php';
 
-        if (file_exists($file)) {
-            loadFile($file);
+        if (file_exists($fileController)) {
+            loadFile($fileController);
             $data = implode('', array_map('ucfirst', explode(DS, $file)));
             $class = $client . 'Controller' . $data;
             $object = new $class();
-            return $object;
+            return $object->$function();
         } else {
             trigger_error('Error: Could not load controller ' . $file . '!');
             exit;
