@@ -29,7 +29,7 @@ if($component) {
             if(factory::getUser()->isLogin($client)) {
                 if($component == 'home') {
                     $header = new platformHeader();
-                    $header->redirect(factory::getConfig()->get('url').'admin/home/dashboard');
+                    $header->redirect(factory::getConfig()->get('url').'admin/dashboard');
                 } else {
                     loadFile(PATH_PLATFORM.DS.'admin'.DS.'controller'.DS.$component.DS.'index.php');
 
@@ -64,7 +64,7 @@ if($component) {
             if(factory::getUser()->isLogin($client)) {
                 if($component == 'login') {
                     $header = new platformHeader();
-                    $header->redirect(factory::getConfig()->get('url').'admin/home/dashboard');
+                    $header->redirect(factory::getConfig()->get('url').'admin/dashboard');
                 } else {
                     loadFile(PATH_PLATFORM.DS.'admin'.DS.'controller'.DS.$component.DS.$function.'.php' );
 
@@ -105,7 +105,7 @@ if($component) {
 } else {
     if(factory::getUser()->isLogin($client)) {
         $header = new platformHeader();
-        $header->redirect(factory::getConfig()->get('url').'admin/home/dashboard');
+        $header->redirect(factory::getConfig()->get('url').'admin/dashboard');
     } else {
         $session = factory::getSession();
         $session->requestDataLogin = $_GET;
