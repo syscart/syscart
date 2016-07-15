@@ -35,7 +35,7 @@
         </div>
         <div class="login-footer">
             <div class="pull-left">
-                &copy; <?php echo date( 'Y' ); ?> systemli
+                &copy; <?php echo date( 'Y' ); ?> syscart
             </div>
             <div class="pull-right">
                 <a href="#">{{t:adminLogin.text_link_about}}</a> |
