@@ -92,6 +92,8 @@ class htmlDocument
 
     public function renderHtml()
     {
+        global $sysLang;
+
         $classTagHtml = (isset($this->classTag['html'])) ? ' class="'.$this->classTag['html'].'"' : '';
         $classTagHead = (isset($this->classTag['head'])) ? ' class="'.$this->classTag['head'].'"' : '';
         $classTagBody = (isset($this->classTag['body'])) ? ' class="'.$this->classTag['body'].'"' : '';
@@ -111,8 +113,8 @@ class htmlDocument
         '.$this->scriptManager()->renderFooter().'
     </body>
 </html>';
-
-        echo $data;
+    
+        echo $sysLang->generate($data);
     }
 
     public function renderJson()
