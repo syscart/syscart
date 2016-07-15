@@ -67,7 +67,12 @@ class htmlAdminLoadDefault
 
     public function scriptFooter()
     {
-
+        factory::getDocument()->scriptManager()->setFooter(factory::getConfig()->get('url').'templates/backend/js/plugins/jquery/jquery.min.js');
+        factory::getDocument()->scriptManager()->setFooter(factory::getConfig()->get('url').'templates/backend/js/plugins/jquery/jquery-ui.min.js');
+        factory::getDocument()->scriptManager()->setFooter(factory::getConfig()->get('url').'templates/backend/js/plugins/bootstrap/bootstrap.min.js');
+        factory::getDocument()->scriptManager()->setFooter(factory::getConfig()->get('url').'templates/backend/js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js');
+        factory::getDocument()->scriptManager()->setFooter(factory::getConfig()->get('url').'templates/backend/js/plugins.js');
+        factory::getDocument()->scriptManager()->setFooter(factory::getConfig()->get('url').'templates/backend/js/actions.js');
     }
 }
 ?>
