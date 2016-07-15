@@ -16,13 +16,6 @@ class adminControllerCommonLogout extends adminController
     public function index()
     {
         global $client;
-        $language = loaderLanguage('common/logout', $client);
-        echo '<pre dir="ltr">';
-        var_dump($language);
-        echo '</pre>';
-        foreach($language as $item => $value) {
-            $data[$item] = $value;
-        }
 
         $data['site_url'] = factory::getConfig()->get('url');
         
