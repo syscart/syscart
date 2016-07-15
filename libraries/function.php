@@ -106,29 +106,22 @@ function loaderLanguage($file = '', $client = 'site')
                 break;
         }
         $default = 'persian';
-        $data = [];
-
-        $file = PATH_PLATFORM.DS.$client.DS.'language'.DS.$default.DS.'default.php';
-
-        if(file_exists($file)) {
-            $_ = loadFile( $file, true );
-            $data = array_merge( $data, $_ );
+        
+        $fileDefault = PATH_PLATFORM.DS.$client.DS.'language'.DS.$config.DS.'default.php';
+        if(!file_exists($fileDefault))
+            $fileDefault = PATH_PLATFORM.DS.$client.DS.'language'.DS.$default.DS.'default.php';
+        
+        if(file_exists($fileDefault)) {
+            $dataLanguage = loadFile( $fileDefault, true );
         }
 
-        $file = PATH_PLATFORM.DS.$client.DS.'language'.DS.$default.DS.$file.'.php';
+        $fileOption = PATH_PLATFORM.DS.$client.DS.'language'.DS.$config.DS.$file.'.php';
+        if(!file_exists($fileOption))
+            $fileOption = PATH_PLATFORM.DS.$client.DS.'language'.DS.$default.DS.$file.'.php';
 
-        if(file_exists($file)) {
-            $_ = loadFile( $file, true );
-            $data = array_merge( $data, $_ );
-        }
-
-        $file = PATH_PLATFORM.DS.$client.DS.'language'.DS.$config.DS.$file.'.php';
-
-        if(file_exists($file)) {
-            $_ = loadFile( $file, true );
-            $data = array_merge( $data, $_ );
-        }
-
-        return $data;
+        $_ = loadFile( $fileOption, true );
+        $dataLanguage = array_merge( $dataLanguage, $_ );
+        
+        return $dataLanguage;
     }
 }
