@@ -15,60 +15,54 @@ class adminControllerUsersLogin extends adminController
 {
     public function index()
     {
-        global $client;
+        global $client, $sysUser, $sysSession, $sysConfig;
 
         if(($_SERVER['REQUEST_METHOD'] == 'POST') && $this->validate()) {
             $username = platformRequest::getVar('username');
             $password = platformRequest::getVar('password');
 
-            factory::getUser()->login($username, $password, $client);
+            $sysUser->login($username, $password, $client);
         }
 
-        if(factory::getUser()->isLogin($client)) {
-            $session = factory::getSession();
+        if($sysUser->isLogin($client)) {
             $header = new platformHeader();
-            if($session->requestDataLogin) {
-                $dataLogin = $session->requestDataLogin;
-                $url = factory::getConfig()->get('url').$dataLogin['route'];
+            if($sysSession->requestDataLogin) {
+                $dataLogin = $sysSession->requestDataLogin;
+                $url = $sysConfig->get('url').$dataLogin['route'];
                 unset($dataLogin['route']);
                 foreach($dataLogin as $key => $value) {
                     $url .= '&'.$key.'='.$value;
                 }
-                unset($session->requestDataLogin);
+                unset($sysSession->requestDataLogin);
                 $header->redirect($url);
             } else
-                $header->redirect(factory::getConfig()->get('url').'admin');
+                $header->redirect($sysConfig->get('url').'admin');
         } else
             $this->form();
     }
 
     public function form()
     {
-        global $client;
-        $language = loaderLanguage('users/login', $client);
-
-        factory::getDocument()->setTitle($language['heading_title']);
-
-        factory::getDocument()->setDefaultDocument();
-
-        factory::getDocument()->metaManager()->set([
+        global $client, $sysDoc, $sysConfig;
+        
+        $sysDoc->setTitle('{{t:adminLogin.heading_title}}');
+        
+        $sysDoc->setDefaultDocument();
+        
+        $sysDoc->metaManager()->set([
             'name' => 'description',
-            'content' => factory::getConfig()->get('metaDescription')
+            'content' => $sysConfig->get('metaDescription')
         ]);
-
-        factory::getDocument()->setClassTag([
+        
+        $sysDoc->setClassTag([
             'html' => 'body-full-height'
         ]);
-
-        foreach($language as $item => $value) {
-            $data[$item] = $value;
-        }
-
-        $data['site_url'] = factory::getConfig()->get('url');
-
-        factory::getDocument()->setBody(loaderTemplate('users/login', $data, $client));
-
-        factory::getDocument()->renderHtml();
+        
+        $data['site_url'] = $sysConfig->get('url');
+        
+        $sysDoc->setBody(loaderTemplate('users/login', $data, $client));
+        
+        $sysDoc->renderHtml();
     }
 
     private function validate()
@@ -85,4 +79,3 @@ class adminControllerUsersLogin extends adminController
             return false;
     }
 }
-?>

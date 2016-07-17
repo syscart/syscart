@@ -15,7 +15,7 @@ define('WEBSERVICE_DIR', dirname(__FILE__));
 
 require_once('function.php');
 require_once('controller.php');
-//echo md5('655ff');
+
 global $client;
 $client = 'webservice';
 $router = new utilityRouter();

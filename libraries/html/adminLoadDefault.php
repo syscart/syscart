@@ -15,22 +15,23 @@ class htmlAdminLoadDefault
 {
     public function meta()
     {
-        factory::getDocument()->metaManager()->set([
+        global $sysDoc;
+        $sysDoc->metaManager()->set([
             'name' => 'generator',
             'content' => 'system cart (syscart)'
         ]);
-
-        factory::getDocument()->metaManager()->set([
+    
+        $sysDoc->metaManager()->set([
             'name' => 'viewport',
             'content' => 'width=device-width, initial-scale=1',
         ]);
-
-        factory::getDocument()->metaManager()->set([
+    
+        $sysDoc->metaManager()->set([
             'http-equiv' => 'X-UA-Compatible',
             'content' => 'IE=edge'
         ]);
-
-        factory::getDocument()->metaManager()->set([
+    
+        $sysDoc->metaManager()->set([
             'http-equiv' => 'Content-Type',
             'content' => 'text/html; charset=utf-8'
         ]);
@@ -38,20 +39,22 @@ class htmlAdminLoadDefault
 
     public function styleHeader()
     {
-        factory::getDocument()->stylesheetManager()->setHeader([
+        global $sysDoc, $sysConfig;
+    
+        $sysDoc->stylesheetManager()->setHeader([
             'rel' => 'icon',
-            'href' => factory::getConfig()->get('url').'favicon.ico',
+            'href' => $sysConfig->get('url').'favicon.ico',
             'type' => 'image/x-icon'
         ]);
 
-        factory::getDocument()->stylesheetManager()->setHeader([
+        $sysDoc->stylesheetManager()->setHeader([
             'rel' => 'shortcut icon',
-            'href' => factory::getConfig()->get('url').'favicon.ico',
+            'href' => $sysConfig->get('url').'favicon.ico',
             'type' => 'image/vnd.microsoft.icon'
         ]);
 
-        factory::getDocument()->stylesheetManager()->setHeader([
-            'href' => factory::getConfig()->get('url').'templates/backend/css/theme-default.css',
+        $sysDoc->stylesheetManager()->setHeader([
+            'href' => $sysConfig->get('url').'templates/backend/css/theme-default.css',
         ]);
     }
 
@@ -67,12 +70,13 @@ class htmlAdminLoadDefault
 
     public function scriptFooter()
     {
-        factory::getDocument()->scriptManager()->setFooter(factory::getConfig()->get('url').'templates/backend/js/plugins/jquery/jquery.min.js');
-        factory::getDocument()->scriptManager()->setFooter(factory::getConfig()->get('url').'templates/backend/js/plugins/jquery/jquery-ui.min.js');
-        factory::getDocument()->scriptManager()->setFooter(factory::getConfig()->get('url').'templates/backend/js/plugins/bootstrap/bootstrap.min.js');
-        factory::getDocument()->scriptManager()->setFooter(factory::getConfig()->get('url').'templates/backend/js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js');
-        factory::getDocument()->scriptManager()->setFooter(factory::getConfig()->get('url').'templates/backend/js/plugins.js');
-        factory::getDocument()->scriptManager()->setFooter(factory::getConfig()->get('url').'templates/backend/js/actions.js');
+        global $sysDoc, $sysConfig;
+        $sysDoc->scriptManager()->setFooter($sysConfig->get('url').'templates/backend/js/plugins/jquery/jquery.min.js');
+        $sysDoc->scriptManager()->setFooter($sysConfig->get('url').'templates/backend/js/plugins/jquery/jquery-ui.min.js');
+        $sysDoc->scriptManager()->setFooter($sysConfig->get('url').'templates/backend/js/plugins/bootstrap/bootstrap.min.js');
+        $sysDoc->scriptManager()->setFooter($sysConfig->get('url').'templates/backend/js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js');
+        $sysDoc->scriptManager()->setFooter($sysConfig->get('url').'templates/backend/js/plugins.js');
+        $sysDoc->scriptManager()->setFooter($sysConfig->get('url').'templates/backend/js/actions.js');
     }
 }
 ?>

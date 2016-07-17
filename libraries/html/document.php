@@ -98,7 +98,7 @@ class htmlDocument
         $classTagHead = (isset($this->classTag['head'])) ? ' class="'.$this->classTag['head'].'"' : '';
         $classTagBody = (isset($this->classTag['body'])) ? ' class="'.$this->classTag['body'].'"' : '';
         $data = '<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"'.$classTagHtml.' xml:lang="'.factory::getLanguage()->getCode().'" lang="'.factory::getLanguage()->getCode().'" dir="'.factory::getLanguage()->getDirection().'">
+<html xmlns="http://www.w3.org/1999/xhtml"'.$classTagHtml.' xml:lang="'.$sysLang->getCode().'" lang="'.$sysLang->getCode().'" dir="'.$sysLang->getDirection().'">
     <head'.$classTagHead.'>
         <title>'.$this->title.'</title>
         '.$this->metaManager()->render().'
@@ -122,5 +122,3 @@ class htmlDocument
         echo json_encode($this->body, JSON_UNESCAPED_UNICODE);
     }
 }
-
-?>

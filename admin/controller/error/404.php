@@ -18,4 +18,3 @@ class adminControllerError404 extends adminController
         loadFile(ADMIN_DIR.DS.'templates'.DS.'error'.DS.'index.php');
     }
 }
-?>

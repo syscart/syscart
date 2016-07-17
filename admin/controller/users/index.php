@@ -15,9 +15,10 @@ class adminControllerUsersIndex extends adminController
 {
     public function actionIndex()
     {
+        global $sysUser;
         echo utilityString::ss('user page index');
         global $client;
-        if(factory::getUser()->isLogin($client)) {
+        if($sysUser->isLogin($client)) {
 
         } else {
 
@@ -29,4 +30,3 @@ class adminControllerUsersIndex extends adminController
         $this->ajaxCheck();
     }
 }
-?>

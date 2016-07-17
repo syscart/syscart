@@ -82,6 +82,7 @@ function loaderTemplate($file = '', $data = array(), $client = 'site')
 
 function loaderLanguage($file = '', $client = 'site')
 {
+    global $sysConfig;
     if($file == '') {
         trigger_error( 'Error: not selection language' );
         exit;
@@ -90,19 +91,19 @@ function loaderLanguage($file = '', $client = 'site')
         switch($client)
         {
             case 'site':
-                $config = factory::getConfig()->get('languageSite');
+                $config = $sysConfig->get('languageSite');
                 break;
             case 'admin':
-                $config = factory::getConfig()->get('languageAdmin');
+                $config = $sysConfig->get('languageAdmin');
                 break;
             case 'exchange':
-                $config = factory::getConfig()->get('languageExchange');
+                $config = $sysConfig->get('languageExchange');
                 break;
             case 'webservice':
-                $config = factory::getConfig()->get('languageWebservice');
+                $config = $sysConfig->get('languageWebservice');
                 break;
             case 'other':
-                $config = factory::getConfig()->get('languageOther');
+                $config = $sysConfig->get('languageOther');
                 break;
         }
         $default = 'persian';

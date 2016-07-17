@@ -18,4 +18,3 @@ class adminModuleUsersLogin
         echo utilityString::ss('login form');
     }
 }
-?>

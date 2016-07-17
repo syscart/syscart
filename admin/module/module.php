@@ -14,4 +14,3 @@ defined('syscart') or die('access denied...!');
 abstract class adminModule
 {
 }
-?>

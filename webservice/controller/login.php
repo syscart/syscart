@@ -15,10 +15,11 @@ class webserviceControllerLogin extends webserviceController
 {
     public function actionIndex()
     {
+        global $sysUser;
         $this->checkWebserviceKey();
 
         global $client;
-        if(factory::getUser()->isLogin($client))
+        if($sysUser->isLogin($client))
             outputError(6);
         else {
             if($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -28,4 +29,3 @@ class webserviceControllerLogin extends webserviceController
         }
     }
 }
-?>

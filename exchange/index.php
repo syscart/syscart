@@ -15,17 +15,17 @@ define('ADMIN_DIR', dirname(__FILE__));
 
 require_once('function.php');
 
-global $client;
+global $client, $sysUser, $sysConfig, $sysSession;
 $client = 'admin';
 $router = new utilityRouter();
 
 $component = $router->getRoute(1);
 if($component) {
     if(file_exists(dirname(__FILE__).'/controller/'.$component.'/index.php')) {
-        if(factory::getUser()->isLogin($client)) {
+        if($sysUser->isLogin($client)) {
             if($component == 'login') {
                 $header = new platformHeader();
-                $header->redirect(factory::getConfig()->get('url').'admin/dashboard');
+                $header->redirect($sysConfig->get('url').'admin/dashboard');
             } else {
                 require_once( 'controller/'.$component.'/index.php' );
                 $class = 'adminController'.ucfirst( $component );
@@ -33,14 +33,13 @@ if($component) {
                 $object->actionIndex();
             }
         } else {
-            $session = factory::getSession();
-            if(isset($session->requestDataLogin)) {
+            if(isset($sysSession->requestDataLogin)) {
                 require_once( 'controller/login/index.php' );
 
                 $object = new adminControllerLogin();
                 $object->actionIndex();
             } else {
-                $session->requestDataLogin = $_GET;
+                $sysSession->requestDataLogin = $_GET;
 
                 $header = new platformHeader();
                 $header->redirect(factory::getConfig()->get('url').'admin/login');
@@ -50,12 +49,11 @@ if($component) {
         adminError();
     }
 } else {
-    if(factory::getUser()->isLogin($client)) {
+    if($sysUser->isLogin($client)) {
         $header = new platformHeader();
-        $header->redirect(factory::getConfig()->get('url').'admin/dashboard');
+        $header->redirect($sysConfig->get('url').'admin/dashboard');
     } else {
-        $session = factory::getSession();
-        $session->requestDataLogin = $_GET;
+        $sysSession->requestDataLogin = $_GET;
 
         $header = new platformHeader();
         $header->redirect(factory::getConfig()->get('url').'admin/login');

@@ -23,4 +23,3 @@ class consoleControllerUsersLogin extends consoleController
         echo 'form';
     }
 }
-?>

@@ -15,4 +15,3 @@ abstract class consoleController
 {
     abstract function index();
 }
-?>

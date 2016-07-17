@@ -31,6 +31,7 @@ class platformSession
 	 */
 	public static function getInstance($options = array())
 	{
+		global $sysDbo;
 		if( !isset(self::$instance))
 			self::$instance = new self;
 
@@ -38,14 +39,13 @@ class platformSession
 		self::$instance->removeExpire();
 
 		$user = factory::getUser();
-		$db = factory::getDbo();
 
 		$sql = "SELECT id, name, username, email, block
 				  FROM #__users
 				 WHERE id = (SELECT userId FROM #__session WHERE sessionId = :session)";
 		$sql = platformQuery::refactor($sql);
 
-		$query = $db->prepare($sql);
+		$query = $sysDbo->prepare($sql);
 		$query->execute(array(':session' => session_id()));
 		$result = $query->fetch(\PDO::FETCH_ASSOC);
 

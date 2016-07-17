@@ -15,9 +15,9 @@ class adminControllerCommonLogout extends adminController
 {
     public function index()
     {
-        global $client;
+        global $client, $sysConfig;
 
-        $data['site_url'] = factory::getConfig()->get('url');
+        $data['site_url'] = $sysConfig->get('url');
         
         return loaderTemplate('common/logout', $data, $client);
     }

@@ -15,16 +15,15 @@ class adminControllerCommonFooter extends adminController
 {
     public function index()
     {
-        global $client;
+        global $client, $sysConfig;
         $language = loaderLanguage('common/footer', $client);
         
         foreach($language as $item => $value) {
             $data[$item] = $value;
         }
         
-        $data['site_url'] = factory::getConfig()->get('url');
+        $data['site_url'] = $sysConfig->get('url');
         
         return loaderTemplate('common/footer', $data, $client);
     }
 }
-?>

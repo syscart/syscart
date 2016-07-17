@@ -31,16 +31,3 @@ $client = 'site';
 factory::getSession();
 
 utilityRouter::getInstance();
-
-//echo '<br>';
-//$user = new \platform\platformUser();
-//$salt = $user->getRandomText();
-//$pass = 'nahangkhan';
-//echo md5($pass.$salt).':'.$salt;
-//$user->login('majeed21', $pass);
-//echo $passSalt = 'a8d0e22d389e35b4088331ba7c931b34:Z1pSDuSA3cywXvRLyeOVAJQ6fQWRgUyk';
-//echo strlen($passSalt);
-//echo '<br>';
-//$arr = explode(':', $passSalt);
-//echo md5($pass.$arr[1]);
-?>

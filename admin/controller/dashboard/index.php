@@ -15,31 +15,29 @@ class adminControllerDashboardIndex extends adminController
 {
     public function index()
     {
-        global $client;
+        global $client, $sysDoc, $sysConfig;
+
         $language = loaderLanguage('dashboard/index', $client);
 
-        factory::getDocument()->setTitle($language['heading_title']);
+        $sysDoc->setTitle($language['heading_title']);
 
-        factory::getDocument()->setDefaultDocument();
+        $sysDoc->setDefaultDocument();
 
-        factory::getDocument()->metaManager()->set([
+        $sysDoc->metaManager()->set([
             'name' => 'description',
-            'content' => factory::getConfig()->get('metaDescription')
+            'content' => $sysConfig->get('metaDescription')
         ]);
 
         foreach($language as $item => $value) {
             $data[$item] = $value;
         }
 
-        $data['site_url'] = factory::getConfig()->get('url');
+        $data['site_url'] = $sysConfig->get('url');
         
         $data['logout'] = loaderController('common'.DS.'logout', 'index', $client);
-//        var_dump($data['logout']);
-//        exit;
 
-        factory::getDocument()->setBody(loaderTemplate('dashboard/index', $data, $client));
+        $sysDoc->setBody(loaderTemplate('dashboard/index', $data, $client));
 
-        factory::getDocument()->renderHtml();
+        $sysDoc->renderHtml();
     }
 }
-?>

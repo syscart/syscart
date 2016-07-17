@@ -15,7 +15,7 @@ define('ADMIN_DIR', dirname(__FILE__));
 
 loadFile(PATH_PLATFORM.DS.'admin'.DS.'libraries'.DS.'include.php');
 
-global $client;
+global $client, $sysUser, $sysConfig, $sysSession;
 $client = 'admin';
 $router = new utilityRouter();
 
@@ -26,10 +26,10 @@ if($component) {
 
     if(is_null($function)) {
         if(file_exists(dirname(__FILE__).'/controller/'.$component.'/index.php')) {
-            if(factory::getUser()->isLogin($client)) {
+            if($sysUser->isLogin($client)) {
                 if($component == 'home') {
                     $header = new platformHeader();
-                    $header->redirect(factory::getConfig()->get('url').'admin/dashboard');
+                    $header->redirect($sysConfig->get('url').'admin/dashboard');
                 } else {
                     loadFile(PATH_PLATFORM.DS.'admin'.DS.'controller'.DS.$component.DS.'index.php');
 
@@ -43,15 +43,14 @@ if($component) {
                         $object->$callback();
                 }
             } else {
-                $session = factory::getSession();
-                if(isset($session->requestDataLogin)) {
+                if(isset($sysSession->requestDataLogin)) {
                     $header = new platformHeader();
-                    $header->redirect(factory::getConfig()->get('url').'admin/users/login');
+                    $header->redirect($sysConfig->get('url').'admin/users/login');
                 } else {
-                    $session->requestDataLogin = $_GET;
+                    $sysSession->requestDataLogin = $_GET;
 
                     $header = new platformHeader();
-                    $header->redirect(factory::getConfig()->get('url').'admin/users/login');
+                    $header->redirect($sysConfig->get('url').'admin/users/login');
                 }
             }
         } else {
@@ -61,10 +60,10 @@ if($component) {
         }
     } else {
         if(file_exists(dirname(__FILE__).'/controller/'.$component.'/'.$function.'.php')) {
-            if(factory::getUser()->isLogin($client)) {
+            if($sysUser->isLogin($client)) {
                 if($component == 'login') {
                     $header = new platformHeader();
-                    $header->redirect(factory::getConfig()->get('url').'admin/dashboard');
+                    $header->redirect($sysConfig->get('url').'admin/dashboard');
                 } else {
                     loadFile(PATH_PLATFORM.DS.'admin'.DS.'controller'.DS.$component.DS.$function.'.php' );
 
@@ -78,8 +77,7 @@ if($component) {
                         $object->$callback();
                 }
             } else {
-                $session = factory::getSession();
-                if(isset($session->requestDataLogin)) {
+                if(isset($sysSession->requestDataLogin)) {
                     loadFile(PATH_PLATFORM.DS.'admin'.DS.'controller'.DS.'users'.DS.'login.php' );
 
                     $object = new adminControllerUsersLogin();
@@ -90,10 +88,10 @@ if($component) {
                     else
                         $object->$callback();
                 } else {
-                    $session->requestDataLogin = $_GET;
+                    $sysSession->requestDataLogin = $_GET;
 
                     $header = new platformHeader();
-                    $header->redirect(factory::getConfig()->get('url').'admin/users/login');
+                    $header->redirect($sysConfig->get('url').'admin/users/login');
                 }
             }
         } else {
@@ -103,14 +101,13 @@ if($component) {
         }
     }
 } else {
-    if(factory::getUser()->isLogin($client)) {
+    if($sysUser->isLogin($client)) {
         $header = new platformHeader();
-        $header->redirect(factory::getConfig()->get('url').'admin/dashboard');
+        $header->redirect($sysConfig->get('url').'admin/dashboard');
     } else {
-        $session = factory::getSession();
-        $session->requestDataLogin = $_GET;
+        $sysSession->requestDataLogin = $_GET;
 
         $header = new platformHeader();
-        $header->redirect(factory::getConfig()->get('url').'admin/users/login');
+        $header->redirect($sysConfig->get('url').'admin/users/login');
     }
 }

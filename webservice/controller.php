@@ -17,11 +17,12 @@ abstract class webserviceController
 
     protected function checkWebserviceKey()
     {
+        global $sysConfig;
         $header = getallheaders();
         if(isset($header['sys-webservice-key'])) {
             $data = explode(':', $header['sys-webservice-key']);
             if(count($data) == 2) {
-                $key = factory::getConfig()->get('webservice_key');
+                $key = $sysConfig->get('webservice_key');
                 if(strcmp($data[0], md5($key.$data[1])) == 0)
                     return true;
                 else
@@ -34,11 +35,10 @@ abstract class webserviceController
 
     protected function checkWebserviceLogin()
     {
-        global $client;
-        if(factory::getUser()->isLogin($client))
+        global $client, $sysUser;
+        if($sysUser->isLogin($client))
             return true;
         else
             outputError(5);
     }
 }
-?>
