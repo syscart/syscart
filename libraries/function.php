@@ -33,18 +33,18 @@ function loaderController($file = '', $function = 'index', $client = 'site')
     }
 }
 
-function loaderModule($file = '', $client = 'site')
+function loaderModule($map = '', $client = 'site')
 {
-    if($file == '') {
+    if($map == '') {
         trigger_error( 'Error: not selection module' );
         exit;
     }
     else {
-        $file = PATH_PLATFORM.DS.$client.DS.'module'.DS.$file.'.php';
+        $file = PATH_PLATFORM.DS.$client.DS.'module'.DS.$map.'.php';
 
         if (file_exists($file)) {
             loadFile($file);
-            $data = implode('', array_map('ucfirst', explode(DS, $file)));
+            $data = implode('', array_map('ucfirst', explode(DS, $map)));
             $class = $client . 'Module' . $data;
             $object = new $class();
             return $object;
