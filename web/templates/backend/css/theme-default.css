@@ -1191,7 +1191,7 @@ body.page-container-boxed .page-container {
 .breadcrumb li:last-child {
   color: #656d78;
 }
-.breadcrumb > li + li:after {
+.breadcrumb > li + li:before {
   font-family: "FontAwesome";
   content: "\f104";
   color: #99a0aa;
