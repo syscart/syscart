@@ -80,9 +80,20 @@ class htmlDocument
         $this->afterBody = $data;
     }
 
-    public function setTitle($data)
+    public function setTitle($title, $client = null)
     {
-        $this->title = $data;
+        $this->title = $title;
+        
+        $data = null;
+        if($client == 'admin') {
+            $data .= '<div class="page-title">
+                        <h2 class="pull-right">
+                            <span class="fa fa-arrow-circle-o-left"></span> '.$title.'
+                        </h2>
+                    </div>';
+        }
+        
+        return $data;
     }
 
     public function setClassTag($data)
