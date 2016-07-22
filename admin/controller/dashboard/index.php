@@ -17,23 +17,25 @@ class adminControllerDashboardIndex extends adminController
     {
         global $client, $sysDoc, $sysConfig;
 
-        $language = loaderLanguage('dashboard/index', $client);
+        $data['heading_title'] = $sysDoc->setTitle('{{t:adminDashboard.heading_title}}', $client);
 
-        $sysDoc->setTitle($language['heading_title']);
+        $data['site_url'] = $sysConfig->get('url');
 
         $sysDoc->setDefaultDocument();
-
         $sysDoc->metaManager()->set([
             'name' => 'description',
             'content' => $sysConfig->get('metaDescription')
         ]);
 
-        foreach($language as $item => $value) {
-            $data[$item] = $value;
-        }
+        $breadcrumbObject = loaderModule('common'.DS.'breadcrumb', $client);
 
-        $data['site_url'] = $sysConfig->get('url');
+        $breadcrumb[] = ['text' => '{{t:adminBreadcrumb.home}}', 'url' => 'dashboard'];
+        $breadcrumb[] = ['text' => '{{t:adminBreadcrumb.dashboard}}'];
+
+        $data['breadcrumb'] = $breadcrumbObject->render($breadcrumb);
         
+        $data['sidebar'] = loaderController('common'.DS.'sidebar', 'index', $client);
+        $data['nav'] = loaderController('common'.DS.'navHorizontal', 'index', $client);
         $data['logout'] = loaderController('common'.DS.'logout', 'index', $client);
 
         $sysDoc->setBody(loaderTemplate('dashboard/index', $data, $client));
