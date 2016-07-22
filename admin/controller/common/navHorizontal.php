@@ -21,6 +21,7 @@ class adminControllerCommonNavHorizontal extends adminController
     
         $data['tasks'] = loaderController('common'.DS.'tasks', 'index', $client);
         $data['messages'] = loaderController('common'.DS.'messages', 'index', $client);
+        $data['audio'] = loaderController('common'.DS.'audio', 'index', $client);
         
         return loaderTemplate('common/navHorizontal', $data, $client);
     }

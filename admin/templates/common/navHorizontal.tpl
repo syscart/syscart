@@ -15,4 +15,5 @@
     
     <?php echo $messages; ?>
     <?php echo $tasks; ?>
+    <?php echo $audio; ?>
 </ul>
