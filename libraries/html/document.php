@@ -80,17 +80,24 @@ class htmlDocument
         $this->afterBody = $data;
     }
 
-    public function setTitle($title, $client = null)
+    public function setTitle($title, $client = null, $icon = 'fa fa-arrow-circle-o-left', $button = null)
     {
         $this->title = $title;
         
         $data = null;
         if($client == 'admin') {
-            $data .= '<div class="page-title">
-                        <h2 class="pull-right">
-                            <span class="fa fa-arrow-circle-o-left"></span> '.$title.'
-                        </h2>
-                    </div>';
+            $data .= '<div class="page-title">';
+                $data .= '<h2 class="pull-right">
+                            <span class="'.$icon.'"></span> '.$title.'
+                          </h2>';
+                if($button) {
+                    $data .= '<h2 class="pull-left">';
+                        foreach( $button as $item ) {
+                            $data .= '<button id="'.$item['id'].'" class="btn btn-'.$item['color'].'"><i class="'.$item['icon'].'"></i> '.$item['text'].'</button>';
+                        }
+                    $data .= '</h2>';
+                }
+            $data .= '</div>';
         }
         
         return $data;
