@@ -93,7 +93,7 @@
         <li class="xn-openable">
             <a href="#"><span class="fa fa-cogs"></span> <span class="xn-text">{{t:adminMenu.setting}}</span></a>
             <ul>
-                <li><a href="#"><span class="fa fa-cogs"></span> {{t:adminMenu.setting_base}}</a></li>
+                <li><a href="setting"><span class="fa fa-cogs"></span> {{t:adminMenu.setting_base}}</a></li>
                 <li class="xn-openable">
                     <a href="#"><span class="fa fa-clock-o"></span> {{t:adminMenu.setting_user}}</a>
                     <ul>
