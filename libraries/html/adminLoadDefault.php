@@ -52,15 +52,19 @@ class htmlAdminLoadDefault
             'href' => $sysConfig->get('url').'favicon.ico',
             'type' => 'image/vnd.microsoft.icon'
         ]);
-
-        $sysDoc->stylesheetManager()->setHeader([
-            'href' => $sysConfig->get('url').'templates/backend/css/theme-default.css',
-        ]);
     }
 
     public function styleFooter()
     {
+        global $sysDoc, $sysConfig;
 
+        $sysDoc->stylesheetManager()->setFooters([
+            'href' => $sysConfig->get('url').'templates/backend/css/theme-default.css',
+        ]);
+
+        $sysDoc->stylesheetManager()->setFooters([
+            'href' => $sysConfig->get('url').'templates/backend/css/style.css',
+        ]);
     }
 
     public function scriptHeader()

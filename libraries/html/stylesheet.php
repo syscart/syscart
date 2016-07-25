@@ -55,7 +55,8 @@ class htmlStylesheet
     {
         $data = '';
         foreach($this->footers as $value) {
-            $data .= '<link rel="'.$value['rel'].'" href="'.$value['href'].'" type="'.$value['type'].'" />';
+            $data .= '<link rel="'.$value['rel'].'" href="'.$value['href'].'" type="'.$value['type'].'" />
+        ';
         }
 
         return $data;
