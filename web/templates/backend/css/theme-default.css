@@ -45,7 +45,7 @@ body {
   background: #f5f5f5 url('../img/bg.png') left top repeat;
   position: relative;
   font-family: 'Open Sans', sans-serif;
-  font-size: 12px;
+  font-size: 11px;
   color: #656d78;
   overflow-x: hidden;
 }
@@ -296,7 +296,7 @@ body.page-container-boxed .page-container {
   width: 100%;
   line-height: 19px;
   color: #ffffff;
-  font-size: 13px;
+  font-size: 11px;
   font-weight: 400;
   padding: 15px 10px 15px 15px;
   text-decoration: none;
@@ -341,7 +341,7 @@ body.page-container-boxed .page-container {
 }
 .x-navigation li > ul li > a {
   color: #cccccc;
-  font-size: 12px;
+  font-size: 11px;
   line-height: 19px;
   font-weight: 400;
   padding: 12px 10px;
@@ -1939,7 +1939,7 @@ ul.panel-controls > li > .dropdown-menu:before {
 /* END USER */
 /* BUTTONS */
 .btn {
-  font-size: 12px;
+  font-size: 11px;
   padding: 4px 15px;
   line-height: 20px;
   font-weight: 400;
@@ -2206,7 +2206,7 @@ input[type=checkbox] {
 }
 .form-control {
   height: 30px;
-  font-size: 12px;
+  font-size: 11px;
   line-height: 18px;
   -moz-box-shadow: none;
   -webkit-box-shadow: none;
@@ -2340,6 +2340,7 @@ input[type=checkbox] {
 }
 label {
   font-weight: 600;
+  font-size: 13px;
 }
 label.error,
 label.valid {
@@ -2425,7 +2426,7 @@ label.valid {
 /* EOF ALERTS */
 /* DROP DOWN */
 .dropdown-menu {
-  font-size: 12px;
+  font-size: 11px;
   -moz-box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.1);
   -webkit-box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.1);
   box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.1);
@@ -2956,7 +2957,7 @@ blockquote.pull-right {
 .nav-tabs > li > a {
   margin-right: 5px;
   border: 0px;
-  font-size: 14px;
+  font-size: 12px;
   border-top: 2px solid transparent;
   -moz-border-radius: 0px;
   -webkit-border-radius: 0px;
