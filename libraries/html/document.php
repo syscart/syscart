@@ -137,6 +137,10 @@ class htmlDocument
 
     public function renderJson()
     {
-        echo json_encode($this->body, JSON_UNESCAPED_UNICODE);
+        global $sysLang;
+
+        $data = json_encode($this->body, JSON_UNESCAPED_UNICODE);
+    
+        echo $sysLang->generate($data);
     }
 }
