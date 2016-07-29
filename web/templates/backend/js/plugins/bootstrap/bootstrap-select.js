@@ -992,7 +992,7 @@
     title: null,
     selectedTextFormat: 'values',
     noneSelectedText: 'Nothing selected',
-    noneResultsText: 'No results match',
+    noneResultsText: 'آیتمی پیدا نشد',
     countSelectedText: '{0} of {1} selected',
     maxOptionsText: ['Limit reached ({n} {var} max)', 'Group limit reached ({n} {var} max)', ['items', 'item']],
     width: false,
