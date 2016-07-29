@@ -1,6 +1,5 @@
 @charset "UTF-8";
 
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,500,600,700&subset=latin,latin-ext);
 @import "jquery/jquery-ui.min.css";
 @import "bootstrap/bootstrap.min.css";
 @import "fontawesome/font-awesome.min.css";
@@ -5486,12 +5485,12 @@ div.datepicker thead tr:first-child th:hover {
   display: inline-block;
   overflow: hidden;
   width: 100%;
-  text-align: left;
+  text-align: right;
 }
 .bootstrap-select.btn-group .btn .caret {
   position: absolute;
   top: 50%;
-  right: 12px;
+  left: 12px;
   margin-top: -2px;
   vertical-align: middle;
 }
@@ -5548,7 +5547,7 @@ div.datepicker thead tr:first-child th:hover {
 .bootstrap-select.btn-group.show-tick .dropdown-menu li.selected a i.check-mark {
   position: absolute;
   display: inline-block;
-  right: 15px;
+  left: 15px;
   margin-top: 11px;
   font-size: 11px;
 }
@@ -5579,11 +5578,11 @@ div.datepicker thead tr:first-child th:hover {
   border-right: 7px solid transparent;
   border-bottom-width: 7px;
   border-bottom-style: solid;
-  border-bottom-color: #cccccc;
-  border-bottom-color: rgba(204, 204, 204, 0.2);
+  border-bottom-color: #6f6f6f;
+  border-bottom-color: rgba(113, 113, 113, 0.2);
   position: absolute;
-  bottom: -4px;
-  left: 9px;
+  bottom: -9px;
+  right: 9px;
   display: none;
 }
 .bootstrap-select.show-menu-arrow .dropdown-toggle:after {
@@ -5620,7 +5619,7 @@ div.datepicker thead tr:first-child th:hover {
   left: auto;
 }
 .bootstrap-select.show-menu-arrow.open > .dropdown-toggle:before,
-.bootstrap-select.show-menu-arrow.open > .dropdown-toggle:after {
+.bootstrap-select.show-menu-arrow.open > .dropdown-toggle:before {
   display: block;
 }
 .bootstrap-select.btn-group .no-results {

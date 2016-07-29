@@ -60,7 +60,6 @@ public final class demo_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("<link rel=\"stylesheet\" type=\"text/css\" href=\"resources/css/codemirror.css\" />\n");
       out.write("<script src=\"resources/js//jquery-1.11.0.min.js\"></script>\n");
       out.write("<script src=\"resources/js/codemirror-compressed.js\"></script>\n");
-      out.write("<link rel=\"stylesheet\" href=\"http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,700,400italic\" type=\"text/css\" />\n");
       out.write("<script>\n");
       out.write("\tvar editors = [];\n");
       out.write("\n");
