@@ -52,6 +52,10 @@ class htmlAdminLoadDefault
             'href' => $sysConfig->get('url').'favicon.ico',
             'type' => 'image/vnd.microsoft.icon'
         ]);
+
+        $sysDoc->stylesheetManager()->setHeader([
+            'href' => $sysConfig->get('url').'media/font/style.css',
+        ]);
     }
 
     public function styleFooter()
