@@ -93,7 +93,10 @@ class htmlDocument
                 if($button) {
                     $data .= '<h2 class="pull-left">';
                         foreach( $button as $item ) {
-                            $data .= '<button id="'.$item['id'].'" class="btn btn-'.$item['color'].'"><i class="'.$item['icon'].'"></i> '.$item['text'].'</button>';
+                            $class = (isset($item['class'])) ? ' '.$item['class'] : null;
+                            $type = (isset($item['type'])) ? ' type="'.$item['type'].'"' : null;
+                            $form = (isset($item['form'])) ? ' form="'.$item['form'].'"' : null;
+                            $data .= '<button'.$type.' id="'.$item['id'].'" class="btn btn-'.$item['color'].$class.'"'.$form.'><i class="'.$item['icon'].'"></i> '.$item['text'].'</button>';
                         }
                     $data .= '</h2>';
                 }
