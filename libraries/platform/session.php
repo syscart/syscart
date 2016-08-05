@@ -46,7 +46,9 @@ class platformSession
 		$sql = platformQuery::refactor($sql);
 
 		$query = $sysDbo->prepare($sql);
-		$query->execute(array(':session' => session_id()));
+		$query->bindParam(':session', session_id(), PDO::PARAM_STR);
+
+		$query->execute();
 		$result = $query->fetch(\PDO::FETCH_ASSOC);
 
 		if($result) {
@@ -108,7 +110,9 @@ class platformSession
 		$sql = platformQuery::refactor($sql);
 
 		$query = $db->prepare($sql);
-		$query->execute(array(':time' => (time()-($config->get('lifetime')*60))));
+		$query->bindParam(':time', $time = (time()-($config->get('lifetime')*60)), PDO::PARAM_STR);
+
+		$query->execute();
 	}
 
 	/*
@@ -124,7 +128,9 @@ class platformSession
 		$sql = platformQuery::refactor($sql);
 
 		$query = $db->prepare($sql);
-		$query->execute(array(':session' => session_id()));
+		$query->bindParam(':session', session_id(), PDO::PARAM_STR);
+
+		$query->execute();
 		$result = $query->fetch(\PDO::FETCH_ASSOC);
 
 		if($result['sessionId']) {
@@ -135,25 +141,23 @@ class platformSession
 			$sql = platformQuery::refactor($sql);
 
 			$query = $db->prepare($sql);
-			$param = array(
-				':time' => time(),
-				':data' => json_encode($_SESSION, JSON_UNESCAPED_UNICODE),
-				':session' => session_id()
-			);
-			$query->execute($param);
+			$query->bindParam(':time', time(), PDO::PARAM_STR);
+			$query->bindParam(':data', json_encode($_SESSION, JSON_UNESCAPED_UNICODE), PDO::PARAM_STR);
+			$query->bindParam(':session', session_id(), PDO::PARAM_STR);
+
+			$query->execute();
 		} else {
 			$sql = "INSERT INTO #__session (sessionId, time, data, ip)
 					   	 VALUES (:session, :time, :data, :ip);";
 			$sql = platformQuery::refactor($sql);
 
 			$query = $db->prepare($sql);
-			$param = array(
-					':session' => session_id(),
-					':time' => time(),
-					':data' => json_encode($_SESSION),
-					':ip' => utilityHttp::getIpAddress()
-			);
-			$query->execute($param);
+			$query->bindParam(':session', session_id(), PDO::PARAM_STR);
+			$query->bindParam(':time', time(), PDO::PARAM_STR);
+			$query->bindParam(':data', json_encode($_SESSION, JSON_UNESCAPED_UNICODE), PDO::PARAM_STR);
+			$query->bindParam(':ip', utilityHttp::getIpAddress(), PDO::PARAM_STR);
+
+			$query->execute();
 		}
 	}
 
@@ -175,11 +179,10 @@ class platformSession
 		$sql = platformQuery::refactor($sql);
 
 		$query = $db->prepare($sql);
-		$param = array(
-				':user' => $index,
-				':session' => session_id()
-		);
-		$query->execute($param);
+		$query->bindParam(':user', $index, PDO::PARAM_INT);
+		$query->bindParam(':session', session_id(), PDO::PARAM_STR);
+
+		$query->execute();
 	}
 
 	/*
@@ -201,11 +204,10 @@ class platformSession
 			$sql = platformQuery::refactor($sql);
 
 			$query = $db->prepare($sql);
-			$param = array(
-					':client' => true,
-					':session' => session_id()
-			);
-			$query->execute($param);
+			$query->bindParam(':client', true, PDO::PARAM_BOOL);
+			$query->bindParam(':session', session_id(), PDO::PARAM_STR);
+
+			$query->execute();
 
 			return $client;
 		} else
@@ -227,7 +229,9 @@ class platformSession
 		$sql = platformQuery::refactor($sql);
 
 		$query = $db->prepare($sql);
-		$query->execute(array(':session' => session_id()));
+		$query->bindParam(':session', session_id(), PDO::PARAM_STR);
+
+		$query->execute();
 		$result = $query->fetch(\PDO::FETCH_ASSOC);
 
 		$this->client['site'] = $result['site'];
@@ -297,4 +301,3 @@ class platformSession
 		return false;
 	}
 }
-?>
