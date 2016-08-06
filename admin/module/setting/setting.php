@@ -1,0 +1,48 @@
+<?php
+/**
+ * @package    system cart
+ *             admin/module/setting/setting.php
+ *
+ * @copyright  Copyright (C) 2016 - 2017 Open Source Matters, Inc. All rights reserved.
+ * @license    GNU General Public License version 2 or later; see LICENSE.txt
+ * @company    syscart
+ * @autor      majeed mohammadian
+ */
+
+defined('syscart') or die('access denied...!');
+
+class adminModuleSettingSetting
+{
+    public function editSetting($code, $data)
+    {
+        global $sysDbo;
+
+        $sql = "DELETE FROM #__setting WHERE code = :code";
+        $sql = platformQuery::refactor($sql);
+
+        $query = $sysDbo->prepare($sql);
+        $query->bindParam(':code', $code, PDO::PARAM_STR);
+
+        $query->execute();
+
+        foreach( $data as $key => $value ) {
+            if (substr($key, 0, strlen($code)) == $code) {
+                $sql = "INSERT INTO #__setting (`code`, `key`, `value`, `serialized`) VALUES (:code, :key, :value, :serialized);";
+                $sql = platformQuery::refactor($sql);
+
+                $query = $sysDbo->prepare($sql);
+                $query->bindParam(':code', $code, PDO::PARAM_STR);
+                $query->bindParam(':key', $key, PDO::PARAM_STR);
+                $query->bindParam(':value', $value, PDO::PARAM_STR);
+
+                if (!is_array($value)) {
+                    $query->bindParam(':serialized', $serialized = 0, PDO::PARAM_INT);
+                } else {
+                    $query->bindParam(':serialized', $serialized = 1, PDO::PARAM_INT);
+                }
+                
+                $query->execute();
+            }
+        }
+    }
+}
