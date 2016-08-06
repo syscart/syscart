@@ -32,8 +32,21 @@ class platformRequest
             case 'GET':
                 $qi = (isset($_GET[$question])) ? $_GET[$question] : $default;
                 break;
+            case 'SERVER':
+                $qi = (isset($_SERVER[$question])) ? $_SERVER[$question] : $default;
+                break;
         }
         return strip_tags($qi);
+    }
+    
+    public function post()
+    {
+        return $_POST;
+    }
+    
+    public function get()
+    {
+        return $_GET;
     }
 }
 ?>
