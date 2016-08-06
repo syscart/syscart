@@ -35,4 +35,4 @@ loadFile(PATH_PLATFORM.DS.'config.php');
 loadFile(PATH_PLATFORM.DS.'libraries'.DS.'function.php');
 loadFile(PATH_PLATFORM.DS.'libraries'.DS.'loader.php');
 loadFile(PATH_PLATFORM.DS.'libraries'.DS.'factory.php');
-?>
+loadFile(PATH_PLATFORM.DS.'libraries'.DS.'global.php');
