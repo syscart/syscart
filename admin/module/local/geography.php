@@ -37,6 +37,35 @@ class adminModuleLocalGeography
         return $query->fetchAll(\PDO::FETCH_ASSOC);
     }
 
+    public function getAllZoneCountryPublish($country)
+    {
+        global $sysDbo;
+
+        $sql = "SELECT * FROM #__country_zone WHERE countryId = :countryId AND state = '1'";
+        $sql = platformQuery::refactor($sql);
+
+        $query = $sysDbo->prepare($sql);
+        $query->bindParam(':countryId', $country, PDO::PARAM_INT);
+
+        $query->execute();
+        return $query->fetchAll(\PDO::FETCH_ASSOC);
+    }
+
+    public function getAllCityZoneCountryPublish($country, $zone)
+    {
+        global $sysDbo;
+
+        $sql = "SELECT * FROM #__zone_city WHERE countryId = :countryId AND zoneId = :zoneId AND state = '1'";
+        $sql = platformQuery::refactor($sql);
+
+        $query = $sysDbo->prepare($sql);
+        $query->bindParam(':countryId', $country, PDO::PARAM_INT);
+        $query->bindParam(':zoneId', $zone, PDO::PARAM_INT);
+
+        $query->execute();
+        return $query->fetchAll(\PDO::FETCH_ASSOC);
+    }
+
     public function getZoneCountrySelectBox($countryId)
     {
         global $sysDbo;
