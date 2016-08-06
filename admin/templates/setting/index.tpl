@@ -25,7 +25,7 @@
                                             <div class="col-md-6 col-xs-12">
                                                 <div class="input-group">
                                                     <span class="input-group-addon"><span class="fa fa-shopping-cart"></span></span>
-                                                    <input type="text" name="setting_siteTitle" class="form-control" placeholder="{{t:adminSetting.placeholder_site_title}}">
+                                                    <input type="text" name="setting_siteTitle" class="form-control" value="<?= $site_title; ?>" placeholder="{{t:adminSetting.placeholder_site_title}}">
                                                 </div>
                                                 <span class="help-block">{{t:adminSetting.message_site_title}}</span>
                                             </div>
@@ -37,7 +37,7 @@
                                             <div class="col-md-6 col-xs-12">
                                                 <div class="input-group">
                                                     <span class="input-group-addon"><span class="fa fa-user"></span></span>
-                                                    <input type="text" name="setting_owner" class="form-control" placeholder="{{t:adminSetting.placeholder_owner}}">
+                                                    <input type="text" name="setting_owner" class="form-control" value="<?= $owner; ?>" placeholder="{{t:adminSetting.placeholder_owner}}">
                                                 </div>
                                                 <span class="help-block">{{t:adminSetting.message_owner}}</span>
                                             </div>
@@ -47,7 +47,7 @@
                                         <div class="form-group">
                                             <label class="col-md-3 col-xs-12 control-label text-end">{{t:adminSetting.label_address}}</label>
                                             <div class="col-md-6 col-xs-12">
-                                                <textarea name="setting_address" class="form-control" rows="3" placeholder="{{t:adminSetting.placeholder_address}}"></textarea>
+                                                <textarea name="setting_address" class="form-control" rows="3" placeholder="{{t:adminSetting.placeholder_address}}"><?= $address; ?></textarea>
                                                 <span class="help-block">{{t:adminSetting.message_address}}</span>
                                             </div>
                                         </div>
@@ -58,7 +58,7 @@
                                             <div class="col-md-6 col-xs-12">
                                                 <div class="input-group">
                                                     <span class="input-group-addon">@</span>
-                                                    <input type="text" name="setting_email" class="form-control" placeholder="{{t:adminSetting.placeholder_email}}">
+                                                    <input type="text" name="setting_email" class="form-control" value="<?= $email; ?>" placeholder="{{t:adminSetting.placeholder_email}}">
                                                 </div>
                                                 <span class="help-block">{{t:adminSetting.message_email}}</span>
                                             </div>
@@ -70,7 +70,7 @@
                                             <div class="col-md-6 col-xs-12">
                                                 <div class="input-group">
                                                     <span class="input-group-addon"><span class="glyphicon glyphicon-phone-alt"></span></span>
-                                                    <input type="text" name="setting_tell" class="form-control" placeholder="{{t:adminSetting.placeholder_tell}}">
+                                                    <input type="text" name="setting_tell" class="form-control" value="<?= $tell; ?>" placeholder="{{t:adminSetting.placeholder_tell}}">
                                                 </div>
                                                 <span class="help-block">{{t:adminSetting.message_tell}}</span>
                                             </div>
@@ -82,7 +82,7 @@
                                             <div class="col-md-6 col-xs-12">
                                                 <div class="input-group">
                                                     <span class="input-group-addon"><span class="fa fa-phone-square"></span></span>
-                                                    <input type="text" name="setting_fax" class="form-control" placeholder="{{t:adminSetting.placeholder_fax}}">
+                                                    <input type="text" name="setting_fax" class="form-control" value="<?= $fax; ?>" placeholder="{{t:adminSetting.placeholder_fax}}">
                                                 </div>
                                                 <span class="help-block">{{t:adminSetting.message_fax}}</span>
                                             </div>
@@ -92,7 +92,7 @@
                                         <div class="form-group">
                                             <label class="col-md-3 col-xs-12 control-label text-end">{{t:adminSetting.label_open}}</label>
                                             <div class="col-md-6 col-xs-12">
-                                                <textarea name="setting_open" class="form-control" rows="3" placeholder="{{t:adminSetting.placeholder_open}}"></textarea>
+                                                <textarea name="setting_open" class="form-control" rows="3" placeholder="{{t:adminSetting.placeholder_open}}"><?= $open; ?></textarea>
                                                 <span class="help-block">{{t:adminSetting.message_open}}</span>
                                             </div>
                                         </div>
@@ -101,7 +101,7 @@
                                         <div class="form-group">
                                             <label class="col-md-3 col-xs-12 control-label text-end">{{t:adminSetting.label_description}}</label>
                                             <div class="col-md-6 col-xs-12">
-                                                <textarea name="setting_description" class="form-control" rows="3" placeholder="{{t:adminSetting.placeholder_description}}"></textarea>
+                                                <textarea name="setting_description" class="form-control" rows="3" placeholder="{{t:adminSetting.placeholder_description}}"><?= $description; ?></textarea>
                                                 <span class="help-block">{{t:adminSetting.message_description}}</span>
                                             </div>
                                         </div>
@@ -114,7 +114,7 @@
                                             <div class="col-md-6 col-xs-12">
                                                 <div class="input-group">
                                                     <span class="input-group-addon"><span class="glyphicon glyphicon-paperclip"></span></span>
-                                                        <input type="text" name="setting_metaTitle" class="form-control" placeholder="{{t:adminSetting.placeholder_meta_title}}">
+                                                    <input type="text" name="setting_metaTitle" class="form-control" value="<?= $metaTitle; ?>" placeholder="{{t:adminSetting.placeholder_meta_title}}">
                                                 </div>
                                                 <span class="help-block">{{t:adminSetting.message_meta_title}}</span>
                                             </div>
@@ -124,7 +124,7 @@
                                         <div class="form-group">
                                             <label class="col-md-3 col-xs-12 control-label text-end">{{t:adminSetting.label_meta_description}}</label>
                                             <div class="col-md-6 col-xs-12">
-                                                <textarea name="setting_metaDescription" class="form-control" rows="3" placeholder="{{t:adminSetting.placeholder_meta_description}}"></textarea>
+                                                <textarea name="setting_metaDescription" class="form-control" rows="3" placeholder="{{t:adminSetting.placeholder_meta_description}}"><?= $metaDescription; ?></textarea>
                                                 <span class="help-block">{{t:adminSetting.message_meta_description}}</span>
                                             </div>
                                         </div>
@@ -133,7 +133,7 @@
                                         <div class="form-group">
                                             <label class="col-md-3 col-xs-12 control-label text-end">{{t:adminSetting.label_meta_keyword}}</label>
                                             <div class="col-md-6 col-xs-12">
-                                                <textarea name="setting_metaKeyword" class="form-control" rows="3" placeholder="{{t:adminSetting.placeholder_meta_keyword}}"></textarea>
+                                                <textarea name="setting_metaKeyword" class="form-control" rows="3" placeholder="{{t:adminSetting.placeholder_meta_keyword}}"><?= $metaKeyword; ?></textarea>
                                                 <span class="help-block">{{t:adminSetting.message_meta_keyword}}</span>
                                             </div>
                                         </div>
@@ -148,8 +148,9 @@
                                                     <option value="-1">{{t:general.please_select}}</option>
                                                     <?php foreach( $countries as $country ) {
                                                         $img = (isset($country['isoCode2'])) ? "<img src='".$site_url."/media/img/flags/".strtolower($country["isoCode2"]).".png' />" : "";
+                                                        $selectCountry = ($countryValue == $country['id']) ? ' selected' : null;
                                                     ?>
-                                                        <option value="<?= $country['id']; ?>" data-content="<?= $img.' '.$country['faName']; ?>"><?= $country['faName']; ?></option>
+                                                        <option value="<?= $country['id']; ?>" data-content="<?= $img.' '.$country['faName']; ?>"<?= $selectCountry; ?>><?= $country['faName']; ?></option>
                                                     <?php } ?>
                                                 </select>
                                                 <span class="help-block">{{t:adminSetting.message_country}}</span>
@@ -162,6 +163,11 @@
                                             <div class="col-md-6 col-xs-12">
                                                 <select name="setting_zone" class="form-control show-tick show-menu-arrow" id="setting-zone" data-live-search="true">
                                                     <option value="-1">{{t:general.please_select}}</option>
+                                                    <?php foreach( $zones as $zone ) {
+                                                        $selectZone = ($zoneValue == $zone['id']) ? ' selected' : null;
+                                                        ?>
+                                                        <option value="<?= $zone['id']; ?>"<?= $selectZone; ?>><?= $zone['faName']; ?></option>
+                                                    <?php } ?>
                                                 </select>
                                                 <span class="help-block">{{t:adminSetting.message_zone}}</span>
                                             </div>
@@ -173,6 +179,11 @@
                                             <div class="col-md-6 col-xs-12">
                                                 <select name="setting_city" class="form-control show-tick show-menu-arrow" id="setting-city" data-live-search="true">
                                                     <option value="-1">{{t:general.please_select}}</option>
+                                                    <?php foreach( $cities as $city ) {
+                                                        $selectCity = ($cityValue == $city['id']) ? ' selected' : null;
+                                                        ?>
+                                                        <option value="<?= $city['id']; ?>"<?= $selectCity; ?>><?= $city['faName']; ?></option>
+                                                    <?php } ?>
                                                 </select>
                                                 <span class="help-block">{{t:adminSetting.message_city}}</span>
                                             </div>
@@ -184,6 +195,11 @@
                                             <div class="col-md-6 col-xs-12">
                                                 <select name="setting_currency" class="form-control show-tick show-menu-arrow" id="setting-currency" data-live-search="true">
                                                     <option value="-1">{{t:general.please_select}}</option>
+                                                    <?php foreach( $currencies as $currency ) {
+                                                        $selectCurrency = ($currencyValue == $currency['id']) ? ' selected' : null;
+                                                        ?>
+                                                        <option value="<?= $currency['id']; ?>"<?= $selectCurrency; ?>><?= $currency['name']; ?></option>
+                                                    <?php } ?>
                                                 </select>
                                                 <span class="help-block">{{t:adminSetting.message_currency}}</span>
                                             </div>
@@ -195,6 +211,11 @@
                                             <div class="col-md-6 col-xs-12">
                                                 <select name="setting_lengthClassId" class="form-control show-tick show-menu-arrow" id="setting-lengthClassId" data-live-search="true">
                                                     <option value="-1">{{t:general.please_select}}</option>
+                                                    <?php foreach( $lengthClassIds as $lengthClassId ) {
+                                                        $selectLengthClassId = ($lengthClassIdValue == $lengthClassId['id']) ? ' selected' : null;
+                                                        ?>
+                                                        <option value="<?= $lengthClassId['id']; ?>"<?= $selectLengthClassId; ?>><?= $lengthClassId['name']; ?></option>
+                                                    <?php } ?>
                                                 </select>
                                                 <span class="help-block">{{t:adminSetting.message_length_class_id}}</span>
                                             </div>
@@ -206,6 +227,11 @@
                                             <div class="col-md-6 col-xs-12">
                                                 <select name="setting_weightClassId" class="form-control show-tick show-menu-arrow" id="setting-weightClassId" data-live-search="true">
                                                     <option value="-1">{{t:general.please_select}}</option>
+                                                    <?php foreach( $weightClassIds as $weightClassId ) {
+                                                        $selectWeightClassId = ($weightClassIdValue == $weightClassId['id']) ? ' selected' : null;
+                                                        ?>
+                                                        <option value="<?= $weightClassId['id']; ?>"<?= $selectWeightClassId; ?>><?= $weightClassId['name']; ?></option>
+                                                    <?php } ?>
                                                 </select>
                                                 <span class="help-block">{{t:adminSetting.message_weight_class_id}}</span>
                                             </div>
@@ -220,10 +246,10 @@
                                             <div class="col-md-6 col-xs-12">
                                                 <div class="form-group">
                                                     <div class="col-md-6">
-                                                        <label class="check"><input type="radio" name="setting_showProductCount" class="iradio" checked="checked"/> {{t:general.enable}}</label>
+                                                        <label class="check"><input type="radio" name="setting_showProductCount" class="iradio" value="1"<?= ($showProductCount == 1) ? ' checked="checked"' : null; ?>/> {{t:general.enable}}</label>
                                                     </div>
                                                     <div class="col-md-6">
-                                                        <label class="check"><input type="radio" name="setting_showProductCount" class="iradio"/> {{t:general.disable}}</label>
+                                                        <label class="check"><input type="radio" name="setting_showProductCount" class="iradio" value="0"<?= ($showProductCount == 0) ? ' checked="checked"' : null; ?>/> {{t:general.disable}}</label>
                                                     </div>
                                                 </div>
                                                 <span class="help-block">{{t:adminSetting.message_show_product_count}}</span>
@@ -236,7 +262,7 @@
                                             <div class="col-md-6 col-xs-12">
                                                 <div class="input-group">
                                                     <span class="input-group-addon"><span class="fa fa-arrows-h"></span></span>
-                                                    <input type="number" name="setting_productDescriptionLength" min="1" class="form-control" placeholder="{{t:adminSetting.placeholder_product_description_length}}">
+                                                    <input type="number" name="setting_productDescriptionLength" min="1" class="form-control" value="<?= $productDescriptionLength ?>" placeholder="{{t:adminSetting.placeholder_product_description_length}}">
                                                 </div>
                                                 <span class="help-block">{{t:adminSetting.message_product_description_length}}</span>
                                             </div>
@@ -251,10 +277,10 @@
                                             <div class="col-md-6 col-xs-12">
                                                 <div class="form-group">
                                                     <div class="col-md-6">
-                                                        <label class="check"><input type="radio" name="setting_commentStatus" class="iradio" checked="checked"/> {{t:general.enable}}</label>
+                                                        <label class="check"><input type="radio" name="setting_commentStatus" class="iradio" value="1"<?= ($commentStatus == 1) ? ' checked="checked"' : null; ?>/> {{t:general.enable}}</label>
                                                     </div>
                                                     <div class="col-md-6">
-                                                        <label class="check"><input type="radio" name="setting_commentStatus" class="iradio"/> {{t:general.disable}}</label>
+                                                        <label class="check"><input type="radio" name="setting_commentStatus" class="iradio" value="0"<?= ($commentStatus == 0) ? ' checked="checked"' : null; ?>/> {{t:general.disable}}</label>
                                                     </div>
                                                 </div>
                                                 <span class="help-block">{{t:adminSetting.message_comment_status}}</span>
@@ -267,10 +293,10 @@
                                             <div class="col-md-6 col-xs-12">
                                                 <div class="form-group">
                                                     <div class="col-md-6">
-                                                        <label class="check"><input type="radio" name="setting_commentGuest" class="iradio" checked="checked"/> {{t:general.enable}}</label>
+                                                        <label class="check"><input type="radio" name="setting_commentGuest" class="iradio" value="1"<?= ($commentGuest == 1) ? ' checked="checked"' : null; ?>/> {{t:general.enable}}</label>
                                                     </div>
                                                     <div class="col-md-6">
-                                                        <label class="check"><input type="radio" name="setting_commentGuest" class="iradio"/> {{t:general.disable}}</label>
+                                                        <label class="check"><input type="radio" name="setting_commentGuest" class="iradio" value="0"<?= ($commentGuest == 0) ? ' checked="checked"' : null; ?>/> {{t:general.disable}}</label>
                                                     </div>
                                                 </div>
                                                 <span class="help-block">{{t:adminSetting.message_comment_guest}}</span>
@@ -283,10 +309,10 @@
                                             <div class="col-md-6 col-xs-12">
                                                 <div class="form-group">
                                                     <div class="col-md-6">
-                                                        <label class="check"><input type="radio" name="setting_commentMail" class="iradio" checked="checked"/> {{t:general.enable}}</label>
+                                                        <label class="check"><input type="radio" name="setting_commentMail" class="iradio" value="1"<?= ($commentMail == 1) ? ' checked="checked"' : null; ?>/> {{t:general.enable}}</label>
                                                     </div>
                                                     <div class="col-md-6">
-                                                        <label class="check"><input type="radio" name="setting_commentMail" class="iradio"/> {{t:general.disable}}</label>
+                                                        <label class="check"><input type="radio" name="setting_commentMail" class="iradio" value="0"<?= ($commentMail == 0) ? ' checked="checked"' : null; ?>/> {{t:general.disable}}</label>
                                                     </div>
                                                 </div>
                                                 <span class="help-block">{{t:adminSetting.message_comment_mail}}</span>
@@ -302,7 +328,7 @@
                                             <div class="col-md-6 col-xs-12">
                                                 <div class="input-group">
                                                     <span class="input-group-addon"><span class="fa fa-gift"></span></span>
-                                                    <input type="number" name="setting_voucherMax" min="1" class="form-control" placeholder="{{t:adminSetting.placeholder_voucher_max}}">
+                                                    <input type="number" name="setting_voucherMax" min="1" class="form-control" value="<?= $voucherMax; ?>" placeholder="{{t:adminSetting.placeholder_voucher_max}}">
                                                 </div>
                                                 <span class="help-block">{{t:adminSetting.message_voucher_max}}</span>
                                             </div>
@@ -317,10 +343,10 @@
                                             <div class="col-md-6 col-xs-12">
                                                 <div class="form-group">
                                                     <div class="col-md-6">
-                                                        <label class="check"><input type="radio" name="setting_tax" class="iradio" checked="checked"/> {{t:general.enable}}</label>
+                                                        <label class="check"><input type="radio" name="setting_tax" class="iradio" value="1"<?= ($tax == 1) ? ' checked="checked"' : null; ?>/> {{t:general.enable}}</label>
                                                     </div>
                                                     <div class="col-md-6">
-                                                        <label class="check"><input type="radio" name="setting_tax" class="iradio"/> {{t:general.disable}}</label>
+                                                        <label class="check"><input type="radio" name="setting_tax" class="iradio" value="0"<?= ($tax == 0) ? ' checked="checked"' : null; ?>/> {{t:general.disable}}</label>
                                                     </div>
                                                 </div>
                                                 <span class="help-block">{{t:adminSetting.message_tax}}</span>
@@ -336,10 +362,10 @@
                                             <div class="col-md-6 col-xs-12">
                                                 <div class="form-group">
                                                     <div class="col-md-6">
-                                                        <label class="check"><input type="radio" name="setting_customerPrice" class="iradio" checked="checked"/> {{t:general.enable}}</label>
+                                                        <label class="check"><input type="radio" name="setting_customerPrice" class="iradio" value="1"<?= ($customerPrice == 1) ? ' checked="checked"' : null; ?>/> {{t:general.enable}}</label>
                                                     </div>
                                                     <div class="col-md-6">
-                                                        <label class="check"><input type="radio" name="setting_customerPrice" class="iradio"/> {{t:general.disable}}</label>
+                                                        <label class="check"><input type="radio" name="setting_customerPrice" class="iradio" value="0"<?= ($customerPrice == 0) ? ' checked="checked"' : null; ?>/> {{t:general.disable}}</label>
                                                     </div>
                                                 </div>
                                                 <span class="help-block">{{t:adminSetting.message_customer_price}}</span>
@@ -352,7 +378,7 @@
                                             <div class="col-md-6 col-xs-12">
                                                 <div class="input-group">
                                                     <span class="input-group-addon"><span class="fa fa-compass"></span></span>
-                                                    <input type="number" name="setting_loginAttempts" min="1" class="form-control" placeholder="{{t:adminSetting.placeholder_login_attempts}}">
+                                                    <input type="number" name="setting_loginAttempts" min="1" class="form-control" value="<?= $loginAttempts; ?>" placeholder="{{t:adminSetting.placeholder_login_attempts}}">
                                                 </div>
                                                 <span class="help-block">{{t:adminSetting.message_login_attempts}}</span>
                                             </div>
@@ -364,10 +390,10 @@
                                             <div class="col-md-6 col-xs-12">
                                                 <div class="form-group">
                                                     <div class="col-md-6">
-                                                        <label class="check"><input type="radio" name="setting_customerNewEmail" class="iradio" checked="checked"/> {{t:general.enable}}</label>
+                                                        <label class="check"><input type="radio" name="setting_customerNewEmail" class="iradio" value="1"<?= ($customerNewEmail == 1) ? ' checked="checked"' : null; ?>/> {{t:general.enable}}</label>
                                                     </div>
                                                     <div class="col-md-6">
-                                                        <label class="check"><input type="radio" name="setting_customerNewEmail" class="iradio"/> {{t:general.disable}}</label>
+                                                        <label class="check"><input type="radio" name="setting_customerNewEmail" class="iradio" value="0"<?= ($customerNewEmail == 0) ? ' checked="checked"' : null; ?>/> {{t:general.disable}}</label>
                                                     </div>
                                                 </div>
                                                 <span class="help-block">{{t:adminSetting.message_customer_new_mail}}</span>
@@ -383,7 +409,7 @@
                                             <div class="col-md-6 col-xs-12">
                                                 <div class="input-group">
                                                     <span class="input-group-addon"><span class="fa fa-book"></span></span>
-                                                    <input type="text" name="setting_invoicePrefix" class="form-control" placeholder="{{t:adminSetting.placeholder_invoice_prefix}}">
+                                                    <input type="text" name="setting_invoicePrefix" class="form-control" value="<?= $invoicePrefix; ?>" placeholder="{{t:adminSetting.placeholder_invoice_prefix}}">
                                                 </div>
                                                 <span class="help-block">{{t:adminSetting.message_invoice_prefix}}</span>
                                             </div>
@@ -395,10 +421,10 @@
                                             <div class="col-md-6 col-xs-12">
                                                 <div class="form-group">
                                                     <div class="col-md-6">
-                                                        <label class="check"><input type="radio" name="setting_cartWeight" class="iradio" checked="checked"/> {{t:general.enable}}</label>
+                                                        <label class="check"><input type="radio" name="setting_cartWeight" class="iradio" value="1"<?= ($cartWeight == 1) ? ' checked="checked"' : null; ?>/> {{t:general.enable}}</label>
                                                     </div>
                                                     <div class="col-md-6">
-                                                        <label class="check"><input type="radio" name="setting_cartWeight" class="iradio"/> {{t:general.disable}}</label>
+                                                        <label class="check"><input type="radio" name="setting_cartWeight" class="iradio" value="0"<?= ($cartWeight == 0) ? ' checked="checked"' : null; ?>/> {{t:general.disable}}</label>
                                                     </div>
                                                 </div>
                                                 <span class="help-block">{{t:adminSetting.message_cart_weight}}</span>
@@ -411,10 +437,10 @@
                                             <div class="col-md-6 col-xs-12">
                                                 <div class="form-group">
                                                     <div class="col-md-6">
-                                                        <label class="check"><input type="radio" name="setting_checkout_guest" class="iradio" checked="checked"/> {{t:general.enable}}</label>
+                                                        <label class="check"><input type="radio" name="setting_checkoutGuest" class="iradio" value="1"<?= ($checkoutGuest == 1) ? ' checked="checked"' : null; ?>/> {{t:general.enable}}</label>
                                                     </div>
                                                     <div class="col-md-6">
-                                                        <label class="check"><input type="radio" name="setting_checkout_guest" class="iradio"/> {{t:general.disable}}</label>
+                                                        <label class="check"><input type="radio" name="setting_checkoutGuest" class="iradio" value="0"<?= ($checkoutGuest == 0) ? ' checked="checked"' : null; ?>/> {{t:general.disable}}</label>
                                                     </div>
                                                 </div>
                                                 <span class="help-block">{{t:adminSetting.message_checkout_guest}}</span>
@@ -427,10 +453,10 @@
                                             <div class="col-md-6 col-xs-12">
                                                 <div class="form-group">
                                                     <div class="col-md-6">
-                                                        <label class="check"><input type="radio" name="setting_checkout_mail" class="iradio" checked="checked"/> {{t:general.enable}}</label>
+                                                        <label class="check"><input type="radio" name="setting_checkoutMail" class="iradio" value="1"<?= ($checkoutMail == 1) ? ' checked="checked"' : null; ?>/> {{t:general.enable}}</label>
                                                     </div>
                                                     <div class="col-md-6">
-                                                        <label class="check"><input type="radio" name="setting_checkout_mail" class="iradio"/> {{t:general.disable}}</label>
+                                                        <label class="check"><input type="radio" name="setting_checkoutMail" class="iradio" value="0"<?= ($checkoutMail == 0) ? ' checked="checked"' : null; ?>/> {{t:general.disable}}</label>
                                                     </div>
                                                 </div>
                                                 <span class="help-block">{{t:adminSetting.message_checkout_mail}}</span>
@@ -446,10 +472,10 @@
                                             <div class="col-md-6 col-xs-12">
                                                 <div class="form-group">
                                                     <div class="col-md-6">
-                                                        <label class="check"><input type="radio" name="setting_stock_display" class="iradio" checked="checked"/> {{t:general.enable}}</label>
+                                                        <label class="check"><input type="radio" name="setting_stockDisplay" class="iradio" value="1"<?= ($stockDisplay == 1) ? ' checked="checked"' : null; ?>/> {{t:general.enable}}</label>
                                                     </div>
                                                     <div class="col-md-6">
-                                                        <label class="check"><input type="radio" name="setting_stock_display" class="iradio"/> {{t:general.disable}}</label>
+                                                        <label class="check"><input type="radio" name="setting_stockDisplay" class="iradio" value="0"<?= ($stockDisplay == 0) ? ' checked="checked"' : null; ?>/> {{t:general.disable}}</label>
                                                     </div>
                                                 </div>
                                                 <span class="help-block">{{t:adminSetting.message_stock_display}}</span>
@@ -462,10 +488,10 @@
                                             <div class="col-md-6 col-xs-12">
                                                 <div class="form-group">
                                                     <div class="col-md-6">
-                                                        <label class="check"><input type="radio" name="setting_stock_warning" class="iradio" checked="checked"/> {{t:general.enable}}</label>
+                                                        <label class="check"><input type="radio" name="setting_stockWarning" class="iradio" value="1"<?= ($stockWarning == 1) ? ' checked="checked"' : null; ?>/> {{t:general.enable}}</label>
                                                     </div>
                                                     <div class="col-md-6">
-                                                        <label class="check"><input type="radio" name="setting_stock_warning" class="iradio"/> {{t:general.disable}}</label>
+                                                        <label class="check"><input type="radio" name="setting_stockWarning" class="iradio" value="0"<?= ($stockWarning == 0) ? ' checked="checked"' : null; ?>/> {{t:general.disable}}</label>
                                                     </div>
                                                 </div>
                                                 <span class="help-block">{{t:adminSetting.message_stock_warning}}</span>

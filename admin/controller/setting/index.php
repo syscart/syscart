@@ -38,7 +38,13 @@ class adminControllerSettingIndex extends adminController
         $geographyObject = loaderModule('local'.DS.'geography', $client);
 
         $data['countries'] = $geographyObject->getAllCountryPublish();
-        
+        $data['zones'] = $geographyObject->getAllZoneCountryPublish($sysConfig->get('setting_country'));
+        $data['cities'] = $geographyObject->getAllCityZoneCountryPublish($sysConfig->get('setting_country'), $sysConfig->get('setting_zone'));
+
+        $data['currencies'] = null;
+        $data['lengthClassIds'] = null;
+        $data['weightClassIds'] = null;
+
         $breadcrumbObject = loaderModule('common'.DS.'breadcrumb', $client);
 
         $breadcrumb[] = ['text' => '{{t:adminBreadcrumb.home}}', 'url' => 'dashboard'];
@@ -46,7 +52,44 @@ class adminControllerSettingIndex extends adminController
         $breadcrumb[] = ['text' => '{{t:adminBreadcrumb.setting_base}}'];
 
         $data['breadcrumb'] = $breadcrumbObject->render($breadcrumb);
-        
+
+        $data['site_title'] = $sysConfig->get('setting_siteTitle');
+        $data['owner'] = $sysConfig->get('setting_owner');
+        $data['address'] = $sysConfig->get('setting_address');
+        $data['email'] = $sysConfig->get('setting_email');
+        $data['tell'] = $sysConfig->get('setting_tell');
+        $data['fax'] = $sysConfig->get('setting_fax');
+        $data['open'] = $sysConfig->get('setting_open');
+        $data['description'] = $sysConfig->get('setting_description');
+
+        $data['metaTitle'] = $sysConfig->get('setting_metaTitle');
+        $data['metaDescription'] = $sysConfig->get('setting_metaDescription');
+        $data['metaKeyword'] = $sysConfig->get('setting_metaKeyword');
+
+        $data['countryValue'] = $sysConfig->get('setting_country');
+        $data['zoneValue'] = $sysConfig->get('setting_zone');
+        $data['cityValue'] = $sysConfig->get('setting_city');
+        $data['currencyValue'] = $sysConfig->get('setting_currency');
+        $data['lengthClassIdValue'] = $sysConfig->get('setting_lengthClassId');
+        $data['weightClassIdValue'] = $sysConfig->get('setting_weightClassId');
+
+        $data['showProductCount'] = $sysConfig->get('setting_showProductCount');
+        $data['productDescriptionLength'] = $sysConfig->get('setting_productDescriptionLength');
+        $data['commentStatus'] = $sysConfig->get('setting_commentStatus');
+        $data['commentGuest'] = $sysConfig->get('setting_commentGuest');
+        $data['commentMail'] = $sysConfig->get('setting_commentMail');
+        $data['voucherMax'] = $sysConfig->get('setting_voucherMax');
+        $data['tax'] = $sysConfig->get('setting_tax');
+        $data['customerPrice'] = $sysConfig->get('setting_customerPrice');
+        $data['loginAttempts'] = $sysConfig->get('setting_loginAttempts');
+        $data['customerNewEmail'] = $sysConfig->get('setting_customerNewEmail');
+        $data['invoicePrefix'] = $sysConfig->get('setting_invoicePrefix');
+        $data['cartWeight'] = $sysConfig->get('setting_cartWeight');
+        $data['checkoutGuest'] = $sysConfig->get('setting_checkoutGuest');
+        $data['checkoutMail'] = $sysConfig->get('setting_checkoutMail');
+        $data['stockDisplay'] = $sysConfig->get('setting_stockDisplay');
+        $data['stockWarning'] = $sysConfig->get('setting_stockWarning');
+
         $data['sidebar'] = loaderController('common'.DS.'sidebar', 'index', $client);
         $data['nav'] = loaderController('common'.DS.'navHorizontal', 'index', $client);
         $data['logout'] = loaderController('common'.DS.'logout', 'index', $client);
