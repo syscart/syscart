@@ -253,21 +253,3 @@ abstract class factory
         return self::$document;
     }
 }
-
-global $sysConfig;
-$sysConfig = factory::getConfig();
-global $sysEvent;
-$sysEvent = factory::getEvent();
-global $sysDbo;
-$sysDbo = factory::getDbo();
-global $sysDb;
-$sysDb = factory::getDbDriver();
-global $sysSession;
-$sysSession = factory::getSession();
-global $sysUser;
-$sysUser = factory::getUser();
-global $sysLang;
-$sysLang = factory::getLanguage();
-global $sysDoc;
-$sysDoc = factory::getDocument();
-?>
