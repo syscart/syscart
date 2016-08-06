@@ -49,7 +49,15 @@ class platformRegistry
 	 */
 	public function get($field = NULL, $default = NULL)
 	{
-		return ($this->data->$field) ? $this->data->$field : $default;
+		if(isset($this->data->$field))
+			return $this->data->$field;
+		
+		return $default;
+	}
+	
+	public function set($field, $value = null)
+	{
+		$this->data->$field = $value;
 	}
 
 	/*
