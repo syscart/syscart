@@ -21,7 +21,6 @@ class utilityRouter
         $sql = platformQuery::refactor($sql);
     
         $query = $sysDbo->prepare($sql);
-        $query->bindParam(':session', session_id(), PDO::PARAM_STR);
     
         $query->execute();
         $resultConfig = $query->fetchAll(\PDO::FETCH_ASSOC);
