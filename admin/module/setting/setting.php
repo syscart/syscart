@@ -33,11 +33,12 @@ class adminModuleSettingSetting
                 $query = $sysDbo->prepare($sql);
                 $query->bindParam(':code', $code, PDO::PARAM_STR);
                 $query->bindParam(':key', $key, PDO::PARAM_STR);
-                $query->bindParam(':value', $value, PDO::PARAM_STR);
 
                 if (!is_array($value)) {
+                    $query->bindParam(':value', $value, PDO::PARAM_STR);
                     $query->bindParam(':serialized', $serialized = 0, PDO::PARAM_INT);
                 } else {
+                    $query->bindParam(':value', json_encode($value, JSON_UNESCAPED_UNICODE), PDO::PARAM_STR);
                     $query->bindParam(':serialized', $serialized = 1, PDO::PARAM_INT);
                 }
                 
