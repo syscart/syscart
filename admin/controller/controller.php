@@ -14,12 +14,4 @@ defined('syscart') or die('access denied...!');
 abstract class adminController
 {
     abstract function index();
-
-    protected function ajaxCheck()
-    {
-    }
-
-    protected function renderHtml()
-    {
-    }
 }
