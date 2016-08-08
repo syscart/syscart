@@ -13,7 +13,7 @@ defined('syscart') or die('access denied...!');
 
 class adminControllerUsersIndex extends adminController
 {
-    public function actionIndex()
+    public function index()
     {
         global $sysUser;
         echo utilityString::ss('user page index');
@@ -23,10 +23,5 @@ class adminControllerUsersIndex extends adminController
         } else {
 
         }
-    }
-
-    public function actionAjax()
-    {
-        $this->ajaxCheck();
     }
 }
