@@ -204,7 +204,7 @@ class platformSession
 			$sql = platformQuery::refactor($sql);
 
 			$query = $db->prepare($sql);
-			$query->bindParam(':client', true, PDO::PARAM_BOOL);
+			$query->bindParam(':client', $c = true, PDO::PARAM_BOOL);
 			$query->bindParam(':session', session_id(), PDO::PARAM_STR);
 
 			$query->execute();
