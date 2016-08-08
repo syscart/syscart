@@ -91,7 +91,7 @@ class htmlDocument
                             <span class="'.$icon.'"></span> '.$title.'
                           </h2>';
                 if($button) {
-                    $data .= '<h2 class="pull-left">';
+                    $data .= '<h2 class="pull-left button-list">';
                         foreach( $button as $item ) {
                             $class = (isset($item['class'])) ? ' '.$item['class'] : null;
                             $type = (isset($item['type'])) ? ' type="'.$item['type'].'"' : null;
