@@ -93,11 +93,12 @@
         <li class="xn-openable">
             <a href="#"><span class="fa fa-cogs"></span> <span class="xn-text">{{t:adminMenu.setting}}</span></a>
             <ul>
-                <li><a href="setting"><span class="fa fa-cogs"></span> {{t:adminMenu.setting_base}}</a></li>
+                <li><a href="<?= $site_url; ?>admin/setting"><span class="fa fa-cogs"></span> {{t:adminMenu.setting_base}}</a></li>
                 <li class="xn-openable">
-                    <a href="#"><span class="fa fa-clock-o"></span> {{t:adminMenu.setting_user}}</a>
+                    <a href="#"><span class="glyphicon glyphicon-user"></span> {{t:adminMenu.setting_user}}</a>
                     <ul>
-                        <li><a href="#"><span class="fa fa-align-center"></span> {{t:adminMenu.setting_users}}</a></li>
+                        <li><a href="<?= $site_url; ?>admin/users"><span class="fa fa-user"></span> {{t:adminMenu.setting_users}}</a></li>
+                        <li><a href="<?= $site_url; ?>admin/users/group"><span class="fa fa-group"></span> {{t:adminMenu.setting_userGroup}}</a></li>
                     </ul>
                 </li>
             </ul>
