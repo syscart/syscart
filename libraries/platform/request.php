@@ -35,6 +35,9 @@ class platformRequest
             case 'SERVER':
                 $qi = (isset($_SERVER[$question])) ? $_SERVER[$question] : $default;
                 break;
+            case 'COOKIE':
+                $qi = (isset($_COOKIE[$question])) ? $_COOKIE[$question] : $default;
+                break;
         }
         return strip_tags($qi);
     }
