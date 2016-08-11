@@ -1939,7 +1939,7 @@ ul.panel-controls > li > .dropdown-menu:before {
 /* END USER */
 /* BUTTONS */
 .btn {
-  font-size: 11px;
+  font-size: 12px;
   padding: 4px 15px;
   line-height: 20px;
   font-weight: 400;
@@ -2076,7 +2076,8 @@ ul.panel-controls > li > .dropdown-menu:before {
 .btn .fa,
 .btn .glyphicon {
   font-size: 14px;
-  margin-right: 5px;
+  margin-right: 1px;
+  margin-top: 1px;
 }
 .btn.btn-rounded {
   background: transparent;

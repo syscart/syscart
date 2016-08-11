@@ -8,3 +8,5 @@
 .text-end {text-align: end;}
 
 .button-list button {margin-left: 5px;}
+
+.btn-sm span {margin-top: 5px !important;}
