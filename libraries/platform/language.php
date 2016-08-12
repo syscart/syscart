@@ -46,7 +46,9 @@ class platformLanguage
 			$sql = platformQuery::refactor($sql);
 
 			$query = $sysDbo->prepare($sql);
-			$query->execute(array(':code' => $this->code));
+			$query->bindParam(':code', $this->code, PDO::PARAM_INT);
+
+			$query->execute();
 			$result = $query->fetch(\PDO::FETCH_ASSOC);
 			$this->id = $result['id'];
 		}
@@ -75,14 +77,18 @@ class platformLanguage
 		}
 		if($languageGroups) {
 			$sql = "SELECT groups, meta, value
-				  FROM #__language_code
-				 WHERE languageId = :langID
-				   AND groups IN (".implode(',', $languageGroups).")
-				   AND state = '1'";
+				  	  FROM #__language_code
+				 	 WHERE languageId = :langID
+				   	   AND groups IN (".implode(',', $languageGroups).")
+				       AND state = '1'";
 			$sql = platformQuery::refactor($sql);
+
 			$query = $sysDbo->prepare($sql);
-			$query->execute(array(':langID' => $sysLang->getID()));
+			$query->bindParam(':langID', $sysLang->getID(), PDO::PARAM_INT);
+
+			$query->execute();
 			$result = $query->fetchAll(\PDO::FETCH_ASSOC);
+
 			$langKey = $langValue = [];
 			foreach( $result as $langData ) {
 				$langKey[] = '{{t:'.$langData[ 'groups' ].'.'.$langData[ 'meta' ].'}}';
@@ -95,4 +101,3 @@ class platformLanguage
 		}
 	}
 }
-?>
