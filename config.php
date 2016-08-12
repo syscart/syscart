@@ -25,18 +25,6 @@ class syscartConfig {
     public $url = 'http://localhost/syscart/web/';
     // webservice
     public $webservice_key = '655';
-    // language
-    public $languageSite = 'persian';
-    public $languageSiteCode = 'fa';
-    public $languageAdmin = 'persian';
-    public $languageAdminCode = 'fa';
-    public $languageExchange = 'persian';
-    public $languageExchangeCode = 'fa';
-    public $languageWebservice = 'persian';
-    public $languageWebserviceCode = 'fa';
-    public $languageOther = 'persian';
-    public $languageOtherCode = 'fa';
     // meta
     public $metaDescription = 'title shop';
 }
-?>
