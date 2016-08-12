@@ -78,7 +78,7 @@ class htmlAdminLoadDefault
 
     public function scriptFooter()
     {
-        global $sysDoc, $sysConfig, $sysDocScript;
+        global $sysConfig, $sysDocScript;
         $sysDocScript->setFooter($sysConfig->get('url').'templates/backend/js/plugins/jquery/jquery.min.js');
         $sysDocScript->setFooter($sysConfig->get('url').'templates/backend/js/plugins/jquery/jquery-ui.min.js');
         $sysDocScript->setFooter($sysConfig->get('url').'templates/backend/js/plugins/bootstrap/bootstrap.min.js');

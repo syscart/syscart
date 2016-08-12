@@ -47,7 +47,7 @@ class adminControllerUsersLogin extends adminController
         
         $sysDoc->setTitle('{{t:adminLogin.heading_title}}');
         
-        $sysDoc->setDefaultDocument();
+        $sysDoc->addScript();
         
         $sysDoc->metaManager()->set([
             'name' => 'description',

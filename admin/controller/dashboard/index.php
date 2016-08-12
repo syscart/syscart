@@ -21,7 +21,8 @@ class adminControllerDashboardIndex extends adminController
 
         $data['site_url'] = $sysConfig->get('url');
 
-        $sysDoc->setDefaultDocument();
+        $sysDoc->addScript();
+        
         $sysDoc->metaManager()->set([
             'name' => 'description',
             'content' => $sysConfig->get('metaDescription')

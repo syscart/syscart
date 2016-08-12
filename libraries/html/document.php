@@ -146,4 +146,32 @@ class htmlDocument
     
         echo $sysLang->generate($data);
     }
+
+    public function addScript()
+    {
+        $script = func_get_args();
+        global $sysDocScript, $sysConfig, $sysDoc;
+    
+        $sysDoc->setDefaultDocument();
+        
+        foreach( $script as $key ) {
+            switch($key)
+            {
+                case 'ajaxForm':
+                    $sysDocScript->setFooter($sysConfig->get('url').'templates/backend/js/plugins/form/jquery.form.js');
+                    break;
+                case 'select':
+                    $sysDocScript->setFooter($sysConfig->get('url').'templates/backend/js/plugins/bootstrap/bootstrap-select.js');
+                    break;
+                case 'check':
+                    $sysDocScript->setFooter($sysConfig->get('url').'templates/backend/js/plugins/icheck/icheck.min.js');
+                    break;
+                case 'notification':
+                    $sysDocScript->setFooter($sysConfig->get('url').'templates/backend/js/plugins/noty/jquery.noty.js');
+                    $sysDocScript->setFooter($sysConfig->get('url').'templates/backend/js/plugins/noty/layouts/topCenter.js');
+                    $sysDocScript->setFooter($sysConfig->get('url').'templates/backend/js/plugins/noty/themes/default.js');
+                    break;
+            }
+        }
+    }
 }
