@@ -27,3 +27,8 @@ global $sysLang;
 $sysLang = factory::getLanguage();
 global $sysDoc;
 $sysDoc = factory::getDocument();
+
+global $sysDocScript;
+$sysDocScript = $sysDoc->scriptManager();
+global $sysDocStyle;
+$sysDocStyle = $sysDoc->stylesheetManager();

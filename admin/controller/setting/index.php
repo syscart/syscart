@@ -15,7 +15,7 @@ class adminControllerSettingIndex extends adminController
 {
     public function index()
     {
-        global $client, $sysDoc, $sysConfig;
+        global $client, $sysDoc, $sysConfig, $sysDocScript;
 
         $button[] = ['id' => 'btn-save', 'color' => 'success', 'icon' => 'fa fa-save', 'text' => '{{t:general.save}}'];
 
@@ -24,13 +24,13 @@ class adminControllerSettingIndex extends adminController
         $data['site_url'] = $sysConfig->get('url');
 
         $sysDoc->setDefaultDocument();
-        $sysDoc->scriptManager()->setFooter($sysConfig->get('url').'templates/backend/js/plugins/form/jquery.form.js');
-        $sysDoc->scriptManager()->setFooter($sysConfig->get('url').'templates/backend/js/plugins/bootstrap/bootstrap-select.js');
-        $sysDoc->scriptManager()->setFooter($sysConfig->get('url').'templates/backend/js/plugins/icheck/icheck.min.js');
-        $sysDoc->scriptManager()->setFooter($sysConfig->get('url').'templates/backend/js/plugins/noty/jquery.noty.js');
-        $sysDoc->scriptManager()->setFooter($sysConfig->get('url').'templates/backend/js/plugins/noty/layouts/topCenter.js');
-        $sysDoc->scriptManager()->setFooter($sysConfig->get('url').'templates/backend/js/plugins/noty/themes/default.js');
-        $sysDoc->scriptManager()->setFooter($sysConfig->get('url').'templates/backend/js/route/setting/index.js');
+        $sysDocScript->setFooter($sysConfig->get('url').'templates/backend/js/plugins/form/jquery.form.js');
+        $sysDocScript->setFooter($sysConfig->get('url').'templates/backend/js/plugins/bootstrap/bootstrap-select.js');
+        $sysDocScript->setFooter($sysConfig->get('url').'templates/backend/js/plugins/icheck/icheck.min.js');
+        $sysDocScript->setFooter($sysConfig->get('url').'templates/backend/js/plugins/noty/jquery.noty.js');
+        $sysDocScript->setFooter($sysConfig->get('url').'templates/backend/js/plugins/noty/layouts/topCenter.js');
+        $sysDocScript->setFooter($sysConfig->get('url').'templates/backend/js/plugins/noty/themes/default.js');
+        $sysDocScript->setFooter($sysConfig->get('url').'templates/backend/js/route/setting/index.js');
 
         $sysDoc->metaManager()->set([
             'name' => 'description',
