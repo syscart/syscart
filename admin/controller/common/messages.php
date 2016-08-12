@@ -15,10 +15,8 @@ class adminControllerCommonMessages extends adminController
 {
     public function index()
     {
-        global $client, $sysConfig;
-
-        $data['site_url'] = $sysConfig->get('url');
+        global $client;
         
-        return loaderTemplate('common/messages', $data, $client);
+        return loaderTemplate('common/messages', [], $client);
     }
 }

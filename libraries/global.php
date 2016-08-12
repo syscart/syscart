@@ -32,3 +32,6 @@ global $sysDocScript;
 $sysDocScript = $sysDoc->scriptManager();
 global $sysDocStyle;
 $sysDocStyle = $sysDoc->stylesheetManager();
+
+global $sysUrl;
+$sysUrl = $sysConfig->get('url');

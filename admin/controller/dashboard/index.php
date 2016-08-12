@@ -19,10 +19,8 @@ class adminControllerDashboardIndex extends adminController
 
         $data['heading_title'] = $sysDoc->setTitle('{{t:adminDashboard.heading_title}}', $client);
 
-        $data['site_url'] = $sysConfig->get('url');
-
         $sysDoc->addScript();
-        
+
         $sysDoc->metaManager()->set([
             'name' => 'description',
             'content' => $sysConfig->get('metaDescription')

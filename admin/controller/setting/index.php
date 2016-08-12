@@ -16,8 +16,6 @@ class adminControllerSettingIndex extends adminController
     public function index()
     {
         global $client, $sysDoc, $sysConfig, $sysDocScript;
-    
-        $data['site_url'] = $sysConfig->get('url');
         
         $button[] = ['id' => 'btn-save', 'color' => 'success', 'icon' => 'fa fa-save', 'text' => '{{t:general.save}}'];
         $data['heading_title'] = $sysDoc->setTitle('{{t:adminSetting.heading_title}}', $client, 'fa fa-cogs', $button);

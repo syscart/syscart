@@ -15,10 +15,8 @@ class adminControllerCommonAudio extends adminController
 {
     public function index()
     {
-        global $client, $sysConfig;
-    
-        $data['site_url'] = $sysConfig->get('url');
+        global $client;
         
-        return loaderTemplate('common/audio', $data, $client);
+        return loaderTemplate('common/audio', [], $client);
     }
 }

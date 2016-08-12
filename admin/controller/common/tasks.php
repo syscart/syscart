@@ -15,10 +15,8 @@ class adminControllerCommonTasks extends adminController
 {
     public function index()
     {
-        global $client, $sysConfig;
-
-        $data['site_url'] = $sysConfig->get('url');
+        global $client;
         
-        return loaderTemplate('common/tasks', $data, $client);
+        return loaderTemplate('common/tasks', [], $client);
     }
 }

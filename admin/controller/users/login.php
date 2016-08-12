@@ -58,9 +58,7 @@ class adminControllerUsersLogin extends adminController
             'html' => 'body-full-height'
         ]);
         
-        $data['site_url'] = $sysConfig->get('url');
-        
-        $sysDoc->setBody(loaderTemplate('users/login', $data, $client));
+        $sysDoc->setBody(loaderTemplate('users/login', [], $client));
         
         $sysDoc->renderHtml();
     }

@@ -15,9 +15,7 @@ class adminControllerCommonNavHorizontal extends adminController
 {
     public function index()
     {
-        global $client, $sysConfig;
-
-        $data['site_url'] = $sysConfig->get('url');
+        global $client;
     
         $data['tasks'] = loaderController('common'.DS.'tasks', 'index', $client);
         $data['messages'] = loaderController('common'.DS.'messages', 'index', $client);

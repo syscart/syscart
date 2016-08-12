@@ -57,13 +57,15 @@ function loaderModule($map = '', $client = 'site')
 
 function loaderTemplate($file = '', $data = array(), $client = 'site')
 {
+    global $sysUrl;
     if($file == '') {
         trigger_error( 'Error: not selection template' );
         exit;
     }
     else {
         $file = PATH_PLATFORM.DS.$client.DS.'templates'.DS.$file.'.tpl';
-
+        
+        $data['site_url'] = $sysUrl;
         if (file_exists($file)) {
             extract($data);
             ob_start();
