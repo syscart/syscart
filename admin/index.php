@@ -15,7 +15,7 @@ define('ADMIN_DIR', dirname(__FILE__));
 
 loadFile(PATH_PLATFORM.DS.'admin'.DS.'libraries'.DS.'include.php');
 
-global $client, $sysUser, $sysConfig, $sysSession;
+global $client, $sysUser, $sysConfig, $sysSession, $sysUrl;
 $client = 'admin';
 $router = new utilityRouter();
 
@@ -29,7 +29,7 @@ if($component) {
             if($sysUser->isLogin($client)) {
                 if($component == 'home') {
                     $header = new platformHeader();
-                    $header->redirect($sysConfig->get('url').'admin/dashboard');
+                    $header->redirect($sysUrl.'admin/dashboard');
                 } else {
                     loadFile(PATH_PLATFORM.DS.'admin'.DS.'controller'.DS.$component.DS.'index.php');
 
@@ -45,12 +45,12 @@ if($component) {
             } else {
                 if(isset($sysSession->requestDataLogin)) {
                     $header = new platformHeader();
-                    $header->redirect($sysConfig->get('url').'admin/users/login');
+                    $header->redirect($sysUrl.'admin/users/login');
                 } else {
                     $sysSession->requestDataLogin = $_GET;
 
                     $header = new platformHeader();
-                    $header->redirect($sysConfig->get('url').'admin/users/login');
+                    $header->redirect($sysUrl.'admin/users/login');
                 }
             }
         } else {
@@ -63,7 +63,7 @@ if($component) {
             if($sysUser->isLogin($client)) {
                 if($component == 'login') {
                     $header = new platformHeader();
-                    $header->redirect($sysConfig->get('url').'admin/dashboard');
+                    $header->redirect($sysUrl.'admin/dashboard');
                 } else {
                     loadFile(PATH_PLATFORM.DS.'admin'.DS.'controller'.DS.$component.DS.$function.'.php' );
 
@@ -91,7 +91,7 @@ if($component) {
                     $sysSession->requestDataLogin = $_GET;
 
                     $header = new platformHeader();
-                    $header->redirect($sysConfig->get('url').'admin/users/login');
+                    $header->redirect($sysUrl.'admin/users/login');
                 }
             }
         } else {
@@ -103,11 +103,11 @@ if($component) {
 } else {
     if($sysUser->isLogin($client)) {
         $header = new platformHeader();
-        $header->redirect($sysConfig->get('url').'admin/dashboard');
+        $header->redirect($sysUrl.'admin/dashboard');
     } else {
         $sysSession->requestDataLogin = $_GET;
 
         $header = new platformHeader();
-        $header->redirect($sysConfig->get('url').'admin/users/login');
+        $header->redirect($sysUrl.'admin/users/login');
     }
 }

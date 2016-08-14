@@ -15,7 +15,7 @@ define('ADMIN_DIR', dirname(__FILE__));
 
 require_once('function.php');
 
-global $client, $sysUser, $sysConfig, $sysSession;
+global $client, $sysUser, $sysConfig, $sysSession, $sysUrl;
 $client = 'admin';
 $router = new utilityRouter();
 
@@ -25,7 +25,7 @@ if($component) {
         if($sysUser->isLogin($client)) {
             if($component == 'login') {
                 $header = new platformHeader();
-                $header->redirect($sysConfig->get('url').'admin/dashboard');
+                $header->redirect($sysUrl.'admin/dashboard');
             } else {
                 require_once( 'controller/'.$component.'/index.php' );
                 $class = 'adminController'.ucfirst( $component );
@@ -42,7 +42,7 @@ if($component) {
                 $sysSession->requestDataLogin = $_GET;
 
                 $header = new platformHeader();
-                $header->redirect(factory::getConfig()->get('url').'admin/login');
+                $header->redirect($sysUrl.'admin/login');
             }
         }
     } else {
@@ -51,11 +51,11 @@ if($component) {
 } else {
     if($sysUser->isLogin($client)) {
         $header = new platformHeader();
-        $header->redirect($sysConfig->get('url').'admin/dashboard');
+        $header->redirect($sysUrl.'admin/dashboard');
     } else {
         $sysSession->requestDataLogin = $_GET;
 
         $header = new platformHeader();
-        $header->redirect(factory::getConfig()->get('url').'admin/login');
+        $header->redirect($sysUrl.'admin/login');
     }
 }

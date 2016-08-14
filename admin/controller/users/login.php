@@ -15,7 +15,7 @@ class adminControllerUsersLogin extends adminController
 {
     public function index()
     {
-        global $client, $sysUser, $sysSession, $sysConfig;
+        global $client, $sysUser, $sysSession, $sysUrl;
 
         if(($_SERVER['REQUEST_METHOD'] == 'POST') && $this->validate()) {
             $username = platformRequest::getVar('username');
@@ -28,7 +28,7 @@ class adminControllerUsersLogin extends adminController
             $header = new platformHeader();
             if($sysSession->requestDataLogin) {
                 $dataLogin = $sysSession->requestDataLogin;
-                $url = $sysConfig->get('url').$dataLogin['route'];
+                $url = $sysUrl.$dataLogin['route'];
                 unset($dataLogin['route']);
                 foreach($dataLogin as $key => $value) {
                     $url .= '&'.$key.'='.$value;
@@ -36,7 +36,7 @@ class adminControllerUsersLogin extends adminController
                 unset($sysSession->requestDataLogin);
                 $header->redirect($url);
             } else
-                $header->redirect($sysConfig->get('url').'admin');
+                $header->redirect($sysUrl.'admin');
         } else
             $this->form();
     }

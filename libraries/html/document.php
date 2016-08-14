@@ -113,7 +113,7 @@ class htmlDocument
 
     public function renderHtml()
     {
-        global $sysLang;
+        global $sysLang, $sysUrl;
 
         $classTagHtml = (isset($this->classTag['html'])) ? ' class="'.$this->classTag['html'].'"' : '';
         $classTagHead = (isset($this->classTag['head'])) ? ' class="'.$this->classTag['head'].'"' : '';
@@ -122,6 +122,7 @@ class htmlDocument
 <html xmlns="http://www.w3.org/1999/xhtml"'.$classTagHtml.' xml:lang="'.$sysLang->getCode().'" lang="'.$sysLang->getCode().'" dir="'.$sysLang->getDirection().'">
     <head'.$classTagHead.'>
         <title>'.$this->title.'</title>
+        <base href="'.$sysUrl.'"/>
         '.$this->metaManager()->render().'
         '.$this->stylesheetManager()->renderHeader().'
         '.$this->scriptManager()->renderHeader().'
@@ -150,26 +151,26 @@ class htmlDocument
     public function addScript()
     {
         $script = func_get_args();
-        global $sysDocScript, $sysConfig, $sysDoc;
+        global $sysDocScript;
     
-        $sysDoc->setDefaultDocument();
+        $this->setDefaultDocument();
         
         foreach( $script as $key ) {
             switch($key)
             {
                 case 'ajaxForm':
-                    $sysDocScript->setFooter($sysConfig->get('url').'templates/backend/js/plugins/form/jquery.form.js');
+                    $sysDocScript->setFooter('templates/backend/js/plugins/form/jquery.form.js');
                     break;
                 case 'select':
-                    $sysDocScript->setFooter($sysConfig->get('url').'templates/backend/js/plugins/bootstrap/bootstrap-select.js');
+                    $sysDocScript->setFooter('templates/backend/js/plugins/bootstrap/bootstrap-select.js');
                     break;
                 case 'check':
-                    $sysDocScript->setFooter($sysConfig->get('url').'templates/backend/js/plugins/icheck/icheck.min.js');
+                    $sysDocScript->setFooter('templates/backend/js/plugins/icheck/icheck.min.js');
                     break;
                 case 'notification':
-                    $sysDocScript->setFooter($sysConfig->get('url').'templates/backend/js/plugins/noty/jquery.noty.js');
-                    $sysDocScript->setFooter($sysConfig->get('url').'templates/backend/js/plugins/noty/layouts/topCenter.js');
-                    $sysDocScript->setFooter($sysConfig->get('url').'templates/backend/js/plugins/noty/themes/default.js');
+                    $sysDocScript->setFooter('templates/backend/js/plugins/noty/jquery.noty.js');
+                    $sysDocScript->setFooter('templates/backend/js/plugins/noty/layouts/topCenter.js');
+                    $sysDocScript->setFooter('templates/backend/js/plugins/noty/themes/default.js');
                     break;
             }
         }
