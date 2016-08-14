@@ -21,11 +21,6 @@ class adminControllerDashboardIndex extends adminController
 
         $sysDoc->addScript();
 
-        $sysDoc->metaManager()->set([
-            'name' => 'description',
-            'content' => $sysConfig->get('metaDescription')
-        ]);
-
         $breadcrumbObject = loaderModule('common'.DS.'breadcrumb', $client);
 
         $breadcrumb[] = ['text' => '{{t:adminBreadcrumb.home}}', 'url' => 'dashboard'];

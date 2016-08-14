@@ -43,16 +43,11 @@ class adminControllerUsersLogin extends adminController
 
     public function form()
     {
-        global $client, $sysDoc, $sysConfig;
+        global $client, $sysDoc;
         
         $sysDoc->setTitle('{{t:adminLogin.heading_title}}');
         
         $sysDoc->addScript();
-        
-        $sysDoc->metaManager()->set([
-            'name' => 'description',
-            'content' => $sysConfig->get('metaDescription')
-        ]);
         
         $sysDoc->setClassTag([
             'html' => 'body-full-height'
