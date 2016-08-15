@@ -172,6 +172,51 @@ class htmlDocument
                     $sysDocScript->setFooter('templates/backend/js/plugins/noty/layouts/topCenter.js');
                     $sysDocScript->setFooter('templates/backend/js/plugins/noty/themes/default.js');
                     break;
+                case 'knobChart':
+                    $sysDocScript->setFooter('templates/backend/js/plugins/knob/jquery.knob.min.js');
+                    break;
+                case 'maskedInput':
+                    $sysDocScript->setFooter('templates/backend/js/plugins/maskedinput/jquery.maskedinput.min.js');
+                    break;
+                case 'dataTables':
+                    $sysDocScript->setFooter('templates/backend/js/plugins/datatables/jquery.dataTables.min.js');
+                    break;
+                case 'fullCalendar':
+                    $sysDocScript->setFooter('templates/backend/js/plugins/fullcalendar/fullcalendar.min.js');
+                    $sysDocScript->setFooter('templates/backend/js/plugins/fullcalendar/lang/fa.js');
+                    break;
+                case 'highlight':
+                    $sysDocScript->setFooter('templates/backend/js/plugins/highlight/jquery.highlight-4.js');
+                    break;
+                case 'morrisChart':
+                    $sysDocScript->setFooter('templates/backend/js/plugins/morris/morris.min.js');
+                    $sysDocScript->setFooter('templates/backend/js/plugins/morris/raphael-min.js');
+                    break;
+                case 'owl':
+                    $sysDocScript->setFooter('templates/backend/js/plugins/owl/owl.carousel.min.js');
+                    break;
+                case 'rangeSlider':
+                    $sysDocScript->setFooter('templates/backend/js/plugins/rangeslider/jQAllRangeSliders-min.js');
+                    break;
+                case 'scrollToTop':
+                    $sysDocScript->setFooter('templates/backend/js/plugins/scrolltotop/scrolltopcontrol.js');
+                    break;
+                case 'smartWizard':
+                    $sysDocScript->setFooter('templates/backend/js/plugins/smartwizard/jquery.smartWizard-2.0.min.js');
+                    break;
+                case 'sparkLineChart':
+                    $sysDocScript->setFooter('templates/backend/js/plugins/sparkline/jquery.sparkline.min.js');
+                    break;
+                case 'tagsInput':
+                    $sysDocScript->setFooter('templates/backend/js/plugins/tagsinput/jquery.tagsinput.min.js');
+                    break;
+                case 'fullScreen':
+                    $sysDocScript->setFooter('templates/backend/js/plugins/fullscreen/jquery.fullscreen-min.js');
+                    break;
+                case 'validationEngine':
+                    $sysDocScript->setFooter('templates/backend/js/plugins/validationengine/jquery.validationEngine.js');
+                    $sysDocScript->setFooter('templates/backend/js/plugins/validationengine/languages/jquery.validationEngine-fa.js');
+                    break;
             }
         }
     }
