@@ -15,7 +15,7 @@ class htmlAdminLoadDefault
 {
     public function meta()
     {
-        global $sysDoc, $sysConfig;
+        global $sysDoc;
 
         $sysDoc->metaManager()->set([
             'name' => 'generator',
@@ -40,7 +40,7 @@ class htmlAdminLoadDefault
 
     public function styleHeader()
     {
-        global $sysConfig, $sysDocStyle;
+        global $sysDocStyle;
     
         $sysDocStyle->setHeader([
             'rel' => 'icon',
@@ -79,13 +79,15 @@ class htmlAdminLoadDefault
 
     public function scriptFooter()
     {
-        global $sysDocScript;
+        global $client, $sysDocScript;
         $sysDocScript->setFooter('templates/backend/js/plugins/jquery/jquery.min.js');
         $sysDocScript->setFooter('templates/backend/js/plugins/jquery/jquery-ui.min.js');
         $sysDocScript->setFooter('templates/backend/js/plugins/bootstrap/bootstrap.min.js');
         $sysDocScript->setFooter('templates/backend/js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js');
         $sysDocScript->setFooter('templates/backend/js/plugins.js');
         $sysDocScript->setFooter('templates/backend/js/actions.js');
+        $sysDocScript->setFooter('templates/backend/js/plugins/cookie/jquery.cookie.js');
+        $sysDocScript->setFooter('templates/backend/js/route/'.$client.'.js');
     }
 }
 ?>

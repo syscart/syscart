@@ -5,7 +5,7 @@ $(document).ready(function(){
     $('#setting-country').change(function(){
         $.ajax({
             method: 'POST',
-            url: 'public/geography/getZoneSelect',
+            url: 'admin/public/geography/getZoneSelect',
             data: {countryId: $(this).val()},
             dataType: 'json',
             beforeSend: function(){
@@ -22,7 +22,7 @@ $(document).ready(function(){
     $('#setting-zone').change(function(){
         $.ajax({
             method: 'POST',
-            url: 'public/geography/getCitySelect',
+            url: 'admin/public/geography/getCitySelect',
             data: {
                 countryId: $('#setting-country').val(),
                 zoneId: $(this).val()

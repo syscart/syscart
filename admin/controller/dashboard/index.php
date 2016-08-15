@@ -15,7 +15,7 @@ class adminControllerDashboardIndex extends adminController
 {
     public function index()
     {
-        global $client, $sysDoc, $sysConfig;
+        global $client, $sysDoc;
 
         $data['heading_title'] = $sysDoc->setTitle('{{t:adminDashboard.heading_title}}', $client);
 
@@ -23,7 +23,7 @@ class adminControllerDashboardIndex extends adminController
 
         $breadcrumbObject = loaderModule('common'.DS.'breadcrumb', $client);
 
-        $breadcrumb[] = ['text' => '{{t:adminBreadcrumb.home}}', 'url' => 'dashboard'];
+        $breadcrumb[] = ['text' => '{{t:adminBreadcrumb.home}}', 'url' => 'admin/dashboard'];
         $breadcrumb[] = ['text' => '{{t:adminBreadcrumb.dashboard}}'];
 
         $data['breadcrumb'] = $breadcrumbObject->render($breadcrumb);

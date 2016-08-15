@@ -36,8 +36,8 @@ class adminControllerSettingIndex extends adminController
         
         $breadcrumbObject = loaderModule('common'.DS.'breadcrumb', $client);
         
-        $breadcrumb[] = ['text' => '{{t:adminBreadcrumb.home}}', 'url' => 'dashboard'];
-        $breadcrumb[] = ['text' => '{{t:adminBreadcrumb.setting}}', 'url' => 'setting'];
+        $breadcrumb[] = ['text' => '{{t:adminBreadcrumb.home}}', 'url' => 'admin/dashboard'];
+        $breadcrumb[] = ['text' => '{{t:adminBreadcrumb.setting}}', 'url' => 'admin/setting'];
         $breadcrumb[] = ['text' => '{{t:adminBreadcrumb.setting_base}}'];
         
         $data['breadcrumb'] = $breadcrumbObject->render($breadcrumb);

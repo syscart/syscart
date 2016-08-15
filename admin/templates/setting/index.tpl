@@ -147,7 +147,7 @@
                                                 <select name="setting_country" class="form-control show-tick show-menu-arrow" id="setting-country" data-live-search="true">
                                                     <option value="-1">{{t:general.please_select}}</option>
                                                     <?php foreach( $countries as $country ) {
-                                                        $img = (isset($country['isoCode2'])) ? "<img src='".$site_url."/media/img/flags/".strtolower($country["isoCode2"]).".png' />" : "";
+                                                        $img = (isset($country['isoCode2'])) ? "<img src='media/img/flags/".strtolower($country["isoCode2"]).".png' />" : "";
                                                         $selectCountry = ($countryValue == $country['id']) ? ' selected' : null;
                                                     ?>
                                                         <option value="<?= $country['id']; ?>" data-content="<?= $img.' '.$country['faName']; ?>"<?= $selectCountry; ?>><?= $country['faName']; ?></option>

@@ -1,2 +1,2 @@
-<audio id="audio-alert" src="<?php echo $site_url; ?>templates/backend/audio/alert.mp3" preload="auto"></audio>
-<audio id="audio-fail" src="<?php echo $site_url; ?>templates/backend/audio/fail.mp3" preload="auto"></audio>
+<audio id="audio-alert" src="templates/backend/audio/alert.mp3" preload="auto"></audio>
+<audio id="audio-fail" src="templates/backend/audio/fail.mp3" preload="auto"></audio>
