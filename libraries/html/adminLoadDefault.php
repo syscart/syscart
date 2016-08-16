@@ -64,11 +64,15 @@ class htmlAdminLoadDefault
         global $sysDocStyle;
     
         $sysDocStyle->setFooters([
-            'href' => 'templates/backend/css/theme-default.css',
+            'href' => 'media/css/theme-default.css',
+        ]);
+
+        $sysDocStyle->setFooters([
+            'href' => 'media/css/jqueryui/1.12.0/ul-lightness/jquery-ui.css',
         ]);
     
         $sysDocStyle->setFooters([
-            'href' => 'templates/backend/css/style.css',
+            'href' => 'media/css/style.css',
         ]);
     }
 
@@ -82,12 +86,11 @@ class htmlAdminLoadDefault
         global $client, $sysDocScript;
         $sysDocScript->setFooter('media/js/jquery/script/core/3.1.0/jquery.js');
         $sysDocScript->setFooter('media/js/jquery/script/ui/1.12.0/jquery-ui.min.js');
-        $sysDocScript->setFooter('templates/backend/js/plugins/bootstrap/bootstrap.min.js');
-        $sysDocScript->setFooter('templates/backend/js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js');
-        $sysDocScript->setFooter('templates/backend/js/plugins.js');
-        $sysDocScript->setFooter('templates/backend/js/actions.js');
-        $sysDocScript->setFooter('templates/backend/js/plugins/cookie/jquery.cookie.js');
-        $sysDocScript->setFooter('templates/backend/js/route/'.$client.'.js');
+        $sysDocScript->setFooter('media/js/jquery/plugins/bootstrap/bootstrap.min.js');
+        $sysDocScript->setFooter('media/js/jquery/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js');
+        $sysDocScript->setFooter('media/js/plugins.js');
+        $sysDocScript->setFooter('media/js/actions.js');
+        $sysDocScript->setFooter('media/js/jquery/plugins/cookie/jquery.cookie.js');
+        $sysDocScript->setFooter('media/js/route/'.$client.'.js');
     }
 }
-?>

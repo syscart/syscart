@@ -22,7 +22,7 @@ class adminControllerSettingIndex extends adminController
         
         $sysDoc->addScript('ajaxForm', 'select', 'check', 'notification');
 
-        $sysDocScript->setFooter('templates/backend/js/route/setting/index.js');
+        $sysDocScript->setFooter('media/js/route/setting/index.js');
         
         $geographyObject = loaderModule('local'.DS.'geography', $client);
         
