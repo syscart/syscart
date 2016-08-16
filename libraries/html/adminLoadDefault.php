@@ -80,8 +80,8 @@ class htmlAdminLoadDefault
     public function scriptFooter()
     {
         global $client, $sysDocScript;
-        $sysDocScript->setFooter('media/js/jquery/script/core/2.1.4/jquery.js');
-        $sysDocScript->setFooter('media/js/jquery/script/ui/1.11.4/jquery-ui.min.js');
+        $sysDocScript->setFooter('media/js/jquery/script/core/3.1.0/jquery.js');
+        $sysDocScript->setFooter('media/js/jquery/script/ui/1.12.0/jquery-ui.min.js');
         $sysDocScript->setFooter('templates/backend/js/plugins/bootstrap/bootstrap.min.js');
         $sysDocScript->setFooter('templates/backend/js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js');
         $sysDocScript->setFooter('templates/backend/js/plugins.js');
