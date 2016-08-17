@@ -151,7 +151,7 @@ class htmlDocument
     public function addScript()
     {
         $script = func_get_args();
-        global $sysDocScript;
+        global $sysDocScript, $sysDocStyle;
     
         $this->setDefaultDocument();
         
@@ -182,6 +182,7 @@ class htmlDocument
                     $sysDocScript->setFooter('templates/backend/js/plugins/datatables/jquery.dataTables.min.js');
                     break;
                 case 'fullCalendar':
+                    $sysDocStyle->setFooters(['href' => 'media/css/fullcalendar/fullcalendar.css']);
                     $sysDocScript->setFooter('templates/backend/js/plugins/fullcalendar/fullcalendar.min.js');
                     $sysDocScript->setFooter('templates/backend/js/plugins/fullcalendar/lang/fa.js');
                     break;

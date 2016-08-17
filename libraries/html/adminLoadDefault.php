@@ -64,11 +64,19 @@ class htmlAdminLoadDefault
         global $sysDocStyle;
     
         $sysDocStyle->setFooters([
-            'href' => 'media/css/theme-default.css',
+            'href' => 'media/css/jqueryui/1.12.0/ul-lightness/jquery-ui.css',
         ]);
 
         $sysDocStyle->setFooters([
-            'href' => 'media/css/jqueryui/1.12.0/ul-lightness/jquery-ui.css',
+            'href' => 'media/css/bootstrap/bootstrap.min.css',
+        ]);
+
+        $sysDocStyle->setFooters([
+            'href' => 'media/css/mcustomscrollbar/jquery.mCustomScrollbar.css',
+        ]);
+
+        $sysDocStyle->setFooters([
+            'href' => 'media/css/theme-default.css',
         ]);
     
         $sysDocStyle->setFooters([
@@ -84,7 +92,7 @@ class htmlAdminLoadDefault
     public function scriptFooter()
     {
         global $client, $sysDocScript;
-        $sysDocScript->setFooter('media/js/jquery/script/core/3.1.0/jquery.js');
+        $sysDocScript->setFooter('media/js/jquery/script/core/2.1.1/jquery.js');
         $sysDocScript->setFooter('media/js/jquery/script/ui/1.12.0/jquery-ui.min.js');
         $sysDocScript->setFooter('media/js/jquery/plugins/bootstrap/bootstrap.min.js');
         $sysDocScript->setFooter('media/js/jquery/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js');
