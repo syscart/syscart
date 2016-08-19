@@ -81,3 +81,23 @@ function loaderTemplate($file = '', $data = array(), $client = 'site')
         }
     }
 }
+
+function loadConfig()
+{
+    global $sysConfig, $sysDbo;
+    
+    $sql = "SELECT * FROM #__setting";
+    $sql = platformQuery::refactor($sql);
+    
+    $query = $sysDbo->prepare($sql);
+    
+    $query->execute();
+    $resultConfig = $query->fetchAll(\PDO::FETCH_ASSOC);
+    
+    foreach( $resultConfig as  $data ) {
+        if($data['serialized'])
+            $sysConfig->set($data['key'], json_decode($data['value']));
+        else
+            $sysConfig->set($data['key'], $data['value']);
+    }
+}
