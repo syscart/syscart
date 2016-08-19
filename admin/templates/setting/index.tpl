@@ -6,7 +6,7 @@
         <div class="page-content-wrap">
             <div class="row">
                 <div class="col-md-12">
-                    <form action="setting/index/save" method="post" enctype="multipart/form-data" id="setting_form">
+                    <form action="admin/setting/index/save" method="post" enctype="multipart/form-data" id="setting_form">
                         <div class="panel panel-default tabs">
                             <ul class="nav nav-tabs nav-justified">
                                 <li class="active"><a href="#tab-public" data-toggle="tab">{{t:adminSetting.tab_title_public}}</a></li>
@@ -507,7 +507,23 @@
                                 </div>
                                 <div class="tab-pane" id="tab-image">image</div>
                                 <div class="tab-pane" id="tab-email">email</div>
-                                <div class="tab-pane" id="tab-server">server</div>
+                                <div class="tab-pane" id="tab-server">
+                                    <div class="col-md-12 col-xs-12 margin-ti30">
+                                        <legend><span class="fa fa-user"></span> {{t:adminSetting.header_label_tab_server_admin}}</legend>
+                                    </div>
+                                    <div class="col-md-12 col-xs-12 margin-ti15">
+                                        <div class="form-group">
+                                            <label class="col-md-3 col-xs-12 control-label text-end">{{t:adminSetting.label_cookie_time}}</label>
+                                            <div class="col-md-6 col-xs-12">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon"><span class="fa fa-shopping-cart"></span></span>
+                                                    <input type="number" name="setting_cookieTime" class="form-control" min="1" max="365" value="<?= $cookieTime; ?>" placeholder="{{t:adminSetting.placeholder_cookie_time}}">
+                                                </div>
+                                                <span class="help-block">{{t:adminSetting.message_cookie_time}}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </form>

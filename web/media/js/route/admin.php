@@ -5,6 +5,7 @@ define('syscart', true);
 require_once('../../../../include.php');
 
 global $sysConfig;
+$cookieTime = $sysConfig->get('setting_cookieTime');
 ?>
 $(document).ready(function(){
     var iconXNavigation = '';
@@ -15,10 +16,10 @@ $(document).ready(function(){
     $('#x-navigation').click(function(){
         if(iconXNavigation == 'fa-dedent') {
             iconXNavigation = 'fa-indent';
-            $.cookie('x-navigation', 'close', {expires: 365, path: '/'});
+            $.cookie('x-navigation', 'close', {expires: <?= $cookieTime ?>, path: '/'});
         } else {
             iconXNavigation = 'fa-dedent';
-            $.cookie('x-navigation', 'open', {expires: 365, path: '/'});
+            $.cookie('x-navigation', 'open', {expires: <?= $cookieTime ?>, path: '/'});
         }
     });
 });

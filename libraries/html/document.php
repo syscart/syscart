@@ -159,64 +159,64 @@ class htmlDocument
             switch($key)
             {
                 case 'ajaxForm':
-                    $sysDocScript->setFooter('templates/backend/js/plugins/form/jquery.form.js');
+                    $sysDocScript->setFooter('media/js/jquery/plugins/form/jquery.form.js');
                     break;
                 case 'select':
-                    $sysDocScript->setFooter('templates/backend/js/plugins/bootstrap/bootstrap-select.js');
+                    $sysDocScript->setFooter('media/js/jquery/plugins/bootstrap/bootstrap-select.js');
                     break;
                 case 'check':
-                    $sysDocScript->setFooter('templates/backend/js/plugins/icheck/icheck.min.js');
+                    $sysDocScript->setFooter('media/js/jquery/plugins/icheck/icheck.min.js');
                     break;
                 case 'notification':
-                    $sysDocScript->setFooter('templates/backend/js/plugins/noty/jquery.noty.js');
-                    $sysDocScript->setFooter('templates/backend/js/plugins/noty/layouts/topCenter.js');
-                    $sysDocScript->setFooter('templates/backend/js/plugins/noty/themes/default.js');
+                    $sysDocScript->setFooter('media/js/jquery/plugins/noty/jquery.noty.js');
+                    $sysDocScript->setFooter('media/js/jquery/plugins/noty/layouts/topCenter.js');
+                    $sysDocScript->setFooter('media/js/jquery/plugins/noty/themes/default.js');
                     break;
                 case 'knobChart':
-                    $sysDocScript->setFooter('templates/backend/js/plugins/knob/jquery.knob.min.js');
+                    $sysDocScript->setFooter('media/js/jquery/plugins/knob/jquery.knob.min.js');
                     break;
                 case 'maskedInput':
-                    $sysDocScript->setFooter('templates/backend/js/plugins/maskedinput/jquery.maskedinput.min.js');
+                    $sysDocScript->setFooter('media/js/jquery/plugins/maskedinput/jquery.maskedinput.min.js');
                     break;
                 case 'dataTables':
-                    $sysDocScript->setFooter('templates/backend/js/plugins/datatables/jquery.dataTables.min.js');
+                    $sysDocScript->setFooter('media/js/jquery/plugins/datatables/jquery.dataTables.min.js');
                     break;
                 case 'fullCalendar':
                     $sysDocStyle->setFooters(['href' => 'media/css/fullcalendar/fullcalendar.css']);
-                    $sysDocScript->setFooter('templates/backend/js/plugins/fullcalendar/fullcalendar.min.js');
-                    $sysDocScript->setFooter('templates/backend/js/plugins/fullcalendar/lang/fa.js');
+                    $sysDocScript->setFooter('media/js/jquery/plugins/fullcalendar/fullcalendar.min.js');
+                    $sysDocScript->setFooter('media/js/jquery/plugins/fullcalendar/lang/fa.js');
                     break;
                 case 'highlight':
-                    $sysDocScript->setFooter('templates/backend/js/plugins/highlight/jquery.highlight-4.js');
+                    $sysDocScript->setFooter('media/js/jquery/plugins/highlight/jquery.highlight-4.js');
                     break;
                 case 'morrisChart':
-                    $sysDocScript->setFooter('templates/backend/js/plugins/morris/morris.min.js');
-                    $sysDocScript->setFooter('templates/backend/js/plugins/morris/raphael-min.js');
+                    $sysDocScript->setFooter('media/js/jquery/plugins/morris/morris.min.js');
+                    $sysDocScript->setFooter('media/js/jquery/plugins/morris/raphael-min.js');
                     break;
                 case 'owl':
-                    $sysDocScript->setFooter('templates/backend/js/plugins/owl/owl.carousel.min.js');
+                    $sysDocScript->setFooter('media/js/jquery/plugins/owl/owl.carousel.min.js');
                     break;
                 case 'rangeSlider':
-                    $sysDocScript->setFooter('templates/backend/js/plugins/rangeslider/jQAllRangeSliders-min.js');
+                    $sysDocScript->setFooter('media/js/jquery/plugins/rangeslider/jQAllRangeSliders-min.js');
                     break;
                 case 'scrollToTop':
-                    $sysDocScript->setFooter('templates/backend/js/plugins/scrolltotop/scrolltopcontrol.js');
+                    $sysDocScript->setFooter('media/js/jquery/plugins/scrolltotop/scrolltopcontrol.js');
                     break;
                 case 'smartWizard':
-                    $sysDocScript->setFooter('templates/backend/js/plugins/smartwizard/jquery.smartWizard-2.0.min.js');
+                    $sysDocScript->setFooter('media/js/jquery/plugins/smartwizard/jquery.smartWizard-2.0.min.js');
                     break;
                 case 'sparkLineChart':
-                    $sysDocScript->setFooter('templates/backend/js/plugins/sparkline/jquery.sparkline.min.js');
+                    $sysDocScript->setFooter('media/js/jquery/plugins/sparkline/jquery.sparkline.min.js');
                     break;
                 case 'tagsInput':
-                    $sysDocScript->setFooter('templates/backend/js/plugins/tagsinput/jquery.tagsinput.min.js');
+                    $sysDocScript->setFooter('media/js/jquery/plugins/tagsinput/jquery.tagsinput.min.js');
                     break;
                 case 'fullScreen':
-                    $sysDocScript->setFooter('templates/backend/js/plugins/fullscreen/jquery.fullscreen-min.js');
+                    $sysDocScript->setFooter('media/js/jquery/plugins/fullscreen/jquery.fullscreen-min.js');
                     break;
                 case 'validationEngine':
-                    $sysDocScript->setFooter('templates/backend/js/plugins/validationengine/jquery.validationEngine.js');
-                    $sysDocScript->setFooter('templates/backend/js/plugins/validationengine/languages/jquery.validationEngine-fa.js');
+                    $sysDocScript->setFooter('media/js/jquery/plugins/validationengine/jquery.validationEngine.js');
+                    $sysDocScript->setFooter('media/js/jquery/plugins/validationengine/languages/jquery.validationEngine-fa.js');
                     break;
             }
         }
