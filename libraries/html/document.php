@@ -221,4 +221,11 @@ class htmlDocument
             }
         }
     }
+
+    public function getClassContainer()
+    {
+        $navigation = platformRequest::getVar('x-navigation', 'COOKIE');
+
+        return ($navigation == 'open') ? 'page-container page-mode-rtl' : 'page-container page-mode-rtl page-navigation-toggled page-container-wide';
+    }
 }

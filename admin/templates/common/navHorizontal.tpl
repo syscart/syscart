@@ -10,7 +10,7 @@
     </li>
     
     <li class="xn-icon-button pull-right">
-        <a href="#" class="x-navigation-minimize"><span class="fa fa-dedent"></span></a>
+        <a href="#" class="x-navigation-minimize" id="x-navigation"><span class="fa fa-dedent"></span></a>
     </li>
     
     <?php echo $messages; ?>

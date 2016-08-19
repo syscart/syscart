@@ -78,6 +78,8 @@ class adminControllerSettingIndex extends adminController
         $data['checkoutMail'] = $sysConfig->get('setting_checkoutMail');
         $data['stockDisplay'] = $sysConfig->get('setting_stockDisplay');
         $data['stockWarning'] = $sysConfig->get('setting_stockWarning');
+    
+        $data['classContainer'] = $sysDoc->getClassContainer();
         
         $data['sidebar'] = loaderController('common'.DS.'sidebar', 'index', $client);
         $data['nav'] = loaderController('common'.DS.'navHorizontal', 'index', $client);

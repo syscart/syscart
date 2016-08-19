@@ -99,6 +99,6 @@ class htmlAdminLoadDefault
         $sysDocScript->setFooter('media/js/plugins.js');
         $sysDocScript->setFooter('media/js/actions.js');
         $sysDocScript->setFooter('media/js/jquery/plugins/cookie/jquery.cookie.js');
-        $sysDocScript->setFooter('media/js/route/'.$client.'.js');
+        $sysDocScript->setFooter('media/js/route/'.$client.'.php');
     }
 }

@@ -28,6 +28,8 @@ class adminControllerDashboardIndex extends adminController
 
         $data['breadcrumb'] = $breadcrumbObject->render($breadcrumb);
         
+        $data['classContainer'] = $sysDoc->getClassContainer();
+        
         $data['sidebar'] = loaderController('common'.DS.'sidebar', 'index', $client);
         $data['nav'] = loaderController('common'.DS.'navHorizontal', 'index', $client);
         $data['logout'] = loaderController('common'.DS.'logout', 'index', $client);

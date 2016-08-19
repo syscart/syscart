@@ -1,7 +1,7 @@
-<div class="page-container page-mode-rtl">
-    <?php echo $sidebar; ?>
+<div class="<?= $classContainer; ?>">
+    <?=$sidebar; ?>
     <div class="page-content">
-        <?php echo $nav.$breadcrumb.$heading_title; ?>
+        <?= $nav.$breadcrumb.$heading_title; ?>
 
         <div class="page-content-wrap">
             <div class="row">
