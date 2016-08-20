@@ -35,8 +35,8 @@ class platformSession
 		if( !isset(self::$instance))
 			self::$instance = new self;
 
-		self::$instance->startSession();
 		self::$instance->removeExpire();
+		self::$instance->startSession();
 
 		$user = factory::getUser();
 
