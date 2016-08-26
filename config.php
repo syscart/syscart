@@ -22,7 +22,7 @@ class syscartConfig {
     // session
     public $lifetime = '15';
     // url
-    public $url = 'http://localhost/syscart/web/';
+    public $url = 'http://192.168.21.100/syscart/web/';
     // webservice
     public $webservice_key = '655';
     // meta
