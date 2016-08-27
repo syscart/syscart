@@ -2930,13 +2930,11 @@ blockquote.pull-right {
   float: left;
   width: 100%;
   position: relative;
-  margin-top: 40px;
 }
 .nav-tabs,
 .nav-tabs.nav-justified {
   border-bottom: 0px;
   margin-bottom: 0px;
-  margin-top: -40px;
   padding: 0px 5px;
 }
 .block-head .nav-tabs {

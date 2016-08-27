@@ -10,3 +10,20 @@
 .button-list button {margin-left: 5px;}
 
 .btn-sm span {margin-top: 5px !important;}
+
+@media only screen and (max-width: 768px) {
+    .text-end {text-align: right;}
+    .message-box .mb-container .mb-middle .mb-title {font-size: 16px;}
+    .message-box .mb-container .mb-middle {
+        width: 94%;
+        right: 3%;
+        position: relative;
+        color: #FFF;
+    }
+    .message-box .mb-container {top: 20%;}
+    .page-title h2 {font-size: 14px;}
+    .pad-rl-0 {
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+    }
+}

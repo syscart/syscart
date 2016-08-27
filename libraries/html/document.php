@@ -87,7 +87,7 @@ class htmlDocument
         $data = null;
         if($client == 'admin') {
             $data .= '<div class="page-title">';
-                $data .= '<h2 class="pull-right">
+                $data .= '<h2 class="pull-right text-title-nav">
                             <span class="'.$icon.'"></span> '.$title.'
                           </h2>';
                 if($button) {
@@ -96,7 +96,9 @@ class htmlDocument
                             $class = (isset($item['class'])) ? ' '.$item['class'] : null;
                             $type = (isset($item['type'])) ? ' type="'.$item['type'].'"' : null;
                             $form = (isset($item['form'])) ? ' form="'.$item['form'].'"' : null;
-                            $data .= '<button'.$type.' id="'.$item['id'].'" class="btn btn-'.$item['color'].$class.'"'.$form.'><i class="'.$item['icon'].'"></i> '.$item['text'].'</button>';
+                            $text = (isset($item['text'])) ? $item['text'] : null;
+                            $tips = (isset($item['tips'])) ? ' role="button" data-toggle="tooltip" data-placement="top" data-original-title="'.$item['tips'].'"' : null;
+                            $data .= '<button'.$type.' id="'.$item['id'].'" class="btn btn-'.$item['color'].$class.'"'.$form.$tips.'><i class="'.$item['icon'].'"></i> '.$text.'</button>';
                         }
                     $data .= '</h2>';
                 }

@@ -245,10 +245,10 @@
                                             <label class="col-md-3 col-xs-12 control-label text-end">{{t:adminSetting.label_show_product_count}}</label>
                                             <div class="col-md-6 col-xs-12">
                                                 <div class="form-group">
-                                                    <div class="col-md-6">
+                                                    <div class="col-md-6 col-xs-6">
                                                         <label class="check"><input type="radio" name="setting_showProductCount" class="iradio" value="1"<?= ($showProductCount == 1) ? ' checked="checked"' : null; ?>/> {{t:general.enable}}</label>
                                                     </div>
-                                                    <div class="col-md-6">
+                                                    <div class="col-md-6 col-xs-6">
                                                         <label class="check"><input type="radio" name="setting_showProductCount" class="iradio" value="0"<?= ($showProductCount == 0) ? ' checked="checked"' : null; ?>/> {{t:general.disable}}</label>
                                                     </div>
                                                 </div>
@@ -276,10 +276,10 @@
                                             <label class="col-md-3 col-xs-12 control-label text-end">{{t:adminSetting.label_comment_status}}</label>
                                             <div class="col-md-6 col-xs-12">
                                                 <div class="form-group">
-                                                    <div class="col-md-6">
+                                                    <div class="col-md-6 col-xs-6">
                                                         <label class="check"><input type="radio" name="setting_commentStatus" class="iradio" value="1"<?= ($commentStatus == 1) ? ' checked="checked"' : null; ?>/> {{t:general.enable}}</label>
                                                     </div>
-                                                    <div class="col-md-6">
+                                                    <div class="col-md-6 col-xs-6">
                                                         <label class="check"><input type="radio" name="setting_commentStatus" class="iradio" value="0"<?= ($commentStatus == 0) ? ' checked="checked"' : null; ?>/> {{t:general.disable}}</label>
                                                     </div>
                                                 </div>
@@ -292,10 +292,10 @@
                                             <label class="col-md-3 col-xs-12 control-label text-end">{{t:adminSetting.label_comment_guest}}</label>
                                             <div class="col-md-6 col-xs-12">
                                                 <div class="form-group">
-                                                    <div class="col-md-6">
+                                                    <div class="col-md-6 col-xs-6">
                                                         <label class="check"><input type="radio" name="setting_commentGuest" class="iradio" value="1"<?= ($commentGuest == 1) ? ' checked="checked"' : null; ?>/> {{t:general.enable}}</label>
                                                     </div>
-                                                    <div class="col-md-6">
+                                                    <div class="col-md-6 col-xs-6">
                                                         <label class="check"><input type="radio" name="setting_commentGuest" class="iradio" value="0"<?= ($commentGuest == 0) ? ' checked="checked"' : null; ?>/> {{t:general.disable}}</label>
                                                     </div>
                                                 </div>
@@ -308,10 +308,10 @@
                                             <label class="col-md-3 col-xs-12 control-label text-end">{{t:adminSetting.label_comment_mail}}</label>
                                             <div class="col-md-6 col-xs-12">
                                                 <div class="form-group">
-                                                    <div class="col-md-6">
+                                                    <div class="col-md-6 col-xs-6">
                                                         <label class="check"><input type="radio" name="setting_commentMail" class="iradio" value="1"<?= ($commentMail == 1) ? ' checked="checked"' : null; ?>/> {{t:general.enable}}</label>
                                                     </div>
-                                                    <div class="col-md-6">
+                                                    <div class="col-md-6 col-xs-6">
                                                         <label class="check"><input type="radio" name="setting_commentMail" class="iradio" value="0"<?= ($commentMail == 0) ? ' checked="checked"' : null; ?>/> {{t:general.disable}}</label>
                                                     </div>
                                                 </div>
@@ -342,10 +342,10 @@
                                             <label class="col-md-3 col-xs-12 control-label text-end">{{t:adminSetting.label_tax}}</label>
                                             <div class="col-md-6 col-xs-12">
                                                 <div class="form-group">
-                                                    <div class="col-md-6">
+                                                    <div class="col-md-6 col-xs-6">
                                                         <label class="check"><input type="radio" name="setting_tax" class="iradio" value="1"<?= ($tax == 1) ? ' checked="checked"' : null; ?>/> {{t:general.enable}}</label>
                                                     </div>
-                                                    <div class="col-md-6">
+                                                    <div class="col-md-6 col-xs-6">
                                                         <label class="check"><input type="radio" name="setting_tax" class="iradio" value="0"<?= ($tax == 0) ? ' checked="checked"' : null; ?>/> {{t:general.disable}}</label>
                                                     </div>
                                                 </div>
@@ -361,10 +361,10 @@
                                             <label class="col-md-3 col-xs-12 control-label text-end">{{t:adminSetting.label_customer_price}}</label>
                                             <div class="col-md-6 col-xs-12">
                                                 <div class="form-group">
-                                                    <div class="col-md-6">
+                                                    <div class="col-md-6 col-xs-6">
                                                         <label class="check"><input type="radio" name="setting_customerPrice" class="iradio" value="1"<?= ($customerPrice == 1) ? ' checked="checked"' : null; ?>/> {{t:general.enable}}</label>
                                                     </div>
-                                                    <div class="col-md-6">
+                                                    <div class="col-md-6 col-xs-6">
                                                         <label class="check"><input type="radio" name="setting_customerPrice" class="iradio" value="0"<?= ($customerPrice == 0) ? ' checked="checked"' : null; ?>/> {{t:general.disable}}</label>
                                                     </div>
                                                 </div>
@@ -389,10 +389,10 @@
                                             <label class="col-md-3 col-xs-12 control-label text-end">{{t:adminSetting.label_customer_new_mail}}</label>
                                             <div class="col-md-6 col-xs-12">
                                                 <div class="form-group">
-                                                    <div class="col-md-6">
+                                                    <div class="col-md-6 col-xs-6">
                                                         <label class="check"><input type="radio" name="setting_customerNewEmail" class="iradio" value="1"<?= ($customerNewEmail == 1) ? ' checked="checked"' : null; ?>/> {{t:general.enable}}</label>
                                                     </div>
-                                                    <div class="col-md-6">
+                                                    <div class="col-md-6 col-xs-6">
                                                         <label class="check"><input type="radio" name="setting_customerNewEmail" class="iradio" value="0"<?= ($customerNewEmail == 0) ? ' checked="checked"' : null; ?>/> {{t:general.disable}}</label>
                                                     </div>
                                                 </div>
@@ -420,10 +420,10 @@
                                             <label class="col-md-3 col-xs-12 control-label text-end">{{t:adminSetting.label_cart_weight}}</label>
                                             <div class="col-md-6 col-xs-12">
                                                 <div class="form-group">
-                                                    <div class="col-md-6">
+                                                    <div class="col-md-6 col-xs-6">
                                                         <label class="check"><input type="radio" name="setting_cartWeight" class="iradio" value="1"<?= ($cartWeight == 1) ? ' checked="checked"' : null; ?>/> {{t:general.enable}}</label>
                                                     </div>
-                                                    <div class="col-md-6">
+                                                    <div class="col-md-6 col-xs-6">
                                                         <label class="check"><input type="radio" name="setting_cartWeight" class="iradio" value="0"<?= ($cartWeight == 0) ? ' checked="checked"' : null; ?>/> {{t:general.disable}}</label>
                                                     </div>
                                                 </div>
@@ -436,10 +436,10 @@
                                             <label class="col-md-3 col-xs-12 control-label text-end">{{t:adminSetting.label_checkout_guest}}</label>
                                             <div class="col-md-6 col-xs-12">
                                                 <div class="form-group">
-                                                    <div class="col-md-6">
+                                                    <div class="col-md-6 col-xs-6">
                                                         <label class="check"><input type="radio" name="setting_checkoutGuest" class="iradio" value="1"<?= ($checkoutGuest == 1) ? ' checked="checked"' : null; ?>/> {{t:general.enable}}</label>
                                                     </div>
-                                                    <div class="col-md-6">
+                                                    <div class="col-md-6 col-xs-6">
                                                         <label class="check"><input type="radio" name="setting_checkoutGuest" class="iradio" value="0"<?= ($checkoutGuest == 0) ? ' checked="checked"' : null; ?>/> {{t:general.disable}}</label>
                                                     </div>
                                                 </div>
@@ -452,10 +452,10 @@
                                             <label class="col-md-3 col-xs-12 control-label text-end">{{t:adminSetting.label_checkout_mail}}</label>
                                             <div class="col-md-6 col-xs-12">
                                                 <div class="form-group">
-                                                    <div class="col-md-6">
+                                                    <div class="col-md-6 col-xs-6">
                                                         <label class="check"><input type="radio" name="setting_checkoutMail" class="iradio" value="1"<?= ($checkoutMail == 1) ? ' checked="checked"' : null; ?>/> {{t:general.enable}}</label>
                                                     </div>
-                                                    <div class="col-md-6">
+                                                    <div class="col-md-6 col-xs-6">
                                                         <label class="check"><input type="radio" name="setting_checkoutMail" class="iradio" value="0"<?= ($checkoutMail == 0) ? ' checked="checked"' : null; ?>/> {{t:general.disable}}</label>
                                                     </div>
                                                 </div>
@@ -471,10 +471,10 @@
                                             <label class="col-md-3 col-xs-12 control-label text-end">{{t:adminSetting.label_stock_display}}</label>
                                             <div class="col-md-6 col-xs-12">
                                                 <div class="form-group">
-                                                    <div class="col-md-6">
+                                                    <div class="col-md-6 col-xs-6">
                                                         <label class="check"><input type="radio" name="setting_stockDisplay" class="iradio" value="1"<?= ($stockDisplay == 1) ? ' checked="checked"' : null; ?>/> {{t:general.enable}}</label>
                                                     </div>
-                                                    <div class="col-md-6">
+                                                    <div class="col-md-6 col-xs-6">
                                                         <label class="check"><input type="radio" name="setting_stockDisplay" class="iradio" value="0"<?= ($stockDisplay == 0) ? ' checked="checked"' : null; ?>/> {{t:general.disable}}</label>
                                                     </div>
                                                 </div>
@@ -487,10 +487,10 @@
                                             <label class="col-md-3 col-xs-12 control-label text-end">{{t:adminSetting.label_stock_warning}}</label>
                                             <div class="col-md-6 col-xs-12">
                                                 <div class="form-group">
-                                                    <div class="col-md-6">
+                                                    <div class="col-md-6 col-xs-6">
                                                         <label class="check"><input type="radio" name="setting_stockWarning" class="iradio" value="1"<?= ($stockWarning == 1) ? ' checked="checked"' : null; ?>/> {{t:general.enable}}</label>
                                                     </div>
-                                                    <div class="col-md-6">
+                                                    <div class="col-md-6 col-xs-6">
                                                         <label class="check"><input type="radio" name="setting_stockWarning" class="iradio" value="0"<?= ($stockWarning == 0) ? ' checked="checked"' : null; ?>/> {{t:general.disable}}</label>
                                                     </div>
                                                 </div>

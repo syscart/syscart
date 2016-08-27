@@ -17,7 +17,7 @@ class adminControllerSettingIndex extends adminController
     {
         global $client, $sysDoc, $sysConfig, $sysDocScript;
         
-        $button[] = ['id' => 'btn-save', 'color' => 'success', 'icon' => 'fa fa-save', 'text' => '{{t:general.save}}'];
+        $button[] = ['id' => 'btn-save', 'color' => 'success', 'icon' => 'fa fa-save', 'tips' => '{{t:general.save}}'];
         $data['heading_title'] = $sysDoc->setTitle('{{t:adminSetting.heading_title}}', $client, 'fa fa-cogs', $button);
         
         $sysDoc->addScript('ajaxForm', 'select', 'check', 'notification');
