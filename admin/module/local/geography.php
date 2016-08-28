@@ -17,7 +17,7 @@ class adminModuleLocalGeography
     {
         global $sysDbo;
 
-        $sql = "SELECT * FROM #__country";
+        $sql = "SELECT * FROM #__location_country";
         $sql = platformQuery::refactor($sql);
 
         $query = $sysDbo->prepare($sql);
@@ -29,7 +29,7 @@ class adminModuleLocalGeography
     {
         global $sysDbo;
 
-        $sql = "SELECT * FROM #__country WHERE state='1'";
+        $sql = "SELECT * FROM #__location_country WHERE state='1'";
         $sql = platformQuery::refactor($sql);
 
         $query = $sysDbo->prepare($sql);
@@ -41,7 +41,7 @@ class adminModuleLocalGeography
     {
         global $sysDbo;
 
-        $sql = "SELECT * FROM #__country_zone WHERE countryId = :countryId AND state = '1'";
+        $sql = "SELECT * FROM #__location_zone WHERE countryId = :countryId AND state = '1'";
         $sql = platformQuery::refactor($sql);
 
         $query = $sysDbo->prepare($sql);
@@ -55,7 +55,7 @@ class adminModuleLocalGeography
     {
         global $sysDbo;
 
-        $sql = "SELECT * FROM #__zone_city WHERE countryId = :countryId AND zoneId = :zoneId AND state = '1'";
+        $sql = "SELECT * FROM #__location_city WHERE countryId = :countryId AND zoneId = :zoneId AND state = '1'";
         $sql = platformQuery::refactor($sql);
 
         $query = $sysDbo->prepare($sql);
@@ -70,7 +70,7 @@ class adminModuleLocalGeography
     {
         global $sysDbo;
 
-        $sql = "SELECT id, faName, enName FROM #__country_zone WHERE countryId = :countryId AND state='1'";
+        $sql = "SELECT id, faName, enName FROM #__location_zone WHERE countryId = :countryId AND state='1'";
         $sql = platformQuery::refactor($sql);
 
         $query = $sysDbo->prepare($sql);
@@ -82,7 +82,7 @@ class adminModuleLocalGeography
     {
         global $sysDbo;
 
-        $sql = "SELECT id, faName, enName FROM #__zone_city WHERE countryId = :countryId AND zoneId = :zoneId AND state='1'";
+        $sql = "SELECT id, faName, enName FROM #__location_city WHERE countryId = :countryId AND zoneId = :zoneId AND state='1'";
         $sql = platformQuery::refactor($sql);
 
         $query = $sysDbo->prepare($sql);
