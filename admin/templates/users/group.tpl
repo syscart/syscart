@@ -21,12 +21,12 @@
                                 </div>
                                 <div class="col-md-5 col-xs-12 pull-left pad-rl-0">
                                     <div class="col-md-9 col-xs-12">
-                                        <select class="form-control show-tick show-menu-arrow" id="setting-country" data-live-search="true">
+                                        <select class="form-control show-tick show-menu-arrow" id="select-sort-table" data-live-search="true">
                                             <option value="-1">{{t:general.sort_table_by}}</option>
                                         </select>
                                     </div>
                                     <div class="col-md-3 col-xs-12">
-                                        <select class="form-control show-menu-arrow" id="setting-country">
+                                        <select class="form-control show-menu-arrow" id="select-limit">
                                             <option value="">{{t:general.all}}</option>
                                             <option value="5">5</option>
                                             <option value="10">10</option>
@@ -40,30 +40,57 @@
                                     </div>
                                 </div>
                             </div>
-                            <table class="table table-striped table-hover" dir="rtl">
+                            <table class="table table-striped table-hover">
                                 <thead>
                                     <tr>
-                                        <th class="ver-mid-i text-center" style="width:1% !important;">فعال</th>
-                                        <th class="ver-mid-i text-right" style="width:74% !important;">عنوان</th>
-                                        <th class="ver-mid-i text-right" style="width:10% !important;">اعضا در گروه</th>
-                                        <th class="ver-mid-i" style="width:15% !important;"></th>
+                                        <th class="ver-mid-i text-center width-i1 width-m1">
+                                            <input type="checkbox" class="icheckbox" id="checkAll" value="1"/>
+                                        </th>
+                                        <th class="ver-mid-i text-right width-i64 width-m67">عنوان</th>
+                                        <th class="ver-mid-i text-center width-i10 width-m33">اعضا در گروه</th>
+                                        <th class="ver-mid-i text-center width-i1 width-m100" data-hide="phone,tablet">وضعیت</th>
+                                        <th class="ver-mid-i width-i15 width-m100" data-hide="phone,tablet"></th>
+                                        <th class="ver-mid-i width-i1 width-m100 text-center" data-toggle="true"></th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td class="ver-mid-i" style="text-align:center;">
+                                        <td class="ver-mid-i text-center">
+                                            <input type="checkbox" class="icheckbox checkId" name="check[]" value="1"/>
+                                        </td>
+                                        <td class="ver-mid-i text-right fontI14 fontM11">نام</td>
+                                        <td class="ver-mid-i text-center fontI14 fontM11">12</td>
+                                        <td class="ver-mid-i text-center">
                                             <label class="switch switch-small">
                                                 <input type="checkbox" checked="">
                                                 <span></span>
                                             </label>
                                         </td>
-                                        <td class="ver-mid-i" style="text-align:right;">نام</td>
-                                        <td class="ver-mid-i" style="text-align:right;">12</td>
                                         <td class="ver-mid-i iconTable">
                                             <a href="javascript:void(0)" role="button" class="btn btn-sm btn-success table-add-sub" data-toggle="tooltip" data-placement="top" data-original-title="{{t:general.add_sub}}"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a>
                                             <a href="javascript:void(0)" role="button" class="btn btn-sm btn-info table-edit" data-toggle="tooltip" data-placement="top" data-original-title="{{t:general.edit}}"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></a>
                                             <a href="javascript:void(0)" role="button" class="btn btn-sm btn-danger table-remove" data-toggle="tooltip" data-placement="top" data-original-title="{{t:general.remove}}"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
                                         </td>
+                                        <td class="ver-mid-i text-right"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="ver-mid-i text-center">
+                                            <input type="checkbox" class="icheckbox checkId" name="check[]" value="2"/>
+                                        </td>
+                                        <td class="ver-mid-i text-right fontI14 fontM11">نام</td>
+                                        <td class="ver-mid-i text-center fontI14 fontM11">12</td>
+                                        <td class="ver-mid-i text-center">
+                                            <label class="switch switch-small">
+                                                <input type="checkbox" checked="">
+                                                <span></span>
+                                            </label>
+                                        </td>
+                                        <td class="ver-mid-i iconTable">
+                                            <a href="javascript:void(0)" role="button" class="btn btn-sm btn-success table-add-sub" data-toggle="tooltip" data-placement="top" data-original-title="{{t:general.add_sub}}"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a>
+                                            <a href="javascript:void(0)" role="button" class="btn btn-sm btn-info table-edit" data-toggle="tooltip" data-placement="top" data-original-title="{{t:general.edit}}"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></a>
+                                            <a href="javascript:void(0)" role="button" class="btn btn-sm btn-danger table-remove" data-toggle="tooltip" data-placement="top" data-original-title="{{t:general.remove}}"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
+                                        </td>
+                                        <td class="ver-mid-i text-right"></td>
                                     </tr>
                                 </tbody>
                             </table>

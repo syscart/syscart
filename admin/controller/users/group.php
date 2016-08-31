@@ -22,9 +22,9 @@ class adminControllerUsersGroup extends adminController
 
         $data['heading_title'] = $sysDoc->setTitle('{{t:adminUserGroup.heading_title}}', $client, 'fa fa-group', $button);
 
-        $sysDoc->addScript('select');
+        $sysDoc->addScript('check', 'select', 'fooTable');
 
-        $sysDocScript->setFooter('media/js/route/setting/index.js');
+        $sysDocScript->setFooter('media/js/route/users/group.js');
 
         $breadcrumbObject = loaderModule('common'.DS.'breadcrumb', $client);
 
