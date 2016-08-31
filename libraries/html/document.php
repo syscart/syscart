@@ -96,9 +96,9 @@ class htmlDocument
                             $class = (isset($item['class'])) ? ' '.$item['class'] : null;
                             $type = (isset($item['type'])) ? ' type="'.$item['type'].'"' : null;
                             $form = (isset($item['form'])) ? ' form="'.$item['form'].'"' : null;
-                            $text = (isset($item['text'])) ? $item['text'] : null;
+                            $text = (isset($item['text'])) ? $item['text'] : $item['tips'];
                             $tips = (isset($item['tips'])) ? ' role="button" data-toggle="tooltip" data-placement="top" data-original-title="'.$item['tips'].'"' : null;
-                            $data .= '<button'.$type.' id="'.$item['id'].'" class="btn btn-'.$item['color'].$class.'"'.$form.$tips.'><i class="'.$item['icon'].'"></i> '.$text.'</button>';
+                            $data .= '<button'.$type.' id="'.$item['id'].'" class="btn btn-'.$item['color'].$class.'"'.$form.$tips.'><i class="'.$item['icon'].'"></i> <span class="btn-text">'.$text.'</span></button>';
                         }
                     $data .= '</h2>';
                 }
@@ -219,6 +219,10 @@ class htmlDocument
                 case 'validationEngine':
                     $sysDocScript->setFooter('media/js/jquery/plugins/validationengine/jquery.validationEngine.js');
                     $sysDocScript->setFooter('media/js/jquery/plugins/validationengine/languages/jquery.validationEngine-fa.js');
+                    break;
+                case 'fooTable':
+                    $sysDocStyle->setFooters(['href' => 'media/css/footable/footable.core.css']);
+                    $sysDocScript->setFooter('media/js/jquery/plugins/footable/footable.js');
                     break;
             }
         }
