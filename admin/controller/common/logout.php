@@ -19,5 +19,22 @@ class adminControllerCommonLogout extends adminController
         
         return loaderTemplate('common/logout', [], $client);
     }
+    
+    public function exitApp()
+    {
+        global $client, $sysDoc, $sysUser;
+
+        $data['success'] = false;
+
+        $status = $sysUser->logout($client);
+        if($status){
+            $data['success'] = true;
+            $data['data'] = '{{t:general.event_exit_success}}';
+        } else
+            $data['error'] = '{{t:general.event_exit_error}}';
+        
+        $sysDoc->setBody($data);
+
+        $sysDoc->renderJson();
+    }
 }
-?>
