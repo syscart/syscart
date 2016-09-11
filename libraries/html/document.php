@@ -224,6 +224,10 @@ class htmlDocument
                     $sysDocStyle->setFooters(['href' => 'media/css/footable/footable.core.css']);
                     $sysDocScript->setFooter('media/js/jquery/plugins/footable/footable.js');
                     break;
+                case 'visJs':
+                    $sysDocStyle->setFooters(['href' => 'media/css/vis/vis.css']);
+                    $sysDocScript->setFooter('media/js/jquery/plugins/vis/vis.js');
+                    break;
             }
         }
     }
