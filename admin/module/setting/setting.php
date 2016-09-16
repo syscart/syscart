@@ -27,7 +27,7 @@ class adminModuleSettingSetting
 
         foreach( $data as $key => $value ) {
             if (substr($key, 0, strlen($code)) == $code) {
-                $sql = "INSERT INTO #__setting (`code`, `key`, `value`, `serialized`) VALUES (:code, :key, :value, :serialized);";
+                $sql = "INSERT INTO #__setting (`code`, `key`, `value`, `compression`) VALUES (:code, :key, :value, :compression);";
                 $sql = platformQuery::refactor($sql);
 
                 $query = $sysDbo->prepare($sql);
@@ -36,10 +36,10 @@ class adminModuleSettingSetting
 
                 if (!is_array($value)) {
                     $query->bindParam(':value', $value, PDO::PARAM_STR);
-                    $query->bindParam(':serialized', $serialized = 0, PDO::PARAM_INT);
+                    $query->bindParam(':compression', $serialized = 0, PDO::PARAM_INT);
                 } else {
                     $query->bindParam(':value', json_encode($value, JSON_UNESCAPED_UNICODE), PDO::PARAM_STR);
-                    $query->bindParam(':serialized', $serialized = 1, PDO::PARAM_INT);
+                    $query->bindParam(':compression', $serialized = 1, PDO::PARAM_INT);
                 }
                 
                 $query->execute();

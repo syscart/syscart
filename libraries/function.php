@@ -95,7 +95,7 @@ function loadConfig()
     $resultConfig = $query->fetchAll(\PDO::FETCH_ASSOC);
     
     foreach( $resultConfig as  $data ) {
-        if($data['serialized'])
+        if($data['compression'])
             $sysConfig->set($data['key'], json_decode($data['value']));
         else
             $sysConfig->set($data['key'], $data['value']);
