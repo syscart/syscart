@@ -93,12 +93,23 @@ class htmlDocument
                 if($button) {
                     $data .= '<h2 class="pull-left button-list">';
                         foreach( $button as $item ) {
+                            $tag = (isset($item['tag'])) ? $item['tag'] : 'button';
                             $class = (isset($item['class'])) ? ' '.$item['class'] : null;
-                            $type = (isset($item['type'])) ? ' type="'.$item['type'].'"' : null;
-                            $form = (isset($item['form'])) ? ' form="'.$item['form'].'"' : null;
                             $text = (isset($item['text'])) ? $item['text'] : $item['tips'];
-                            $tips = (isset($item['tips'])) ? ' role="button" data-toggle="tooltip" data-placement="top" data-original-title="'.$item['tips'].'"' : null;
-                            $data .= '<button'.$type.' id="'.$item['id'].'" class="btn btn-'.$item['color'].$class.'"'.$form.$tips.'><i class="'.$item['icon'].'"></i> <span class="btn-text">'.$text.'</span></button>';
+                            switch($tag)
+                            {
+                                case 'button':
+                                    $form = (isset($item['form'])) ? ' form="'.$item['form'].'"' : null;
+                                    $type = (isset($item['type'])) ? ' type="'.$item['type'].'"' : null;
+                                    $tips = (isset($item['tips'])) ? ' role="button" data-toggle="tooltip" data-placement="top" data-original-title="'.$item['tips'].'"' : null;
+                                    $data .= '<button'.$type.' id="'.$item['id'].'" class="btn btn-'.$item['color'].$class.'"'.$form.$tips.'><i class="'.$item['icon'].'"></i> <span class="btn-text">'.$text.'</span></button>';
+                                    break;
+                                case 'a':
+                                    $href = (isset($item['href'])) ? $item['href'] : 'javascript:void(0)';
+                                    $tips = (isset($item['tips'])) ? ' role="a" data-toggle="tooltip" data-placement="top" data-original-title="'.$item['tips'].'"' : null;
+                                    $data .= '<a href="'.$href.'" id="'.$item['id'].'" class="btn btn-'.$item['color'].$class.'"'.$tips.'><i class="'.$item['icon'].'"></i> <span class="btn-text">'.$text.'</span></a>';
+                                    break;
+                            }
                         }
                     $data .= '</h2>';
                 }

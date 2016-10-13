@@ -97,8 +97,8 @@
                 <li class="xn-openable">
                     <a href="javascript:void(0);"><span class="glyphicon glyphicon-user"></span> {{t:adminMenu.setting_user}}</a>
                     <ul>
-                        <li><a href="admin/users"><span class="fa fa-user"></span> {{t:adminMenu.setting_users}}</a></li>
-                        <li><a href="admin/users/group"><span class="fa fa-group"></span> {{t:adminMenu.setting_userGroup}}</a></li>
+                        <li><a href="admin/users"><span class="fa fa-group"></span> {{t:adminMenu.setting_users}}</a></li>
+                        <li><a href="admin/users/access"><span class="fa fa-sitemap"></span> {{t:adminMenu.setting_userAccess}}</a></li>
                     </ul>
                 </li>
             </ul>

@@ -117,4 +117,20 @@ class platformUser
 		} else
 			return false;
 	}
+
+	public function checkAccess()
+	{
+		global $sysDbo;
+
+		$sql = "SELECT id, name, username, email, block
+				  FROM #__users
+				 WHERE id = (SELECT userId FROM #__session WHERE sessionId = :session)";
+		$sql = platformQuery::refactor($sql);
+
+		$query = $sysDbo->prepare($sql);
+		$query->bindParam(':session', session_id(), PDO::PARAM_STR);
+
+		$query->execute();
+		$result = $query->fetch(\PDO::FETCH_ASSOC);
+	}
 }

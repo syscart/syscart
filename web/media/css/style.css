@@ -7,7 +7,8 @@
 
 .text-end {text-align: end;}
 
-.button-list button {margin-left: 5px;}
+.button-list button, .button-list a {margin-left: 5px;}
+.button-list a i.fa {padding: 2px;}
 
 .btn-sm span {margin-top: 5px !important;}
 

@@ -5548,7 +5548,7 @@ div.datepicker thead tr:first-child th:hover {
   display: inline-block;
 }
 .bootstrap-select.btn-group.show-tick .dropdown-menu li a span.text {
-  margin-right: 34px;
+  margin-right: 0px;
 }
 .bootstrap-select.btn-group .dropdown-menu li small {
   padding-left: 0.5em;
