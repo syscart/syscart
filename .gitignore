@@ -1,1 +1,5 @@
 .idea
+/vqmod/vqcache
+/vqmod/checked.cache
+/vqmod/mods.cache
+/vqmod/logs

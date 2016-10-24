@@ -19,7 +19,7 @@ function loadFile($file, $language = false)
     if(file_exists($file)) {
         $_ = [];
 
-        require_once( $file );
+        require_once(VQMod::modCheck($file));
 
         if($language)
             return $_;

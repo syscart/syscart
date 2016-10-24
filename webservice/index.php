@@ -13,8 +13,8 @@ defined('syscart') or die('access denied...!');
 
 define('WEBSERVICE_DIR', dirname(__FILE__));
 
-require_once('function.php');
-require_once('controller.php');
+loadFile('function.php');
+loadFile('controller.php');
 
 global $client;
 $client = 'webservice';
@@ -23,7 +23,7 @@ $router = new utilityRouter();
 $component = $router->getRoute(1);
 if($component) {
     if(file_exists(dirname(__FILE__).'/controller/'.$component.'.php')) {
-        require_once( 'controller/'.$component.'.php' );
+        loadFile( 'controller/'.$component.'.php' );
         $class = 'webserviceController'.ucfirst( $component );
         $object = new $class();
         $function = $router->getRoute(2);

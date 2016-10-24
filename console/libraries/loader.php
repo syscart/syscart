@@ -21,5 +21,5 @@ spl_autoload_register(function($className) {
 
     $load = dirname(__FILE__).DS.$namespace.DS.$fileName.'.php';
     if(is_readable($load))
-        require_once($load);
+        loadFile($load);
 });

@@ -23,7 +23,12 @@ if (version_compare(PHP_VERSION, SYSTEMLI_MINIMUM_PHP, '<'))
     die('Your host needs to use PHP ' . SYSTEMLI_MINIMUM_PHP . ' or higher to run this version of Systemli!');
 }
 
-require_once('../include.php');
+// VirtualQMOD
+require_once('../vqmod/vqmod.php');
+VQMod::bootup();
+
+// VirtualQMOD Include
+require_once(VQMod::modCheck('../include.php'));
 
 global $client;
 $client = 'site';

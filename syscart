@@ -8,4 +8,4 @@ define('syscart', true);
 
 require(__DIR__ . '/include.php');
 
-require_once(PATH_PLATFORM.DS.'console'.DS.'index.php');
+loadFile(PATH_PLATFORM.DS.'console'.DS.'index.php');

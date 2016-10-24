@@ -70,7 +70,7 @@ function loaderTemplate($file = '', $data = array(), $client = 'site')
             extract($data);
             ob_start();
 
-            require_once($file);
+            require_once(VQMod::modCheck($file));
 
             $output = ob_get_contents();
             ob_end_clean();

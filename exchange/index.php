@@ -13,7 +13,7 @@ defined('syscart') or die('access denied...!');
 
 define('ADMIN_DIR', dirname(__FILE__));
 
-require_once('function.php');
+loadFile('function.php');
 
 global $client, $sysUser, $sysConfig, $sysSession, $sysUrl;
 $client = 'admin';
@@ -27,14 +27,14 @@ if($component) {
                 $header = new platformHeader();
                 $header->redirect($sysUrl.'admin/dashboard');
             } else {
-                require_once( 'controller/'.$component.'/index.php' );
+                loadFile( 'controller/'.$component.'/index.php' );
                 $class = 'adminController'.ucfirst( $component );
                 $object = new $class();
                 $object->actionIndex();
             }
         } else {
             if(isset($sysSession->requestDataLogin)) {
-                require_once( 'controller/login/index.php' );
+                loadFile( 'controller/login/index.php' );
 
                 $object = new adminControllerLogin();
                 $object->actionIndex();
