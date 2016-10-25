@@ -252,8 +252,6 @@ abstract class VQMod {
 
 		if(self::$_modFileList) {
 			self::_parseMods();
-		} else {
-			self::$log->write('VQMod::_getMods - NO XML FILES READABLE IN XML FOLDER');
 		}
 	}
 
