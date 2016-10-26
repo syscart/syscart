@@ -40,12 +40,12 @@ function loaderModule($map = '', $client = 'site')
         exit;
     }
     else {
-        $file = PATH_PLATFORM.DS.$client.DS.'module'.DS.$map.'.php';
+        $file = PATH_PLATFORM.DS.$client.DS.'model'.DS.$map.'.php';
 
         if (file_exists($file)) {
             loadFile($file);
             $data = implode('', array_map('ucfirst', explode(DS, $map)));
-            $class = $client . 'Module' . $data;
+            $class = $client . 'Model' . $data;
             $object = new $class();
             return $object;
         } else {
