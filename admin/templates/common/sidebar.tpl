@@ -29,21 +29,21 @@
         <li class="xn-openable">
             <a href="javascript:void(0);"><span class="fa fa-files-o"></span> <span class="xn-text">{{t:adminMenu.catalog}}</span></a>
             <ul>
-                <li><a href="javascript:void(0);"><span class="fa fa-image"></span> {{t:adminMenu.catalog_product}}</a></li>
-                <li><a href="javascript:void(0);"><span class="fa fa-user"></span> {{t:adminMenu.catalog_category}}</a></li>
-                <li><a href="javascript:void(0);"><span class="fa fa-users"></span> {{t:adminMenu.catalog_manufacturer}}</a></li>
+                <li><a href="admin/catalog/category"><span class="fa fa-user"></span> {{t:adminMenu.catalog_category}}</a></li>
+                <li><a href="admin/catalog/product"><span class="fa fa-image"></span> {{t:adminMenu.catalog_product}}</a></li>
+                <li><a href="admin/catalog/manufacturer"><span class="fa fa-users"></span> {{t:adminMenu.catalog_manufacturer}}</a></li>
                 <li class="xn-openable">
                     <a href="javascript:void(0);"><span class="fa fa-clock-o"></span> {{t:adminMenu.catalog_attribute}}</a>
                     <ul>
-                        <li><a href="javascript:void(0);"><span class="fa fa-align-center"></span> {{t:adminMenu.catalog_attribute}}</a></li>
-                        <li><a href="javascript:void(0);"><span class="fa fa-align-justify"></span> {{t:adminMenu.catalog_attribute_group}}</a></li>
+                        <li><a href="admin/catalog/attribute"><span class="fa fa-align-center"></span> {{t:adminMenu.catalog_attribute}}</a></li>
+                        <li><a href="admin/catalog/attribute_group"><span class="fa fa-align-justify"></span> {{t:adminMenu.catalog_attribute_group}}</a></li>
                     </ul>
                 </li>
                 <li class="xn-openable">
                     <a href="javascript:void(0);"><span class="fa fa-clock-o"></span> {{t:adminMenu.catalog_download}}</a>
                     <ul>
-                        <li><a href="javascript:void(0);"><span class="fa fa-align-center"></span> {{t:adminMenu.catalog_download_files}}</a></li>
-                        <li><a href="javascript:void(0);"><span class="fa fa-align-justify"></span> {{t:adminMenu.catalog_download_category}}</a></li>
+                        <li><a href="admin/catalog/download"><span class="fa fa-align-center"></span> {{t:adminMenu.catalog_download_files}}</a></li>
+                        <li><a href="admin/catalog/download_category"><span class="fa fa-align-justify"></span> {{t:adminMenu.catalog_download_category}}</a></li>
                     </ul>
                 </li>
             </ul>
@@ -54,8 +54,8 @@
                 <li class="xn-openable">
                     <a href="javascript:void(0);"><span class="fa fa-clock-o"></span> {{t:adminMenu.sale_customer}}</a>
                     <ul>
-                        <li><a href="javascript:void(0);"><span class="fa fa-align-center"></span> {{t:adminMenu.sale_customer}}</a></li>
-                        <li><a href="javascript:void(0);"><span class="fa fa-align-justify"></span> {{t:adminMenu.sale_customer_group}}</a></li>
+                        <li><a href="admin/sale/customer"><span class="fa fa-align-center"></span> {{t:adminMenu.sale_customer}}</a></li>
+                        <li><a href="admin/sale/customer_group"><span class="fa fa-align-justify"></span> {{t:adminMenu.sale_customer_group}}</a></li>
                     </ul>
                 </li>
                 <li class="xn-openable">

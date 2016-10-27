@@ -10,9 +10,14 @@
  */
 
 defined('syscart') or die('access denied...!');
+defined('DS') or define('DS', DIRECTORY_SEPARATOR);
 
 define('PATH_PLATFORM', dirname(__FILE__));
-define('DS', DIRECTORY_SEPARATOR);
+
+
+// VirtualQMOD
+require_once('vqmod'.DS.'vqmod.php');
+VQMod::bootup();
 
 function loadFile($file, $language = false)
 {

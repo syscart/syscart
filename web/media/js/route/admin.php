@@ -2,7 +2,9 @@
 header("Content-type: application/x-javascript");
 
 define('syscart', true);
-loadFile('../../../../include.php');
+define('DS', DIRECTORY_SEPARATOR);
+
+require_once('..'.DS.'..'.DS.'..'.DS.'..'.DS.'include.php');
 
 $textSending = 'در حال ارسال';
 

@@ -13,6 +13,7 @@ define('syscart', true);
 
 define('SITE_DIR', dirname(__FILE__));
 
+define('DS', DIRECTORY_SEPARATOR);
 /**
  * Define the application's minimum supported PHP version as a constant so it can be referenced within the application.
  */
@@ -23,12 +24,8 @@ if (version_compare(PHP_VERSION, SYSTEMLI_MINIMUM_PHP, '<'))
     die('Your host needs to use PHP ' . SYSTEMLI_MINIMUM_PHP . ' or higher to run this version of Systemli!');
 }
 
-// VirtualQMOD
-require_once('../vqmod/vqmod.php');
-VQMod::bootup();
-
 // VirtualQMOD Include
-require_once(VQMod::modCheck('../include.php'));
+require_once('../include.php');
 
 global $client;
 $client = 'site';
