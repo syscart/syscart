@@ -44,5 +44,9 @@
             </div>
         </div>
     </div>
-
 </div>
+<style>
+    .login-container.lightmode {
+        background: url("media/img/backgrounds/<?=$backgroundLoginPage?>.jpg") left top no-repeat;
+    }
+</style>

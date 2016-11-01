@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    $('#setting-country, #setting-zone, #setting-city, #setting-currency, #setting-lengthClassId, #setting-weightClassId').selectpicker();
+    $('#setting-country, #setting-zone, #setting-city, #setting-currency, #setting-lengthClassId, #setting-weightClassId, #setting-backgroundLoginPage').selectpicker();
     $(".icheckbox, .iradio").iCheck({checkboxClass: 'icheckbox_minimal-grey',radioClass: 'iradio_minimal-grey'});
 
     $('#setting-country').change(function(){

@@ -43,7 +43,7 @@ class adminControllerUsersLogin extends adminController
 
     public function form()
     {
-        global $client, $sysDoc;
+        global $client, $sysDoc, $sysConfig;
         
         $sysDoc->setTitle('{{t:adminLogin.heading_title}}');
         
@@ -52,8 +52,10 @@ class adminControllerUsersLogin extends adminController
         $sysDoc->setClassTag([
             'html' => 'body-full-height'
         ]);
+
+        $data['backgroundLoginPage'] = $sysConfig->get('setting_backgroundLoginPage');
         
-        $sysDoc->setBody(loaderTemplate('users/login', [], $client));
+        $sysDoc->setBody(loaderTemplate('users/login', $data, $client));
         
         $sysDoc->renderHtml();
     }

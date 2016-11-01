@@ -79,6 +79,8 @@ class adminControllerSettingIndex extends adminController
         $data['stockDisplay'] = $sysConfig->get('setting_stockDisplay');
         $data['stockWarning'] = $sysConfig->get('setting_stockWarning');
         
+        $data['backgroundLoginPage'] = $sysConfig->get('setting_backgroundLoginPage');
+        
         $data['cookieTime'] = ($sysConfig->get('setting_cookieTime')) ? $sysConfig->get('setting_cookieTime') : 1;
     
         $data['classContainer'] = $sysDoc->getClassContainer();

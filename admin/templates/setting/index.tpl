@@ -505,7 +505,32 @@
                                         <legend><span class="fa fa-reply"></span> {{t:adminSetting.header_label_tab_option_return}}</legend>
                                     </div>
                                 </div>
-                                <div class="tab-pane" id="tab-image">image</div>
+                                <div class="tab-pane" id="tab-image">
+                                    <div class="col-md-12 col-xs-12 margin-ti15">
+                                        <div class="form-group">
+                                            <label class="col-md-3 col-xs-12 control-label text-end">{{t:adminSetting.label_background_login_page}}</label>
+                                            <div class="col-md-6 col-xs-12">
+                                                <select name="setting_backgroundLoginPage" class="form-control show-tick show-menu-arrow" id="setting-backgroundLoginPage" data-live-search="true">
+                                                    <option value="-1">{{t:general.please_select}}</option>
+                                                    <option value="blue" data-content="<img src='media/img/backgrounds/blue-skin.jpg' width='30px' /> {{t:general.number_1}}"<?= ($backgroundLoginPage == 'blue') ? ' selected' : ''; ?>></option>
+                                                    <option value="chrome" data-content="<img src='media/img/backgrounds/chrome-skin.jpg' width='30px' /> {{t:general.number_2}}"<?= ($backgroundLoginPage == 'chrome') ? ' selected' : ''; ?>></option>
+                                                    <option value="city" data-content="<img src='media/img/backgrounds/city-skin.jpg' width='30px' /> {{t:general.number_3}}"<?= ($backgroundLoginPage == 'city') ? ' selected' : ''; ?>></option>
+                                                    <option value="greenish" data-content="<img src='media/img/backgrounds/greenish-skin.jpg' width='30px' /> {{t:general.number_4}}"<?= ($backgroundLoginPage == 'greenish') ? ' selected' : ''; ?>></option>
+                                                    <option value="kiwi" data-content="<img src='media/img/backgrounds/kiwi-skin.jpg' width='30px' /> {{t:general.number_5}}"<?= ($backgroundLoginPage == 'kiwi') ? ' selected' : ''; ?>></option>
+                                                    <option value="lights" data-content="<img src='media/img/backgrounds/lights-skin.jpg' width='30px' /> {{t:general.number_6}}"<?= ($backgroundLoginPage == 'lights') ? ' selected' : ''; ?>></option>
+                                                    <option value="nexus" data-content="<img src='media/img/backgrounds/nexus-skin.jpg' width='30px' /> {{t:general.number_7}}"<?= ($backgroundLoginPage == 'nexus') ? ' selected' : ''; ?>></option>
+                                                    <option value="night" data-content="<img src='media/img/backgrounds/night-skin.jpg' width='30px' /> {{t:general.number_8}}"<?= ($backgroundLoginPage == 'night') ? ' selected' : ''; ?>></option>
+                                                    <option value="ocean" data-content="<img src='media/img/backgrounds/ocean-skin.jpg' width='30px' /> {{t:general.number_9}}"<?= ($backgroundLoginPage == 'ocean') ? ' selected' : ''; ?>></option>
+                                                    <option value="sunny" data-content="<img src='media/img/backgrounds/sunny-skin.jpg' width='30px' /> {{t:general.number_10}}"<?= ($backgroundLoginPage == 'sunny') ? ' selected' : ''; ?>></option>
+                                                    <option value="sunset" data-content="<img src='media/img/backgrounds/sunset-skin.jpg' width='30px' /> {{t:general.number_11}}"<?= ($backgroundLoginPage == 'sunset') ? ' selected' : ''; ?>></option>
+                                                    <option value="violate" data-content="<img src='media/img/backgrounds/violate-skin.jpg' width='30px' /> {{t:general.number_12}}"<?= ($backgroundLoginPage == 'violate') ? ' selected' : ''; ?>></option>
+                                                    <option value="yellow" data-content="<img src='media/img/backgrounds/yellow-skin.jpg' width='30px' /> {{t:general.number_13}}"<?= ($backgroundLoginPage == 'yellow') ? ' selected' : ''; ?>></option>
+                                                </select>
+                                                <span class="help-block">{{t:adminSetting.message_background_login_page}}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                                 <div class="tab-pane" id="tab-email">email</div>
                                 <div class="tab-pane" id="tab-server">
                                     <div class="col-md-12 col-xs-12 margin-ti30">
