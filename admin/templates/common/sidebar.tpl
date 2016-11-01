@@ -29,8 +29,8 @@
         <li class="xn-openable">
             <a href="javascript:void(0);"><span class="fa fa-files-o"></span> <span class="xn-text">{{t:adminMenu.catalog}}</span></a>
             <ul>
-                <li><a href="admin/catalog/category"><span class="fa fa-user"></span> {{t:adminMenu.catalog_category}}</a></li>
-                <li><a href="admin/catalog/product"><span class="fa fa-image"></span> {{t:adminMenu.catalog_product}}</a></li>
+                <li><a href="admin/catalog/category"><span class="fa fa-folder-open"></span> {{t:adminMenu.catalog_category}}</a></li>
+                <li><a href="admin/catalog/product"><span class="fa fa-tags"></span> {{t:adminMenu.catalog_product}}</a></li>
                 <li><a href="admin/catalog/manufacturer"><span class="fa fa-users"></span> {{t:adminMenu.catalog_manufacturer}}</a></li>
                 <li class="xn-openable">
                     <a href="javascript:void(0);"><span class="fa fa-clock-o"></span> {{t:adminMenu.catalog_attribute}}</a>
