@@ -3956,9 +3956,6 @@ td.dataTables_empty {
 .login-container .login-box .login-footer a {
   color: #FFF;
 }
-.login-container.lightmode {
-  background: url("../img/backgrounds/wall_1.jpg") left top no-repeat;
-}
 .login-container.lightmode .login-box .login-body {
   background: rgba(255, 255, 255, 0.2);
 }
