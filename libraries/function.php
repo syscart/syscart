@@ -11,7 +11,7 @@
 
 defined('syscart') or die('access denied...!');
 
-function loaderController($file = '', $function = 'index', $client = 'site')
+function loaderController($file = '', $function = 'index', $client = 'site', $option = null)
 {
     if($file == '') {
         trigger_error( 'Error: not selection controller' );
@@ -25,7 +25,10 @@ function loaderController($file = '', $function = 'index', $client = 'site')
             $data = implode('', array_map('ucfirst', explode(DS, $file)));
             $class = $client . 'Controller' . $data;
             $object = new $class();
-            return $object->$function();
+            if(is_null($option))
+                return $object->$function();
+            else
+                return $object->$function($option);
         } else {
             trigger_error('Error: Could not load controller ' . $file . '!');
             exit;
@@ -50,6 +53,28 @@ function loaderModule($map = '', $client = 'site')
             return $object;
         } else {
             trigger_error('Error: Could not load model ' . $file . '!');
+            exit;
+        }
+    }
+}
+
+function loaderLibrary($map = '', $client = 'site')
+{
+    if($map == '') {
+        trigger_error( 'Error: not selection library' );
+        exit;
+    }
+    else {
+        $file = PATH_PLATFORM.DS.$client.DS.'libraries'.DS.$map.'.php';
+
+        if (file_exists($file)) {
+            loadFile($file);
+            $data = implode('', array_map('ucfirst', explode(DS, $map)));
+            $class = $client . 'Library' . $data;
+            $object = new $class();
+            return $object;
+        } else {
+            trigger_error('Error: Could not load library ' . $file . '!');
             exit;
         }
     }
