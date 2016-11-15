@@ -1,7 +1,6 @@
 $(document).ready(function(){
     $('#select-sort-table, #select-limit').selectpicker();
     $(".icheckbox, .iradio").iCheck({checkboxClass: 'icheckbox_minimal-grey',radioClass: 'iradio_minimal-grey'});
-    $('table').footable();
 
     $('#checkAll').on('ifToggled', function() {
         if($(this).prop('checked') == true) {
@@ -11,7 +10,8 @@ $(document).ready(function(){
         }
     });
 
-    $('.changeState').on('change', function(){
+    $('table').footable().on('change', '.changeState', function(event){
+        event.preventDefault();
         var state = ($(this).prop('checked') == true) ? 1 : 0;
         $.ajax({
             method: 'POST',
@@ -25,5 +25,14 @@ $(document).ready(function(){
             complete: function(){},
             success: function(data){}
         });
+    }).on('click', '.table-add-sub', function(event) {
+        event.preventDefault();
+        alert('add item');
+    }).on('click', '.table-edit', function(event) {
+        event.preventDefault();
+        alert('edit item');
+    }).on('click', '.table-remove', function(event) {
+        event.preventDefault();
+        alert('remove item');
     });
 });
