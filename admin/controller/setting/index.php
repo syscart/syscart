@@ -82,7 +82,8 @@ class adminControllerSettingIndex extends adminController
         $data['backgroundLoginPage'] = $sysConfig->get('setting_backgroundLoginPage');
         
         $data['cookieTime'] = ($sysConfig->get('setting_cookieTime')) ? $sysConfig->get('setting_cookieTime') : 1;
-    
+        $data['tableLimitAdmin'] = ($sysConfig->get('setting_tableLimitAdmin')) ? $sysConfig->get('setting_tableLimitAdmin') : 10;
+
         $data['classContainer'] = $sysDoc->getClassContainer();
         
         $data['sidebar'] = loaderController('common'.DS.'sidebar', 'index', $client);

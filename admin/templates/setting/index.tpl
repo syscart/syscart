@@ -548,6 +548,18 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="col-md-12 col-xs-12 margin-ti15">
+                                        <div class="form-group">
+                                            <label class="col-md-3 col-xs-12 control-label text-end">{{t:adminSetting.label_table_limit_admin}}</label>
+                                            <div class="col-md-6 col-xs-12">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon"><span class="fa fa-shopping-cart"></span></span>
+                                                    <input type="number" name="setting_tableLimitAdmin" class="form-control" min="1" value="<?= $tableLimitAdmin; ?>" placeholder="{{t:adminSetting.placeholder_table_limit_admin}}">
+                                                </div>
+                                                <span class="help-block">{{t:adminSetting.message_table_limit_admin}}</span>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
