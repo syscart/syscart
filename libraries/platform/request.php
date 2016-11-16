@@ -27,15 +27,19 @@ class platformRequest
         switch($request)
         {
             case 'POST':
+            case 'post':
                 $qi = (isset($_POST[$question])) ? $_POST[$question] : $default;
                 break;
             case 'GET':
+            case 'get':
                 $qi = (isset($_GET[$question])) ? $_GET[$question] : $default;
                 break;
             case 'SERVER':
+            case 'server':
                 $qi = (isset($_SERVER[$question])) ? $_SERVER[$question] : $default;
                 break;
             case 'COOKIE':
+            case 'cookie':
                 $qi = (isset($_COOKIE[$question])) ? $_COOKIE[$question] : $default;
                 break;
         }
@@ -51,5 +55,14 @@ class platformRequest
     {
         return $_GET;
     }
+    
+    public function server()
+    {
+        return $_SERVER;
+    }
+    
+    public function cookie()
+    {
+        return $_COOKIE;
+    }
 }
-?>
