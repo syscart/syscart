@@ -129,7 +129,9 @@
 
 .ver-mid-i {vertical-align: middle !important;}
 
-
+.iconTable>a {
+    margin-left: 5px !important;
+}
 
 @media only screen and (max-width: 768px) {
     .text-end {text-align: right;}
@@ -274,4 +276,9 @@
         overflow: hidden;
         top: -1000px;
     }
+}
+
+.noDataTable {
+    font-size: 13px !important;
+    padding-right: 40px !important;
 }
