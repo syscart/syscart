@@ -42,6 +42,11 @@ class platformRequest
             case 'cookie':
                 $qi = (isset($_COOKIE[$question])) ? $_COOKIE[$question] : $default;
                 break;
+            case 'HEADER':
+            case 'header':
+                $headers = getallheaders();
+                $qi = (isset($headers[$question])) ? $headers[$question] : $default;
+                break;
         }
         return strip_tags($qi);
     }
@@ -64,5 +69,10 @@ class platformRequest
     public function cookie()
     {
         return $_COOKIE;
+    }
+    
+    public function header()
+    {
+        return getallheaders();
     }
 }
