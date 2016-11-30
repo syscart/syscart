@@ -70,11 +70,11 @@
 			});
 
 			this.$buttons.find('button').css({
-				marginLeft: 5
+				marginRight: 5
 			});
 
 			this.$buttons.find('button:first').css({
-				marginLeft: 0
+                marginRight: 0
 			});
 
 			this.$bar.bind({
