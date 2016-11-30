@@ -239,6 +239,9 @@ class htmlDocument
                     $sysDocStyle->setFooters(['href' => 'media/css/vis/vis.css']);
                     $sysDocScript->setFooter('media/js/jquery/plugins/vis/vis.js');
                     break;
+                case 'pJax':
+                    $sysDocScript->setFooter('media/js/jquery/plugins/pjax/jquery.pjax.js');
+                    break;
             }
         }
     }

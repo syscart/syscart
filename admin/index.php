@@ -37,10 +37,17 @@ if($component) {
                     $object = new $class();
 
                     $callback = $router->getRoute(3);
+                    $callbackPJax = '_'.$router->getRoute(3);
                     if(is_null($callback))
-                        $object->index();
+                        if(!platformRequest::getVar('X-PJAX', 'HEADER'))
+                            $object->index();
+                        else
+                            $object->_index();
                     else
-                        $object->$callback();
+                        if(!platformRequest::getVar('X-PJAX', 'HEADER'))
+                            $object->$callback();
+                        else
+                            $object->$callbackPJax();
                 }
             } else {
                 if(isset($sysSession->requestDataLogin)) {
@@ -72,9 +79,15 @@ if($component) {
 
                     $callback = $router->getRoute(3);
                     if(is_null($callback))
-                        $object->index();
+                        if(!platformRequest::getVar('X-PJAX', 'HEADER'))
+                            $object->index();
+                        else
+                            $object->_index();
                     else
-                        $object->$callback();
+                        if(!platformRequest::getVar('X-PJAX', 'HEADER'))
+                            $object->$callback();
+                        else
+                            $object->$callbackPJax();
                 }
             } else {
                 if(isset($sysSession->requestDataLogin)) {
@@ -84,9 +97,15 @@ if($component) {
 
                     $callback = $router->getRoute(3);
                     if(is_null($callback))
-                        $object->index();
+                        if(!platformRequest::getVar('X-PJAX', 'HEADER'))
+                            $object->index();
+                        else
+                            $object->_index();
                     else
-                        $object->$callback();
+                        if(!platformRequest::getVar('X-PJAX', 'HEADER'))
+                            $object->$callback();
+                        else
+                            $object->$callbackPJax();
                 } else {
                     $sysSession->requestDataLogin = $_GET;
 
