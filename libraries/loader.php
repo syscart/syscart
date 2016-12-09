@@ -16,7 +16,7 @@ spl_autoload_register(function($className) {
     $arrPart = explode('\\', $parts[0]);
     $namespace = $arrPart[count($arrPart)-1];
     unset($parts[0]);
-    $fileName = implode('', $parts);
+    $fileName = lcfirst(implode('', $parts));
 
     $load = dirname(__FILE__).DS.$namespace.DS.$fileName.'.php';
 
