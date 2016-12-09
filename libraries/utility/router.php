@@ -44,7 +44,7 @@ class utilityRouter
      *
      * @return utilityRouter|null
      */
-    public function getRoute($number)
+    public static function getRoute($number)
     {
         if(isset(explode('/', platformRequest::getVar('route', 'GET'))[$number]))
             return explode('/', platformRequest::getVar('route', 'GET'))[$number];
