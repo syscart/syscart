@@ -1,15 +1,15 @@
 <?php
 /**
- * @package    system cart
+ * @package    shopiros
  *             libraries/platform/language.php
  *
  * @copyright  Copyright (C) 2016 - 2017 Open Source Matters, Inc. All rights reserved.
  * @license    GNU General Public License version 2 or later; see LICENSE.txt
- * @company    syscart
+ * @company    rayanehesab
  * @autor      majeed mohammadian
  */
 
-defined('syscart') or die('access denied...!');
+defined('shopiros') or die('access denied...!');
 
 class platformLanguage
 {
@@ -84,7 +84,7 @@ class platformLanguage
 			$sql = platformQuery::refactor($sql);
 
 			$query = $sysDbo->prepare($sql);
-			$query->bindParam(':langID', $sysLang->getID(), PDO::PARAM_INT);
+			$query->bindValue(':langID', $sysLang->getID(), PDO::PARAM_INT);
 
 			$query->execute();
 			$result = $query->fetchAll(\PDO::FETCH_ASSOC);

@@ -1,15 +1,15 @@
 <?php
 /**
- * @package    system cart
+ * @package    shopiros
  *             include.php
  *
  * @copyright  Copyright (C) 2016 - 2017 Open Source Matters, Inc. All rights reserved.
  * @license    GNU General Public License version 2 or later; see LICENSE.txt
- * @company    syscart
+ * @company    rayanehesab
  * @autor      majeed mohammadian
  */
 
-defined('syscart') or die('access denied...!');
+defined('shopiros') or die('access denied...!');
 defined('DS') or define('DS', DIRECTORY_SEPARATOR);
 
 define('PATH_PLATFORM', dirname(__FILE__));
@@ -41,4 +41,5 @@ loadFile(PATH_PLATFORM.DS.'libraries'.DS.'function.php');
 loadFile(PATH_PLATFORM.DS.'libraries'.DS.'loader.php');
 loadFile(PATH_PLATFORM.DS.'libraries'.DS.'factory.php');
 loadFile(PATH_PLATFORM.DS.'libraries'.DS.'global.php');
+
 loadConfig();

@@ -1,7 +1,7 @@
 <?php
 header("Content-type: application/x-javascript");
 
-define('syscart', true);
+define('shopiros', true);
 define('DS', DIRECTORY_SEPARATOR);
 
 require_once('..'.DS.'..'.DS.'..'.DS.'..'.DS.'include.php');

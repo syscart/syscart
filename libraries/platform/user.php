@@ -1,15 +1,15 @@
 <?php
 /**
- * @package    system cart
+ * @package    shopiros
  *             libraries/platform/user.php
  *
  * @copyright  Copyright (C) 2016 - 2017 Open Source Matters, Inc. All rights reserved.
  * @license    GNU General Public License version 2 or later; see LICENSE.txt
- * @company    syscart
+ * @company    rayanehesab
  * @autor      majeed mohammadian
  */
 
-defined('syscart') or die('access denied...!');
+defined('shopiros') or die('access denied...!');
 
 class platformUser
 {
@@ -73,7 +73,7 @@ class platformUser
 		$sql = platformQuery::refactor($sql);
 
 		$query = $sysDbo->prepare($sql);
-		$query->bindParam(':session', session_id(), PDO::PARAM_STR);
+		$query->bindValue(':session', session_id(), PDO::PARAM_STR);
 
 		$query->execute();
 		$result = $query->fetch(\PDO::FETCH_ASSOC);

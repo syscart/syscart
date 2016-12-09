@@ -1,15 +1,15 @@
 <?php
 /**
- * @package    system cart
+ * @package    shopiros
  *             libraries/migration
  *
  * @copyright  Copyright (C) 2016 - 2017 Open Source Matters, Inc. All rights reserved.
  * @license    GNU General Public License version 2 or later; see LICENSE.txt
- * @company    syscart
+ * @company    rayanehesab
  * @autor      majeed mohammadian
  */
 
-defined('syscart') or die('access denied...!');
+defined('shopiros') or die('access denied...!');
 
 class migration_0000001
 {

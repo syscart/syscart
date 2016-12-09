@@ -1,15 +1,15 @@
 <?php
 /**
- * @package    system cart
+ * @package    shopiros
  *             config.php
  *
  * @copyright  Copyright (C) 2016 - 2017 Open Source Matters, Inc. All rights reserved.
  * @license    GNU General Public License version 2 or later; see LICENSE.txt
- * @company    syscart
+ * @company    rayanehesab
  * @autor      majeed mohammadian
  */
 
-defined('syscart') or die('access denied...!');
+defined('shopiros') or die('access denied...!');
 
 class syscartConfig {
     // database
@@ -22,7 +22,7 @@ class syscartConfig {
     // session
     public $lifetime = '15';
     // url
-    public $url = 'http://192.168.21.100/syscart/web/';
+    public $url = 'http://localhost/syscart/web/';
     // webservice
     public $webservice_key = '655';
     // meta
