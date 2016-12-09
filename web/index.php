@@ -9,6 +9,9 @@
  * @autor      majeed mohammadian
  */
 
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 define('shopiros', true);
 
 define('SITE_DIR', dirname(__FILE__));
