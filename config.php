@@ -20,7 +20,7 @@ class syscartConfig {
     public $db_port = '3306';
     public $db_prefix = 'sl_';
     // session
-    public $lifetime = '15';
+    public $lifetime = '150';
     // url
     public $url = 'http://localhost/syscart/web/';
     // webservice
