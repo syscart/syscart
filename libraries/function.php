@@ -126,3 +126,13 @@ function loadConfig()
             $sysConfig->set($data['key'], $data['value']);
     }
 }
+
+$dir = PATH_PLATFORM.DS.'function';
+if(is_dir($dir)) {
+    $content = array_diff(scandir($dir), ['..', '.']);
+    foreach( $content as $file ) {
+        if(file_exists($dir.DS.$file)) {
+            loadFile($dir.DS.$file);
+        }
+    }
+}
