@@ -13,10 +13,12 @@ $cookieTime = $sysConfig->get('setting_cookieTime');
 ?>
 $(document).ready(function(){
     var iconXNavigation = '';
+
     if($('#x-navigation').children('span').hasClass('fa-dedent'))
         iconXNavigation = 'fa-dedent';
     else
         iconXNavigation = 'fa-indent';
+
     $('#x-navigation').click(function(){
         if(iconXNavigation == 'fa-dedent') {
             iconXNavigation = 'fa-indent';
@@ -45,5 +47,29 @@ $(document).ready(function(){
                     location.reload();
             }
         });
+    });
+
+    $(document).on('click', '.select-image', function(){
+        $('#modal-media').modal('show');
+        $('#modal-media .modal-body').html('<center><i class="fa fa-refresh fa-spin fa-5x" aria-hidden="true"></i></center>');
+        $.ajax({
+            method: 'POST',
+            url: 'admin/common/fileManager',
+            dataType: 'json',
+            beforeSend: function(){
+                //$(_this).text('<?= $textSending ?>').prop('disabled', true);
+            },
+            complete: function(){
+                //$(_this).text(text).prop('disabled', false);
+            },
+            success: function(data){
+                if(data.success)
+                    location.reload();
+            }
+        });
+    });
+
+    $(document).on('click', '.delete-image', function(){
+        alert('delete-image');
     });
 });

@@ -17,6 +17,15 @@ class adminControllerCommonFooter extends adminController
     {
         global $client;
         
-        return loaderTemplate('common/footer', [], $client);
+        $modalOption = [
+            'id' => 'modal-media',
+            'size' => 'large',
+            'title' => '{{t:general.title_modal_media}}',
+            'showFooter' => false
+        ];
+        
+        $data['modalMedia'] = loaderController('common'.DS.'modal', 'render', $client, $modalOption);
+        
+        return loaderTemplate('common/footer', $data, $client);
     }
 }
