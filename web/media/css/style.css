@@ -7,7 +7,7 @@
 
 .text-end {text-align: end;}
 
-.button-list button, .button-list a {margin-left: 5px;}
+.button-list button, .button-list a {padding-top:5px;padding-bottom: 5px;margin-left: 5px;}
 .button-list a i.fa {padding: 2px;}
 
 .btn-sm span {margin-top: 5px !important;}
@@ -126,6 +126,46 @@
 .fontI18 {font-size: 18px !important;}
 .fontI19 {font-size: 19px !important;}
 .fontI20 {font-size: 20px !important;}
+.fontI21 {font-size: 21px !important;}
+.fontI22 {font-size: 22px !important;}
+.fontI23 {font-size: 23px !important;}
+.fontI24 {font-size: 24px !important;}
+.fontI25 {font-size: 25px !important;}
+.fontI26 {font-size: 26px !important;}
+.fontI27 {font-size: 27px !important;}
+.fontI28 {font-size: 28px !important;}
+.fontI29 {font-size: 29px !important;}
+.fontI30 {font-size: 30px !important;}
+.fontI31 {font-size: 31px !important;}
+.fontI32 {font-size: 32px !important;}
+.fontI33 {font-size: 33px !important;}
+.fontI34 {font-size: 34px !important;}
+.fontI35 {font-size: 35px !important;}
+.fontI36 {font-size: 36px !important;}
+.fontI37 {font-size: 37px !important;}
+.fontI38 {font-size: 38px !important;}
+.fontI39 {font-size: 39px !important;}
+.fontI40 {font-size: 40px !important;}
+.fontI41 {font-size: 41px !important;}
+.fontI42 {font-size: 42px !important;}
+.fontI43 {font-size: 43px !important;}
+.fontI44 {font-size: 44px !important;}
+.fontI45 {font-size: 45px !important;}
+.fontI46 {font-size: 46px !important;}
+.fontI47 {font-size: 47px !important;}
+.fontI48 {font-size: 48px !important;}
+.fontI49 {font-size: 49px !important;}
+.fontI50 {font-size: 50px !important;}
+.fontI55 {font-size: 55px !important;}
+.fontI60 {font-size: 60px !important;}
+.fontI65 {font-size: 65px !important;}
+.fontI70 {font-size: 70px !important;}
+.fontI75 {font-size: 75px !important;}
+.fontI80 {font-size: 80px !important;}
+.fontI85 {font-size: 85px !important;}
+.fontI90 {font-size: 90px !important;}
+.fontI95 {font-size: 95px !important;}
+.fontI100 {font-size: 100px !important;}
 
 .ver-mid-i {vertical-align: middle !important;}
 
