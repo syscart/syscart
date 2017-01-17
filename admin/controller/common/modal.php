@@ -48,7 +48,7 @@ class adminControllerCommonModal extends adminController
                 $data['buttonFooter'][$item]['close'] = (isset($button['close'])) ? ' data-dismiss="modal"' : '';
             }
         else
-            $data['buttonFooter'] = '';
+            $data['buttonFooter'] = [];
         
         $data['showHeader'] = (isset($option['showHeader'])) ? $option['showHeader'] : true;
         $data['showFooter'] = (isset($option['showFooter'])) ? $option['showFooter'] : true;
