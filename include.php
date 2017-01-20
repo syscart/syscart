@@ -14,7 +14,6 @@ defined('DS') or define('DS', DIRECTORY_SEPARATOR);
 
 define('PATH_PLATFORM', dirname(__FILE__));
 
-
 // VirtualQMOD
 require_once('vqmod'.DS.'vqmod.php');
 VQMod::bootup();

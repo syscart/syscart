@@ -15,8 +15,9 @@ ini_set('display_errors', 1);
 define('shopiros', true);
 
 define('SITE_DIR', dirname(__FILE__));
-
 define('DS', DIRECTORY_SEPARATOR);
+
+define('UPLOAD_DIR', SITE_DIR.DS.'media'.DS.'upload');
 /**
  * Define the application's minimum supported PHP version as a constant so it can be referenced within the application.
  */
