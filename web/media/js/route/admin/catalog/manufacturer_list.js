@@ -1,3 +1,15 @@
+function checkBoxData()
+{
+    $(".icheckbox, .iradio").iCheck({checkboxClass: 'icheckbox_minimal-grey',radioClass: 'iradio_minimal-grey'});
+
+    $('#checkAll').on('ifToggled', function() {
+        if($(this).prop('checked') == true) {
+            $('.checkId').iCheck('check');
+        } else {
+            $('.checkId').iCheck('uncheck');
+        }
+    });
+}
 function filterTableManufacturer(url)
 {
     url = url || 'admin/catalog/manufacturer';
@@ -33,8 +45,8 @@ function filterTableManufacturer(url)
                             '<td class="ver-mid-i text-center">' +
                                 '<input type="checkbox" class="icheckbox checkId" name="check[]" value="'+id+'"/>' +
                             '</td>' +
-                            '<td class="ver-mid-i text-right fontI14 fontM11">'+name+'</td>' +
-                            '<td class="ver-mid-i text-right fontI14 fontM11">'+countryName+'</td>' +
+                            '<td class="ver-mid-i text-right fontI14 font-xs11">'+name+'</td>' +
+                            '<td class="ver-mid-i text-right fontI14 hidden-xs">'+countryName+'</td>' +
                             '<td class="ver-mid-i iconTable text-left">' +
                                 '<a href="admin/catalog/manufacturer/edit/'+id+'" role="button" class="btn btn-sm btn-info table-edit" data-toggle="tooltip" data-placement="top" data-original-title="'+object.language.edit+'">' +
                                     '<span class="glyphicon glyphicon-edit" aria-hidden="true"></span>' +
@@ -43,37 +55,21 @@ function filterTableManufacturer(url)
                                     '<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>' +
                                 '</a>' +
                             '</td>' +
-                            '<td class="ver-mid-i text-right"></td>' +
                         '</tr>';
             });
         } else
-            theme += '<tr><td colspan="5" class="noDataTable">داده ای یافت نشد</td></tr>';
+            theme += '<tr><td colspan="4" class="noDataTable">'+object.error+'</td></tr>';
         $('#table-data>tbody').html(theme);
-        $(".icheckbox, .iradio").iCheck({checkboxClass: 'icheckbox_minimal-grey',radioClass: 'iradio_minimal-grey'});
-        $('#checkAll').on('ifToggled', function() {
-            if($(this).prop('checked') == true) {
-                $('.checkId').iCheck('check');
-            } else {
-                $('.checkId').iCheck('uncheck');
-            }
-        });
+        checkBoxData();
     });
 }
 
 $(document).ready(function(){
     $('#filter-sort, #filter-order, #filter-limit').selectpicker();
-    $(".icheckbox, .iradio").iCheck({checkboxClass: 'icheckbox_minimal-grey',radioClass: 'iradio_minimal-grey'});
-
-    $('#checkAll').on('ifToggled', function() {
-        if($(this).prop('checked') == true) {
-            $('.checkId').iCheck('check');
-        } else {
-            $('.checkId').iCheck('uncheck');
-        }
-    });
+    checkBoxData();
 
     var checkNotification = true;
-    $('table').footable().on('click', '.table-remove', function(event) {
+    $(document).on('click', '.table-remove', function(event) {
         event.preventDefault();
         var id = $(this).attr('data-id');
         if(checkNotification) {
@@ -101,32 +97,20 @@ $(document).ready(function(){
                 ]
             });
         }
-    });
-
-    $('#filter-name').keydown(function(event){
+    }).on('keydown', '#filter-name', function(event){
         var keyCode = (event.keyCode ? event.keyCode : event.which);
         if (keyCode == 13) {
             filterTableManufacturer();
         }
-    });
-
-    $('#btn-filter-search').click(function(){
+    }).on('click', '#btn-filter-search', function(){
         filterTableManufacturer();
-    });
-
-    $('#filter-sort').change(function(){
+    }).on('change', '#filter-sort', function(){
         filterTableManufacturer();
-    });
-
-    $('#filter-order').change(function(){
+    }).on('change', '#filter-order', function(){
         filterTableManufacturer();
-    });
-
-    $('#filter-limit').change(function(){
+    }).on('change', '#filter-limit', function(){
         filterTableManufacturer();
-    });
-
-    $('#btn-filter-clear').click(function(){
+    }).on('click', '#btn-filter-clear', function(){
         $('#filter-name').val('');
         $('#filter-sort').val('-1');
         $('#filter-order').val('-1');

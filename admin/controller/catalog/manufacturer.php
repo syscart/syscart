@@ -22,7 +22,7 @@ class adminControllerCatalogManufacturer extends adminController
 
         $data['heading_title'] = $sysDoc->setTitle('{{t:adminCatalogManufacturer.heading_title}}', $client, 'fa fa-industry fa-lg', $button);
 
-        $sysDoc->addScript('check', 'select', 'fooTable', 'notification', 'pJax');
+        $sysDoc->addScript('check', 'select', 'notification', 'pJax');
 
         $sysDocScript->setFooter('media/js/route/admin/catalog/manufacturer_list.js');
 
@@ -52,8 +52,10 @@ class adminControllerCatalogManufacturer extends adminController
 
         $data['success'] = true;
         $data = array_merge($data, $this->getList());
-        if(isset($data['empty']))
+        if(isset($data['empty'])) {
             $data['success'] = false;
+            $data['error'] = '{{t:general.no_data}}';
+        }
         $data['language']['edit'] = '{{t:general.edit}}';
         $data['language']['remove'] = '{{t:general.remove}}';
 

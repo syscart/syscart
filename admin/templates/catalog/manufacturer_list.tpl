@@ -18,8 +18,8 @@
                                         </span>
                                     </div>
                                 </div>
-                                <div class="col-md-5 col-xs-12 pull-left pad-rl-0">
-                                    <div class="col-md-6 col-xs-12">
+                                <div class="col-md-5 col-xs-12 pull-left">
+                                    <div class="col-md-6 col-xs-12 pad-rl-0">
                                         <select class="form-control show-tick show-menu-arrow" id="filter-sort">
                                             <option value="-1">{{t:general.sort_table_by}}</option>
                                             <option value="name"<?=($sort=='name') ? ' selected' : '';?>>{{t:adminCatalogManufacturer.sort_name}}</option>
@@ -27,14 +27,14 @@
                                             <option value="ordering"<?=($sort=='ordering') ? ' selected' : '';?>>{{t:adminCatalogManufacturer.sort_ordering}}</option>
                                         </select>
                                     </div>
-                                    <div class="col-md-3 col-xs-12">
+                                    <div class="col-md-3 col-xs-12 pad-rl-0">
                                         <select class="form-control show-tick show-menu-arrow" id="filter-order">
                                             <option value="-1">{{t:general.order_table_by}}</option>
                                             <option value="ASC"<?=($order=='ASC') ? ' selected' : '';?>>{{t:general.order_table_asc}}</option>
                                             <option value="DESC"<?=($order=='DESC') ? ' selected' : '';?>>{{t:general.order_table_desc}}</option>
                                         </select>
                                     </div>
-                                    <div class="col-md-3 col-xs-12">
+                                    <div class="col-md-3 col-xs-12 pad-rl-0">
                                         <select class="form-control show-tick show-menu-arrow" id="filter-limit">
                                             <option value="-1">{{t:general.limit_table}}</option>
                                             <option value="10"<?=($limit==10) ? ' selected' : '';?>>10</option>
@@ -52,23 +52,22 @@
                                         <th class="ver-mid-i text-center width-i1 width-m1">
                                             <input type="checkbox" class="icheckbox" id="checkAll" value="1"/>
                                         </th>
-                                        <th class="ver-mid-i text-right width-i50 width-m65">{{t:adminCatalogManufacturer.column_name}}</th>
-                                        <th class="ver-mid-i text-right width-i25 width-m100" data-hide="phone,tablet">{{t:adminCatalogManufacturer.column_country}}</th>
-                                        <th class="ver-mid-i text-left width-i25 width-m35"></th>
-                                        <th class="ver-mid-i width-i1 width-m100 text-center" data-toggle="true"></th>
+                                        <th class="ver-mid-i text-right width-i50 width-vs65">{{t:adminCatalogManufacturer.column_name}}</th>
+                                        <th class="ver-mid-i text-right width-i25 hidden-xs">{{t:adminCatalogManufacturer.column_country}}</th>
+                                        <th class="ver-mid-i text-left width-i25 width-vs35"></th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <?php if(isset($empty)) { ?>
-                                        <tr><td colspan="5" class="noDataTable">داده ای یافت نشد</td></tr>
+                                        <tr><td colspan="4" class="noDataTable">{{t:general.no_data}}</td></tr>
                                     <?php } else {
                                         foreach( $dataTable as $key => $item ) { ?>
                                             <tr class="row-<?= $item['id'] ?>">
                                                 <td class="ver-mid-i text-center">
                                                     <input type="checkbox" class="icheckbox checkId" name="check[]" value="<?= $item['id'] ?>"/>
                                                 </td>
-                                                <td class="ver-mid-i text-right fontI14 fontM11"><?= $item['name'] ?></td>
-                                                <td class="ver-mid-i text-right fontI14 fontM11"><?= $item['countryName'] ?></td>
+                                                <td class="ver-mid-i text-right fontI14 font-xs11"><?= $item['name'] ?></td>
+                                                <td class="ver-mid-i text-right fontI14 hidden-xs"><?= $item['countryName'] ?></td>
 
                                                 <td class="ver-mid-i iconTable text-left">
                                                     <a href="admin/catalog/manufacturer/edit/<?= $item['id'] ?>" role="button" class="btn btn-sm btn-info table-edit" data-toggle="tooltip" data-placement="top" data-original-title="{{t:general.edit}}">
@@ -78,7 +77,6 @@
                                                         <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
                                                     </a>
                                                 </td>
-                                                <td class="ver-mid-i text-right"></td>
                                             </tr>
                                             <?php
                                         }
