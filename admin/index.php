@@ -45,7 +45,10 @@ if($component) {
                             $object->_index();
                     else
                         if(!platformRequest::getVar('X-PJAX', 'HEADER'))
-                            $object->$callback();
+                            if($callback == '')
+                                $object->index();
+                            else
+                                $object->$callback();
                         else
                             $object->$callbackPJax();
                 }
@@ -85,7 +88,10 @@ if($component) {
                             $object->_index();
                     else
                         if(!platformRequest::getVar('X-PJAX', 'HEADER'))
-                            $object->$callback();
+                            if($callback == '')
+                                $object->index();
+                            else
+                                $object->$callback();
                         else
                             $object->$callbackPJax();
                 }
@@ -103,7 +109,10 @@ if($component) {
                             $object->_index();
                     else
                         if(!platformRequest::getVar('X-PJAX', 'HEADER'))
-                            $object->$callback();
+                            if($callback == '')
+                                $object->index();
+                            else
+                                $object->$callback();
                         else
                             $object->$callbackPJax();
                 } else {
