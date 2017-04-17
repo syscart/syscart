@@ -11,7 +11,7 @@
 
 defined('shopiros') or die('access denied...!');
 
-abstract class adminController
+abstract class adminController extends platformController
 {
     abstract function index();
 }

@@ -11,7 +11,7 @@
 
 defined('shopiros') or die('access denied...!');
 
-abstract class webserviceController
+abstract class webserviceController extends platformController
 {
     abstract function actionIndex();
 

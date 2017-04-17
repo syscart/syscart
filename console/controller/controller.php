@@ -11,7 +11,7 @@
 
 defined('shopiros') or die('access denied...!');
 
-abstract class consoleController
+abstract class consoleController extends platformController
 {
     abstract function index();
 }
