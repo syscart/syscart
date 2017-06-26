@@ -14,6 +14,7 @@
     <div class="modal-body"><?=$body?></div>
             <?php if($showFooter) { ?>
             <div class="modal-footer">
+                <?=$footer?>
                 <?php foreach( $buttonFooter as $item => $button ) { ?>
                 <button type="button" class="btn<?=$button['size']?><?=$button['color']?>"<?=$button['close']?>><?=$button['title']?></button>
                 <?php } ?>

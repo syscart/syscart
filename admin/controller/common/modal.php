@@ -55,6 +55,7 @@ class adminControllerCommonModal extends adminController
         $data['titleId'] = 'modal-title-'.rand(100,999);
         $data['title'] = (isset($option['title'])) ? $option['title'] : '';
         $data['body'] = (isset($option['body'])) ? $option['body'] : '';
+        $data['footer'] = (isset($option['footer'])) ? $option['footer'] : '';
         
         return loaderTemplate('common/modal', $data, $client);
     }

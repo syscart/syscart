@@ -51,7 +51,7 @@ $(document).ready(function(){
 
     $(document).on('click', '.select-image', function(){
         $('#modal-media').modal('show');
-        $('#modal-media .modal-body').html('<center><i class="fa fa-refresh fa-spin fa-5x" aria-hidden="true"></i></center>');
+        //$('#modal-media .modal-body').html('<center><i class="fa fa-refresh fa-spin fa-5x" aria-hidden="true"></i></center>');
         $.ajax({
             method: 'POST',
             url: 'admin/common/fileManager',
@@ -63,8 +63,9 @@ $(document).ready(function(){
                 //$(_this).text(text).prop('disabled', false);
             },
             success: function(data){
-                if(data.success)
-                    location.reload();
+                if(data.success) {
+                } else {
+                }
             }
         });
     });
