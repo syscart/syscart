@@ -1,5 +1,5 @@
 -----------------------------------------
-vQmod™ - Virtual File Modification System
+vQmod - Virtual File Modification System
 -----------------------------------------
 
 ABOUT:

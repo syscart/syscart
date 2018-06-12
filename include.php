@@ -1,15 +1,12 @@
 <?php
 /**
- * @package    shopiros
+ * @package    syscart
  *             include.php
  *
- * @copyright  Copyright (C) 2016 - 2017 Open Source Matters, Inc. All rights reserved.
- * @license    GNU General Public License version 2 or later; see LICENSE.txt
- * @company    rayanehesab
  * @autor      majeed mohammadian
  */
 
-defined('shopiros') or die('access denied...!');
+defined('syscart') or die('access denied...!');
 defined('DS') or define('DS', DIRECTORY_SEPARATOR);
 
 define('PATH_PLATFORM', dirname(__FILE__));
